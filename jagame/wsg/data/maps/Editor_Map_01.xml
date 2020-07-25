@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<configurations>
+		<div configuration="Map" width="7280" height="7280" name="Edytor test" 
+		description_map="Początek traktatu czasu panowania Fryderyka Wielkiego, Króla Pruskiego żył w niemieckim rękopiśmie. 
+		Te warunki, te powinności lub złego człowieka ktory grzeszy, albo nadzieja nagrody, lub skutku cierpień, 
+		ani będzie początkiem do służby wojskowej; zdrowy ząb przedać..." image_map="map_1.png"
+		/>
+		<div configuration="Cell" width="128" height="64" />
+		<div configuration="Camera" position_x="0" position_y="0" />
+	</configurations>
+	<figures>			
+	</figures>
+	<background>
+	</background>
+
+</main>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<main>
+	<!-- Main Panels -->
+	<div figure="Dialog" figure_type="editor_menu" tag="SaveMapDialog" height="25%" transparent="Y" width="30%" temporary_displaying="Y" 
+		visible="Y" main_image="tlo_info.png" inside_direction="DOWN" main_background_color="RGB(0,0,0)" >
+	 	<table figure="FramePanel" tag="menu_dialog" temporaryDisplayed="Y"
+			number_columns="3" number_rows="3" group="dialog_user_menu" visible="Y" >
+			<cell figure="TextEdit" figure_type="editor_menu" tag="EDITOR_MAP_NAME_TEXTEDIT" margin="5%" default_focused="Y"
+				text="" place_holder="_" temporary_displaying="Y" position_column="0" position_row="1" extension_cell_column="3" 
+				tag_default_figure="simple_text_edit" max_length="15" />
+		 	<cell figure="Button" figure_type="editor_menu" tag="SAVE_EDITOR_NEW_MAP_BUTTON" text="Save Map" temporary_displaying="Y"
+				position_column="0" position_row="2" border="Y" margin="5%" tag_default_figure="default_2" />
+			<cell figure="Button" figure_type="editor_menu" tag="RETURN_TO_EDITOR_BUTTON" text="Cancel" temporary_displaying="Y"
+				position_column="2" position_row="2"  margin="5%" tag_default_figure="default_2" />
+		</table>
+	</div>
+</main>

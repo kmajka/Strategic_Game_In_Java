@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<main>
+	<!-- Main Panels -->
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="2%" transparent="Y" 
+		background_color="default" foreground_color="default" visible="Y" main_image="panel_top.png" >
+		<table figure="FramePanel" height="150%" width="10%" number_columns="1" number_rows="1" visible="Y" >
+			<cell figure="Button" figure_type="game_view" tag="TOOLBAR_MENU_USER_GAME_BUTTON" text="Menu" position_column="0" position_row="0" 
+			margin="4px" margin_left="40px" 
+			border="Y" tag_default_figure="default_2" />
+		</table>
+	</div>
+	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="1%" visible="Y" transparent="Y" main_image="panel_left_right.png" />
+	<div figure="Panel" tag="PANEL_RIGHT" inside_direction="DOWN" transparent="Y"  dock="right" width="1%"
+		background_color="default" foreground_color="default" visible="Y" main_image="panel_left_right.png" >
+		
+		<table figure="FramePanel" height="5%" width="2%" visible="Y" group="empty1" />
+		
+		<table figure="FramePanel" number_columns="1" number_rows="1" height="5%" width="300%" 
+			visible="Y" group="checkbox_display_info_position_character_group"  margin="10px" transparent="Y" >
+			<cell figure="Checkbox" figure_type="game_view" tag="CHECKBOX_DISPLAY_INFO_POSITION_CHARACTER" main_font_color="RGB(255,255,0)" text="C" 
+				position_column="0" position_row="0" margin="10px" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" transparent="Y" />
+		</table>
+
+		<table figure="FramePanel" height="30%" width="1500%" main_image="background_info.png" transparent="Y"
+			number_columns="11" number_rows="12" visible="N" group="info_position_character_group" tag="INFO_POSITION_CHARACTER" >
+			
+			<cell figure="Label" figure_type="game_view" tag="NAME_OF_LAST_SELECTED_OBJECT" text="Name: " 
+				position_column="1" position_row="1" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="MAP_ACTUAL_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Actual map object XY" 
+				position_column="1" position_row="2" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="MAP_START_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Start map object XY" 
+				position_column="1" position_row="3" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="MAP_DESTINATION_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Destin. map object XY" 
+				position_column="1" position_row="4" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="VIEW_ACTUAL_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Actual map object XY" 
+				position_column="1" position_row="5" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="VIEW_START_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Start map object XY" 
+				position_column="1" position_row="6" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="VIEW_DESTINATION_POSITION_XY_OF_LAST_SELECTED_OBJECT" text="Destin. map object XY" 
+				position_column="1" position_row="7" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="ANGLE_LAST_SELECTED_OBJECT" text="Angle:"
+				position_column="1" position_row="8" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Checkbox" figure_type="game_view" tag="DISPLAY_INFO_FIGURE"
+				text="info" position_column="1" position_row="9" transparent="Y" extension_cell_column="4" extension_cell_row="2"
+				margin_top="4px" align="center" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" main_font_color="RGB(255,255,0)" />
+				
+	
+		</table>
+		
+		<table figure="FramePanel" height="5%" width="2%" visible="Y" group="empty2" />
+		
+		<table figure="FramePanel" number_columns="1" number_rows="1" height="5%" width="300%" 
+			visible="Y" group="checkbox_display_info_position_map_group"  margin="10px" transparent="Y" >
+			<cell figure="Checkbox" figure_type="game_view" tag="CHECKBOX_DISPLAY_INFO_POSITION_MAP" main_font_color="RGB(255,255,0)" text="M" 
+				position_column="0" position_row="0" margin="10px" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" transparent="Y" />
+		</table>
+		
+		<table figure="FramePanel" height="30%" width="1500%" main_image="background_info.png" transparent="Y"
+			number_columns="11" number_rows="13" visible="N" group="info_position_map" tag="INFO_POSITION_MAP" >
+			
+			<cell figure="Label" figure_type="game_view" tag="CZAS_GRY" text="czas gry" 
+				position_column="1" position_row="1" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="POZYCJA_KURSORA_EKRAN_GRY"
+				text="pozycja kursora [ekran gr]:" position_column="1" position_row="2"
+				tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px" />
+			<cell figure="Label" figure_type="game_view" tag="POZYCJA_KURSORA_MAPA" text="pozycja kursora [mapa]:"
+				position_column="1" position_row="3" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="ROZMIAR_PLANSZY" text="rozmiar planszy:"
+				position_column="1" position_row="4" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="POLOZENIE_WIERZCHOKOW" text="polozenie wierzchokow mapy"
+				position_column="1" position_row="5" tag_default_figure="label_default_1" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="POLOZENIE_WIERZCHOKOW_X1Y1"
+				text="X1,Y1:" position_column="1" position_row="6" tag_default_figure="label_default_1"
+				border="Y" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="POLOZENIE_WIERZCHOKOW_X2Y1"
+				text="X2,Y1:" position_column="1" position_row="7" tag_default_figure="label_default_1"
+				border="Y" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="POLOZENIE_WIERZCHOKOW_X1Y2"
+				text="X1,Y2:" position_column="1" position_row="8" tag_default_figure="label_default_1"
+				border="Y" extension_cell_column="9" margin_top="4px"/>
+			<cell figure="Label" figure_type="game_view" tag="POLOZENIE_WIERZCHOKOW_X2Y2"
+				text="X2,Y2:" position_column="1" position_row="9" tag_default_figure="label_default_1"
+				border="Y" extension_cell_column="9" margin_top="4px"/>
+				
+				
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_CHECKBOX"
+				text="grid" position_column="1" position_row="10" transparent="Y" extension_cell_column="4" extension_cell_row="2"
+				margin_top="4px" align="center" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" main_font_color="RGB(255,255,0)" />
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_POSITION_CHECKBOX" 
+				text="pos. " position_column="6" position_row="10" transparent="Y" extension_cell_column="4" extension_cell_row="2"
+				margin_top="4px" align="center" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" main_font_color="RGB(255,255,0)" />
+				
+				
+		</table>
+		
+		
+	</div>
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="15%" visible="Y" transparent="Y" inside_direction="RIGHT" main_image="panel_bottom.png" >
+		
+		<table figure="FramePanel" height="140%" width="25%" number_columns="1" number_rows="1" visible="Y" group="map">
+			<cell figure="Map" tag="MAP_VIEW" text="" transparent="Y" main_image="map.png" position_column="0" position_row="0" margin_right="20px"/>
+		</table>
+		
+		<table figure="FramePanel" height="10%" width="2%" visible="Y" group="empty1"/>
+	 	<table figure="FramePanel" height="60%" width="15%"
+			number_columns="2" visible="Y" number_rows="2" group="one" >
+			 <cell figure="Button" figure_type="game_view" tag="START_BUTTON" text="" tag_default_figure="default_2" main_image="f_sword.png"
+				position_column="0" position_row="0" />
+			<cell figure="Button" figure_type="game_view" tag="PAUSE_BUTTON" text="" tag_default_figure="default_2" main_image="f_house.png"
+				position_column="0" position_row="1" />
+			
+			<cell figure="Button" figure_type="game_view" tag="EXIT_MENU_BUTTON" text="" tag_default_figure="default_2"
+				position_column="1" position_row="0" main_image="f_house2.png" extension_cell_row="2"
+				extension_cell_column="1" />
+		</table>
+		<table figure="FramePanel" height="100%" width="20%"
+			number_columns="1" number_rows="9" visible="Y" group="three">
+		</table>
+		<table figure="FramePanel" height="40%" width="10%" 
+		number_columns="2" number_rows="1" visible="Y" group="four" border="Y" >
+		</table>
+		<table figure="FramePanel" tag="panelCastle" height="40%" width="10%"
+			number_columns="3" number_rows="1" visible="N" group="four" >
+			<cell figure="Button" figure_type="game_view" tag="KNIGHT_BUTTON"
+				position_column="0" position_row="0" margin_left="4px"
+				margin_right="2px" border="Y" main_image="l_chelm.png" />
+			<cell figure="Button" figure_type="game_view" tag="RYCERZ_2" text="rycerz2" tag_default_figure="default_3"
+				position_column="1" position_row="0" margin_left="2px"
+				margin_right="2px"/>
+			<cell figure="Button" figure_type="game_view" tag="RYCERZ_3" text="rycerz3" tag_default_figure="default_3"
+				position_column="2" position_row="0" margin_left="2px"
+				margin_right="2px"/>
+		</table>
+		<table figure="FramePanel" height="60%" width="20%"
+			number_columns="1" number_rows="1" visible="Y" group="six">
+			<table figure="list" position_column="0"
+				position_row="0" number_columns="3" number_rows="1" transparent="Y"
+				arrangement="horizontal">
+				<cell figure="Button" figure_type="game_view" tag="KNIGHT_BUTTON" text="" position_column="0" position_row="0" border="Y" main_image="l_zbroja.png" transparent="Y" />
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_2" text="" position_column="1" position_row="0" border="Y" main_image="l_chelm.png" transparent="Y"  />
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_3" text="" position_column="2" position_row="0" border="Y" main_image="l_castle.png" transparent="Y" />
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_4" text="rycerz4" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_5" text="rycerz5" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_6" text="rycerz6" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_7" text="rycerz7" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_8" text="rycerz8" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_9" text="rycerz9" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="game_view" tag="RYCERZ_10" text="rycerz10" position_column="9" position_row="0" tag_default_figure="default_3" />
+			</table>
+		</table>
+	</div>
+</main>

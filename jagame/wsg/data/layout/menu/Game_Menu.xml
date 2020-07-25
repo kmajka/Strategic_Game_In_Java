@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<main>
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="20%"
+		background_color="default" foreground_color="default" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="0%" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="100%"
+		visible="Y" main_background_color="RGB(0,0,0)" inside_direction="right" >
+	</div>
+	<div figure="Panel" tag="PANEL_RIGHT" dock="right" height="100%" main_image="main_menu.png"
+		width="100%" visible="Y" main_background_color="RGB(0,0,0)" inside_direction="DOWN" >
+		
+		
+		<table figure="FramePanel" height="100%" width="100%" number_columns="14" number_rows="15" visible="Y" group="top" >
+			<cell figure="Panel" 
+				position_column="5" position_row="1" extension_cell_row="3" text="Kingdom of the one Lord" 
+				extension_cell_column="4" transparent="Y" font_name="Times New Roman" font_size="50" 
+				font_style="ITALIC | BOLD" main_font_color="RGB(200,0,0)"  />
+				
+				
+			<cell figure="Button" figure_type="main_menu" tag="GENERATE_USER_MAP_BUTTON" text="Skip to Editor" tag_default_figure="default_1"
+				position_column="6" position_row="3" extension_cell_row="1" transparent="Y"
+				extension_cell_column="2" focused_image="mark_element.png"  />
+				
+			<cell figure="Button" figure_type="main_menu" tag="CUSTOM_GAME_BUTTON" text="Custome Game" tag_default_figure="default_1"
+				position_column="6" position_row="5" extension_cell_row="1" transparent="Y"
+				extension_cell_column="2" focused_image="mark_element.png"  />
+			<cell figure="Button" figure_type="main_menu" tag="LOAD_SAVED_GAMES_BUTTON" text="Load Game" 
+				position_column="6" position_row="6" extension_cell_row="1"
+				extension_cell_column="2" focused_image="mark_element.png" tag_default_figure="default_1" />	
+			<cell figure="Button" figure_type="main_menu" tag="EDITOR_GAME_BUTTON" text="Editor" 
+				position_column="6" position_row="7" extension_cell_row="1"
+				extension_cell_column="2" focused_image="mark_element.png" tag_default_figure="default_1" />
+			<cell figure="Button" figure_type="main_menu" tag="CONFIGURATION_BUTTON" text="Options"
+				position_column="6" position_row="8" extension_cell_row="1"
+				extension_cell_column="2" focused_image="mark_element.png" tag_default_figure="default_1" />
+			<cell figure="Button" figure_type="main_menu" tag="CREDITS_BUTTON" text="Credits"
+				position_column="6" position_row="9" extension_cell_row="1"
+				extension_cell_column="2" focused_image="mark_element.png" tag_default_figure="default_1" />
+			<cell figure="Button" figure_type="main_menu" tag="EXIT_APPLICATION_BUTTON" text="Exit"
+				position_column="6" position_row="10" extension_cell_row="1"
+				extension_cell_column="2" focused_image="mark_element.png" tag_default_figure="default_1" />
+				
+			<cell figure="Button" position_column="6" position_row="4" extension_cell_row="7"
+				extension_cell_column="1" transparent="Y" />
+				
+		</table>
+					
+	</div>
+</main>

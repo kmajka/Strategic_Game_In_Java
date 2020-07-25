@@ -1,0 +1,39 @@
+E:\sources\applications\java\client\cmn\src\cmngame\documents\providers\ConfigurationProvider.java
+
+	public ArrayList<IFigureConfiguration> getListFigureConfiguration() {
+		
+		ArrayList<IFigureConfiguration> list = new ArrayList<IFigureConfiguration>();
+		
+		for (BaseConfiguration baseConfiguration : configurationManager.getListFigureConfiguration()) {
+			
+			IFigureConfiguration figureConfiguration = baseConfiguration.getFigureConfiguration();
+			if(figureConfiguration != null) {
+				//BaseDrawFigure configFigure = figureConfiguration.getFigure();
+				//if (configFigure != null) {
+				//	
+				//}
+				list.add(figureConfiguration);
+			}
+		}
+			
+		return list;
+	}
+
+=============================================================================================================
+/cmn/src/cmngame/documents/PanelLayoutManager.java
+
+	protected void updateDataFromConfig() {
+		
+		//update component from configure
+		for (IFigureConfiguration figureConfiguration : configurationProvider.getListFigureConfiguration()) {
+			
+			BaseDrawFigure configFigure = figureConfiguration.getFigure();
+			if (configFigure != null) {
+				
+				for(BaseDrawFigure baseDrawFigure : listFigureManager.getElementsForDefaultTag(configFigure.getTagDefaultFigure())) {
+					DocumentLayoutTool.updateFigure(baseDrawFigure, configFigure);
+				}			
+			}
+		}
+		
+	}

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<main>
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="20%"
+		background_color="default" foreground_color="default" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="0%" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="100%"
+		visible="Y" main_background_color="RGB(0,0,0)" inside_direction="right" >
+	</div>
+	<div figure="Panel" tag="PANEL_RIGHT" dock="right" height="100%" main_image="main_menu.png"
+		width="100%" visible="Y" main_background_color="RGB(0,0,0)" inside_direction="DOWN" >
+		
+		<table figure="FramePanel" height="40%" width="100%" number_columns="14" number_rows="6" visible="Y" group="top" >
+			<cell figure="Panel" tag="NAME_OF_GAME" bold="Y" 
+				position_column="5" position_row="1" extension_cell_row="3" text="Kingdom of the one Lord" 
+				extension_cell_column="4" transparent="Y" font_name="Times New Roman" font_size="50" 
+				font_style="ITALIC | BOLD" main_font_color="RGB(200,0,0)" />
+				
+		 	<cell figure="Panel" text="" 
+				transparent="Y" main_font_color="RGB(0,0,0)" font_name="Arial" font_size="22" font_style="ITALIC" focused_font_style="ITALIC" 
+				position_column="1" border="N" tag="DESCRIPTION_MAP" position_row="3" margin="10px" 
+				extension_cell_column="6" extension_cell_row="4" />
+			<cell figure="Panel" text="" tag="IMAGE_MAP" position_column="7" position_row="3" extension_cell_row="4" transparent="Y"
+				extension_cell_column="2" margin="10px" margin_left="0px"/>
+		</table>
+		
+		<table figure="FramePanel" height="60%" width="100%" number_columns="10" visible="Y" number_rows="11" group="one" >			
+			<cell figure="list" one_choice="Y" position_column="4" position_row="1" extension_cell_row="6"	extension_cell_column="2" 
+				border="N" number_columns="1" number_rows="5"  arrangement="vertical" transparent="Y" >
+ 				<cell figure="Button" figure_type="main_menu" tag="OPEN_CUSTOM_GAME_BUTTON" focused_image="focused_element.png" selected_image="mark_element.png"  template="Y" position_column="0" load="dir" 
+ 				extension="*.*" path_data="/data/maps" tag_default_figure="default_1" /> 
+			</cell>
+			<cell figure="Button" figure_type="main_menu" tag="RETURN_TO_MAIN_MENU_GAME_BUTTON" text="Return"
+				position_column="6" position_row="8" extension_cell_row="1"
+				extension_cell_column="1" tag_default_figure="default_1" focused_image="mark_element.png" />
+				
+			<cell figure="Button" tag="" text=""
+				position_column="6" position_row="1" extension_cell_row="6"
+				extension_cell_column="2" transparent="Y" />
+				
+			<cell figure="Button" tag="" text=""
+				position_column="2" position_row="1" extension_cell_row="6"
+				extension_cell_column="2" main_image="" transparent="Y" />
+				
+		</table> 
+		
+	</div>
+</main>

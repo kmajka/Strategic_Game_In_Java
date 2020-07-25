@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<main>
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="20%"
+		background_color="default" foreground_color="default" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="0%" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="100%"
+		visible="Y" main_background_color="RGB(0,0,0)" inside_direction="right" >
+	</div>
+	<div figure="Panel" tag="PANEL_RIGHT" dock="right" height="100%" main_image="main_menu.png" 
+		width="100%" visible="Y" main_background_color="RGB(0,0,0)" inside_direction="DOWN" >
+		
+
+		
+		<table figure="FramePanel" main_image="not_implemented.png" height="100%" width="100%" number_columns="14" number_rows="15" visible="Y" group="top" >
+      
+  			<cell figure="Panel" 
+  				position_column="5" position_row="1" extension_cell_row="3" text="Kingdom of the one Lord" 
+  				extension_cell_column="4" transparent="Y" font_name="Times New Roman" font_size="50" 
+  				font_style="ITALIC | BOLD" focused_font_style="ITALIC | BOLD" main_font_color="RGB(200,0,0)" />
+          
+        <cell figure="Button" figure_type="main_menu" tag="REOPEN_APPLICATION_BUTTON" text="Restart Game"
+  				position_column="3" position_row="8" extension_cell_row="1"
+  				extension_cell_column="2" tag_default_figure="default_1" focused_image="mark_element.png" />
+          
+        <cell figure="Panel" 
+  				position_column="3" position_row="6" extension_cell_row="1" text=""  
+  				extension_cell_column="4" tag_default_figure="default_template"  />
+          
+  			<cell figure="Button" figure_type="main_menu" tag="RETURN_TO_MAIN_MENU_GAME_BUTTON" text="Return"
+  				position_column="5" position_row="10" extension_cell_row="1"
+  				extension_cell_column="1" tag_default_figure="default_1" focused_image="mark_element.png" />
+       
+		</table>
+				
+       
+	</div>
+</main>

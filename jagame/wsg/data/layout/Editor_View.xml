@@ -1,0 +1,613 @@
+<?xml version="1.0"?>
+<main>
+	<!-- Main Panels -->
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="2%"
+		background_color="default" foreground_color="default" visible="Y" main_image="panel_top.png" >
+		<table figure="FramePanel" height="150%" width="10%" number_columns="1" number_rows="1" visible="Y">
+			<cell figure="Button"  figure_type="editor_view" tag="TOOLBAR_MENU_USER_MAP_BUTTON" text="Menu" position_column="0" position_row="0" margin="4px" margin_left="40px" 
+			tag_default_figure="default_2" />
+		</table>
+	</div>
+ 	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="1%" visible="Y" main_image="panel_left_right.png" />
+	<div figure="Panel" tag="PANEL_RIGHT" dock="right" width="1%"
+		background_color="default" foreground_color="default" visible="Y" main_image="panel_left_right.png" /> 
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="15%" visible="Y" inside_direction="RIGHT" main_image="panel_bottom.png" >
+		  
+		<table figure="FramePanel" height="140%" width="25%" number_columns="1" number_rows="1" visible="Y" group="map">
+			<cell figure="Map" tag="MAP_VIEW" text="" transparent="Y" main_image="map.png" position_column="0" position_row="0" margin="4px" margin_right="20px"/>
+		</table>
+		
+		<table figure="Panel" height="100%" width="3%" number_columns="1" number_rows="1" visible="Y" transparent="Y" group="kind_of_size">
+			<table figure="list" position_column="0" position_row="0" one_choice="Y" number_columns="1" number_rows="5" transparent="Y" arrangement="none" >
+				<cell figure="Button" margin="3px" figure_type="editor_view" tag="SIZE1" text="1x" main_image="size_editor.png" focused_image="size_focus_editor.png" selected_image="mark_size_editor.png" position_column="0" position_row="0" tag_default_figure="default_4" />
+				<cell figure="Button" margin="3px" figure_type="editor_view" tag="SIZE2" text="x2" main_image="size_editor.png" focused_image="size_focus_editor.png" selected_image="mark_size_editor.png" position_column="0" position_row="1" tag_default_figure="default_4" />
+				<cell figure="Button" margin="3px" figure_type="editor_view" tag="SIZE4" text="x4" main_image="size_editor.png" focused_image="size_focus_editor.png" selected_image="mark_size_editor.png" position_column="0" position_row="2" tag_default_figure="default_4" />
+				<cell figure="Button" margin="3px" figure_type="editor_view" tag="SIZE8" text="x8" main_image="size_editor.png" focused_image="size_focus_editor.png" selected_image="mark_size_editor.png" position_column="0" position_row="3" tag_default_figure="default_4" />
+				<cell figure="Button" margin="3px" figure_type="editor_view" tag="SIZE16" text="x16" main_image="size_editor.png" focused_image="size_focus_editor.png" selected_image="mark_size_editor.png" position_column="0" position_row="4" tag_default_figure="default_4"/>
+			</table>
+		</table>
+		
+		<table figure="FramePanel" height="100%" width="1%" visible="Y" group="empty1"/>
+		
+		<table figure="Panel" height="50%" width="4%" number_columns="1" number_rows="2" visible="Y" transparent="Y" group="checkbox">
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_CHECKBOX"
+				text="grid" position_column="0" position_row="0" transparent="Y"
+				margin="5px" align="center" mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" main_font_color="RGB(255,255,0)" />
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_POSITION_CHECKBOX" transparent="Y"
+				text="pos. " position_column="0" position_row="1" margin="5px" align="center" 
+				mark_checkbox="checkbox_mark.png" unmark_checkbox="checkbox_unmark.png" main_font_color="RGB(255,255,0)" />
+		</table>
+		
+		<table figure="FramePanel" height="100%" width="1%" visible="Y" group="empty2"/>
+		
+		<table figure="Panel" height="100%" width="5%" transparent="Y" number_columns="1" number_rows="1" visible="Y" group="kind_of_items">
+		<table figure="list" position_column="0" position_row="0" one_choice="Y" number_columns="1" number_rows="3" transparent="Y" arrangement="none" selected_image="mark_editor_size.png" >
+				<cell figure="Button" margin="4px" figure_type="editor_view" tag="NATURE_USER_MAP_BUTTON" text="Nature" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" margin="4px" figure_type="editor_view" tag="BUILDINGS_USER_MAP_BUTTON" text="Buildings" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" margin="4px" figure_type="editor_view" tag="UNIT_USER_MAP_BUTTON" text="Units" position_column="0" selected_image="mark_editor_size.png" position_row="2" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="FramePanel" height="100%" width="1%" visible="Y" group="empty3"/>
+		
+	    <table figure="Panel" height="100%" width="5%" transparent="Y" number_columns="1" number_rows="1" visible="Y" group="kind_of_units" />
+	    
+	    <table figure="Panel" height="100%" width="5%" transparent="Y" number_columns="1" tag="KIND_OF_NATURE_USER_MAP_LIST" number_rows="1" visible="N" group="kind_of_units" >
+			<table figure="list" position_column="0" position_row="0" one_choice="Y" number_columns="1" number_rows="3" transparent="Y" arrangement="vertical" 
+				selected_image="mark_editor_size.png" top_arrow="TopArrowDrawList_red.png" bottom_arrow="BottomArrowDrawList_red.png" >
+	       		<cell figure="Button" figure_type="editor_view" tag="BACKGROUND_USER_MAP_BUTTON" text="Background" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="TREE_USER_MAP_BUTTON" text="Tree" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="WATER_USER_MAP_BUTTON" text="Water" selected_image="mark_editor_size.png" position_column="0" position_row="2" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ROCK_USER_MAP_BUTTON" text="Rock" selected_image="mark_editor_size.png" position_column="0" position_row="3" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ROAD_USER_MAP_BUTTON" text="Road" selected_image="mark_editor_size.png" position_column="0" position_row="4" tag_default_figure="default_3" />
+	       		<cell figure="Button" figure_type="editor_view" tag="ANIMAL_USER_MAP_BUTTON" text="Animal" selected_image="mark_editor_size.png" position_column="0" position_row="5" tag_default_figure="default_3" />
+			</table>
+		</table>  
+		
+		<table figure="Panel" height="100%" width="5%" transparent="Y" number_columns="1" tag="KIND_OF_BUILDINGS_USER_MAP_LIST" number_rows="1" visible="N" group="kind_of_units" >
+			<table figure="list" position_column="0" position_row="0" one_choice="Y" number_columns="1" number_rows="3" transparent="Y" arrangement="vertical" selected_image="mark_editor_size.png" top_arrow="TopArrowDrawList_red.png" bottom_arrow="BottomArrowDrawList_red.png" >
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_BUILDINGS_USER_MAP_BUTTON" text="Knight Build." selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="BARBARIAN_BUILDINGS_USER_MAP_BUTTON" text="Barbarian Build." selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ELF_BUILDINGS_USER_MAP_BUTTON" text="Elf Build." selected_image="mark_editor_size.png" position_column="0" position_row="2" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="DWARF_BUILDINGS_USER_MAP_BUTTON" text="Dwarf Build." selected_image="mark_editor_size.png" position_column="0" position_row="3" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ORK_BUILDINGS_USER_MAP_BUTTON" text="Ork Build." selected_image="mark_editor_size.png" position_column="0" position_row="4" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="NECROMANCER_BUILDINGS_USER_MAP_BUTTON" text="Necromancers Build." selected_image="mark_editor_size.png" position_column="0" position_row="5" tag_default_figure="default_3" />
+			</table>
+		</table>
+		    
+		<table figure="Panel" height="100%" width="5%" transparent="Y" number_columns="1" tag="KIND_OF_CHARACTER_USER_MAP_LIST" number_rows="1" visible="N" group="kind_of_units" >
+			<table figure="list" position_column="0" position_row="0" one_choice="Y" number_columns="1" number_rows="3" transparent="Y" arrangement="vertical" selected_image="mark_editor_size.png" top_arrow="TopArrowDrawList_red.png" bottom_arrow="BottomArrowDrawList_red.png" >
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_USER_MAP_BUTTON" text="Knight" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="BARBARIAN_USER_MAP_BUTTON" text="Barbarian" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ELF_USER_MAP_BUTTON" text="Elf" selected_image="mark_editor_size.png" position_column="0" position_row="2" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="DWARF_USER_MAP_BUTTON" text="Dwarf" selected_image="mark_editor_size.png" position_column="0" position_row="3" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="ORK_USER_MAP_BUTTON" text="Ork" selected_image="mark_editor_size.png" position_column="0" position_row="4" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="NECROMANCER_USER_MAP_BUTTON" text="Necromancers" selected_image="mark_editor_size.png" position_column="0" position_row="5" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="FramePanel" height="100%" width="1%" visible="Y" group="empty4"/>
+		
+	    <table figure="Panel" height="100%" width="50%"	number_columns="1" number_rows="1" visible="Y" transparent="Y" group="user_map_list" />
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="BACKGROUND_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_1" text="BACKGROUND1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_2" text="BACKGROUND2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_3" text="BACKGROUND3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_4" text="BACKGROUND4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_5" text="BACKGROUND5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_6" text="BACKGROUND6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_7" text="BACKGROUND7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_8" text="BACKGROUND8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_9" text="BACKGROUND9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_10" text="BACKGROUND10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_11" text="BACKGROUND11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_12" text="BACKGROUND12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_13" text="BACKGROUND13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_14" text="BACKGROUND14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_15" text="BACKGROUND15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_16" text="BACKGROUND16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_17" text="BACKGROUND17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_18" text="BACKGROUND18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_19" text="BACKGROUND19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BACKGROUND_20" text="BACKGROUND20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+	    
+	   	<table figure="Panel" height="100%" width="50%"	tag="KNIGHT_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="CASTLE_1" text="" main_image="castle1.png" selected_image="castle1.png"  position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_2" text="KNIG_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_3" text="KNIG_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_4" text="KNIG_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_5" text="KNIG_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_6" text="KNIG_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_7" text="KNIG_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_8" text="KNIG_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_9" text="KNIG_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_10" text="KNIG_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_11" text="KNIG_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_12" text="KNIG_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_13" text="KNIG_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_14" text="KNIG_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_15" text="KNIG_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_16" text="KNIG_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_17" text="KNIG_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_18" text="KNIG_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_19" text="KNIG_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_BUILDINGS_20" text="KNIG_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="Panel" height="100%" width="50%"	tag="BARBARIAN_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_1" text="BARB_BUILD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_2" text="BARB_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_3" text="BARB_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_4" text="BARB_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_5" text="BARB_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_6" text="BARB_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_7" text="BARB_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_8" text="BARB_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_9" text="BARB_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_10" text="BARB_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_11" text="BARB_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_12" text="BARB_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_13" text="BARB_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_14" text="BARB_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_15" text="BARB_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_16" text="BARB_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_17" text="BARB_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_18" text="BARB_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_19" text="BARB_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_BUILDINGS_20" text="BARB_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="Panel" height="100%" width="50%"	tag="ELF_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_1" text="ELF_BUILD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_2" text="ELF_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_3" text="ELF_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_4" text="ELF_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_5" text="ELF_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_6" text="ELF_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_7" text="ELF_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_8" text="ELF_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_9" text="ELF_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_10" text="ELF_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_11" text="ELF_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_12" text="ELF_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_13" text="ELF_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_14" text="ELF_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_15" text="ELF_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_16" text="ELF_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_17" text="ELF_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_18" text="ELF_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_19" text="ELF_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_BUILDINGS_20" text="ELF_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="Panel" height="100%" width="50%"	tag="DWARF_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_1" text="DWAR_BUILD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_2" text="DWAR_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_3" text="DWAR_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_4" text="DWAR_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_5" text="DWAR_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_6" text="DWAR_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_7" text="DWAR_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_8" text="DWAR_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_9" text="DWAR_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_10" text="DWAR_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_11" text="DWAR_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_12" text="DWAR_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_13" text="DWAR_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_14" text="DWAR_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_15" text="DWAR_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_16" text="DWAR_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_17" text="DWAR_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_18" text="DWAR_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_19" text="DWAR_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_BUILDINGS_20" text="DWAR_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+		<table figure="Panel" height="100%" width="50%"	tag="ORK_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_1" text="ORK_BUILD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_2" text="ORK_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_3" text="ORK_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_4" text="ORK_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_5" text="ORK_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_6" text="ORK_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_7" text="ORK_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_8" text="ORK_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_9" text="ORK_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_10" text="ORK_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_11" text="ORK_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_12" text="ORK_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_13" text="ORK_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_14" text="ORK_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_15" text="ORK_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_16" text="ORK_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_17" text="ORK_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_18" text="ORK_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_19" text="ORK_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_BUILDINGS_20" text="ORK_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+	    <table figure="Panel" height="100%" width="50%"	tag="NECROMANCER_OF_BUILDINGS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+			<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_1" text="NECR_BUILD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_2" text="NECR_BUILD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_3" text="NECR_BUILD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_4" text="NECR_BUILD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_5" text="NECR_BUILD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_6" text="NECR_BUILD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_7" text="NECR_BUILD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_8" text="NECR_BUILD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_9" text="NECR_BUILD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_10" text="NECR_BUILD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_11" text="NECR_BUILD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_12" text="NECR_BUILD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_13" text="NECR_BUILD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_14" text="NECR_BUILD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_15" text="NECR_BUILD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_16" text="NECR_BUILD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_17" text="NECR_BUILD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_18" text="NECR_BUILD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_19" text="NECR_BUILD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_BUILDINGS_20" text="NECR_BUILD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+			</table>
+		</table>
+		
+	    <table figure="Panel" height="100%" width="50%"	tag="TREE_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_1" text="" main_image="f_tree1.png" selected_image="f_tree1.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_2" text="TREE2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_3" text="TREE3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_4" text="TREE4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_5" text="TREE5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_6" text="TREE6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_7" text="TREE7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_8" text="TREE8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_9" text="TREE9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_10" text="TREE10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_11" text="TREE11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_12" text="TREE12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_13" text="TREE13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_14" text="TREE14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_15" text="TREE15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_16" text="TREE16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_17" text="TREE17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_18" text="TREE18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_19" text="TREE19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="TREE_20" text="TREE20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="WATER_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_1" text="WATER1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_2" text="WATER2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_3" text="WATER3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_4" text="WATER4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_5" text="WATER5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_6" text="WATER6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_7" text="WATER7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_8" text="WATER8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_9" text="WATER9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_10" text="WATER10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_11" text="WATER11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_12" text="WATER12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_13" text="WATER13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_14" text="WATER14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_15" text="WATER15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_16" text="WATER16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_17" text="WATER17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_18" text="WATER18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_19" text="WATER19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="WATER_20" text="WATER20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="ROCK_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_1" text="ROCK1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_2" text="ROCK2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_3" text="ROCK3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_4" text="ROCK4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_5" text="ROCK5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_6" text="ROCK6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_7" text="ROCK7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_8" text="ROCK8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_9" text="ROCK9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_10" text="ROCK10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_11" text="ROCK11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_12" text="ROCK12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_13" text="ROCK13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_14" text="ROCK14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_15" text="ROCK15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_16" text="ROCK16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_17" text="ROCK17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_18" text="ROCK18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_19" text="ROCK19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROCK_20" text="ROCK20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="ROAD_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_1" text="ROAD1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_2" text="ROAD2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_3" text="ROAD3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_4" text="ROAD4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_5" text="ROAD5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_6" text="ROAD6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_7" text="ROAD7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_8" text="ROAD8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_9" text="ROAD9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_10" text="ROAD10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_11" text="ROAD11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_12" text="ROAD12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_13" text="ROAD13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_14" text="ROAD14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_15" text="ROAD15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_16" text="ROAD16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_17" text="ROAD17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_18" text="ROAD18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_19" text="ROAD19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ROAD_20" text="ROAD20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="ANIMAL_OF_NATURE_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_1" text="ANIMAL1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_2" text="ANIMAL2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_3" text="ANIMAL3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_4" text="ANIMAL4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_5" text="ANIMAL5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_6" text="ANIMAL6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_7" text="ANIMAL7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_8" text="ANIMAL8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_9" text="ANIMAL9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_10" text="ANIMAL10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_11" text="ANIMAL11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_12" text="ANIMAL12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_13" text="ANIMAL13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_14" text="ANIMAL14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_15" text="ANIMAL15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_16" text="ANIMAL16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_17" text="ANIMAL17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_18" text="ANIMAL18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_19" text="ANIMAL19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ANIMAL_20" text="ANIMAL20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+			<table figure="Panel" height="100%" width="50%"	tag="KNIGHT_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_1" text="" main_image="f_knight_editor.png" selected_image="f_knight_editor_selected.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_2" text="KNIGHT_2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_3" text="KNIGHT_3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_4" text="KNIGHT_4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_5" text="KNIGHT_5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_6" text="KNIGHT_6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_7" text="KNIGHT_7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_8" text="KNIGHT_8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_9" text="KNIGHT_9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_10" text="KNIGHT_10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_11" text="KNIGHT_11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_12" text="KNIGHT_12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_13" text="KNIGHT_13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_14" text="KNIGHT_14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_15" text="KNIGHT_15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_16" text="KNIGHT_16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_17" text="KNIGHT_17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_18" text="KNIGHT_18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_19" text="KNIGHT_19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="KNIGHT_20" text="KNIGHT_20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="BARBARIAN_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_1" text="BARBARIAN1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_2" text="BARBARIAN2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_3" text="BARBARIAN3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_4" text="BARBARIAN4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_5" text="BARBARIAN5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_6" text="BARBARIAN6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_7" text="BARBARIAN7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_8" text="BARBARIAN8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_9" text="BARBARIAN9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_10" text="BARBARIAN10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_11" text="BARBARIAN11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_12" text="BARBARIAN12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_13" text="BARBARIAN13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_14" text="BARBARIAN14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_15" text="BARBARIAN15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_16" text="BARBARIAN16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_17" text="BARBARIAN17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_18" text="BARBARIAN18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_19" text="BARBARIAN19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="BARBARIAN_20" text="BARBARIAN20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="ELF_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_1" text="ELF1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_2" text="ELF2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_3" text="ELF3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_4" text="ELF4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_5" text="ELF5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_6" text="ELF6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_7" text="ELF7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_8" text="ELF8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_9" text="ELF9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_10" text="ELF10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_11" text="ELF11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_12" text="ELF12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_13" text="ELF13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_14" text="ELF14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_15" text="ELF15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_16" text="ELF16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_17" text="ELF17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_18" text="ELF18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_19" text="ELF19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ELF_20" text="ELF20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="DWARF_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_1" text="DWARF1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_2" text="DWARF2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_3" text="DWARF3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_4" text="DWARF4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_5" text="DWARF5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_6" text="DWARF6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_7" text="DWARF7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_8" text="DWARF8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_9" text="DWARF9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_10" text="DWARF10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_11" text="DWARF11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_12" text="DWARF12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_13" text="DWARF13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_14" text="DWARF14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_15" text="DWARF15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_16" text="DWARF16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_17" text="DWARF17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_18" text="DWARF18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_19" text="DWARF19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="DWARF_20" text="DWARF20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="ORK_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_1" text="ORK1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_2" text="ORK2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_3" text="ORK3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_4" text="ORK4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_5" text="ORK5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_6" text="ORK6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_7" text="ORK7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_8" text="ORK8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_9" text="ORK9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_10" text="ORK10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_11" text="ORK11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_12" text="ORK12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_13" text="ORK13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_14" text="ORK14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_15" text="ORK15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_16" text="ORK16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_17" text="ORK17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_18" text="ORK18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_19" text="ORK19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="ORK_20" text="ORK20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+	    
+	    <table figure="Panel" height="100%" width="50%"	tag="NECROMANCER_OF_UNITS_USER_MAP_LIST" number_columns="1" number_rows="1" visible="N" main_image="grey.png" transparent="Y" group="user_map_list">
+				<table figure="list" position_column="0" position_row="0" number_columns="10" number_rows="2" transparent="Y" arrangement="none" one_choice="Y" margin="2px" >
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_1" text="NECROMAN1" selected_image="mark_editor_size.png" position_column="0" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_2" text="NECROMAN2" selected_image="mark_editor_size.png" position_column="1" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_3" text="NECROMAN3" selected_image="mark_editor_size.png" position_column="2" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_4" text="NECROMAN4" selected_image="mark_editor_size.png" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_5" text="NECROMAN5" selected_image="mark_editor_size.png" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_6" text="NECROMAN6" selected_image="mark_editor_size.png" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_7" text="NECROMAN7" selected_image="mark_editor_size.png" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_8" text="NECROMAN8" selected_image="mark_editor_size.png" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_9" text="NECROMAN9" selected_image="mark_editor_size.png" position_column="8" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_10" text="NECROMAN10" selected_image="mark_editor_size.png" position_column="9" position_row="0" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_11" text="NECROMAN11" selected_image="mark_editor_size.png" position_column="0" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_12" text="NECROMAN12" selected_image="mark_editor_size.png" position_column="1" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_13" text="NECROMAN13" selected_image="mark_editor_size.png" position_column="2" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_14" text="NECROMAN14" selected_image="mark_editor_size.png" position_column="3" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_15" text="NECROMAN15" selected_image="mark_editor_size.png" position_column="4" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_16" text="NECROMAN16" selected_image="mark_editor_size.png" position_column="5" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_17" text="NECROMAN17" selected_image="mark_editor_size.png" position_column="6" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_18" text="NECROMAN18" selected_image="mark_editor_size.png" position_column="7" position_row="1" tag_default_figure="default_3"	/>
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_19" text="NECROMAN19" selected_image="mark_editor_size.png" position_column="8" position_row="1" tag_default_figure="default_3" />
+					<cell figure="Button" figure_type="editor_view" margin="4px" tag="NECROMANCER_20" text="NECROMAN20" selected_image="mark_editor_size.png" position_column="9" position_row="1" tag_default_figure="default_3" />
+				</table>
+			</table>
+
+		
+	 	<!-- <table figure="FramePanel" height="100%" width="20%"
+			number_columns="1" number_rows="9" visible="Y" group="three"
+			<cell figure="Label" tag="CZAS_GRY" text="czas gry"
+				position_column="0" position_row="0" margin="1px" tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POZYCJA_KURSORA_EKRAN_GRY"
+				text="pozycja kursora [ekran gr]:" position_column="0" position_row="1"
+				margin="1px" tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POZYCJA_KURSORA_MAPA" text="pozycja kursora [mapa]:"
+				position_column="0" position_row="2" margin="1px" tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="ROZMIAR_PLANSZY" text="rozmiar planszy:"
+				position_column="0" position_row="3" margin="1px" tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POLOZENIE_WIERZCHOKOW" text="polozenie wierzchokow mapy"
+				position_column="0" position_row="4" margin="1px" tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POLOZENIE_WIERZCHOKOW_X1Y1"
+				text="X1,Y1:" position_column="0" position_row="5" margin="1px"
+				tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POLOZENIE_WIERZCHOKOW_X2Y1"
+				text="X2,Y1:" position_column="0" position_row="6" margin="1px"
+				tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POLOZENIE_WIERZCHOKOW_X1Y2"
+				text="X1,Y2:" position_column="0" position_row="7" margin="1px"
+				tag_default_figure="label_default_1" margin_right="8px" />
+			<cell figure="Label" tag="POLOZENIE_WIERZCHOKOW_X2Y2"
+				text="X2,Y2:" position_column="0" position_row="8" margin="1px"
+				tag_default_figure="label_default_1" margin_right="8px" />
+		</table> 
+		<table figure="FramePanel" tag="panelCastle.Empty" height="40%" width="10%" 
+		number_columns="2" number_rows="1" visible="Y" group="four" border="Y" >
+		</table>
+	  	<table figure="FramePanel" height="50%" width="15%"
+			number_columns="1" number_rows="2" visible="Y" group="five2">
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_CHECKBOX"
+				text="siatka tla mapy (cell)" position_column="0" position_row="0"
+				margin="1px" tag_default_figure="checkbox_default_1" />
+			<cell figure="Checkbox" figure_type="editor_view" tag="DISPLAY_CELL_BACKGROUND_POSITION_CHECKBOX"
+				text="pozycja komNECROMANCERi tla mapy (cell)" position_column="0"
+				position_row="1" margin="1px" tag_default_figure="checkbox_default_1" />
+		</table>
+		
+		<table figure="FramePanel" tag="panelCastle" height="40%" width="10%"
+			number_columns="3" number_rows="1" visible="N" group="four" >
+			<cell figure="Button" figure_type="editor_view" tag="KNIGHT_BUTTON" text=""
+				position_column="0" position_row="0" margin="4px" margin_left="4px"
+				margin_right="2px"  tag_default_figure="default_3" main_image="l_chelm.png" />
+			<cell figure="Button" figure_type="editor_view" tag="KNIGHT_2" text="KNIGHT2"
+				position_column="1" position_row="0" margin="4px" margin_left="2px"
+				margin_right="2px" tag_default_figure="default_3" />
+			<cell figure="Button" figure_type="editor_view" tag="KNIGHT_3" text="KNIGHT3"
+				position_column="2" position_row="0" margin="4px" margin_left="2px"
+				margin_right="2px" tag_default_figure="default_3" />
+		</table>
+		<table figure="FramePanel" height="60%" width="15%"
+			number_columns="1" number_rows="1" visible="Y" group="six">
+			<table figure="list" position_column="0"
+				position_row="0" number_columns="3" number_rows="1" margin="20px" transparent="Y"
+				arrangement="horizontal">
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_BUTTON" text="" position_column="0" position_row="0" border="Y" main_image="l_zbroja.png" transparent="Y" />
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_2" text="" position_column="1" position_row="0" border="Y" main_image="l_chelm.png" transparent="Y"  />
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_3" text="" position_column="2" position_row="0" border="Y" main_image="l_castle.png" transparent="Y" />
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_4" text="KNIGHT4" position_column="3" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_5" text="KNIGHT5" position_column="4" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_6" text="KNIGHT6" position_column="5" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_7" text="KNIGHT7" position_column="6" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_8" text="KNIGHT8" position_column="7" position_row="0" tag_default_figure="default_3"	/>
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_9" text="KNIGHT9" position_column="8" position_row="0" tag_default_figure="default_3" />
+				<cell figure="Button" figure_type="editor_view" tag="KNIGHT_10" text="KNIGHT10" position_column="9" position_row="0" tag_default_figure="default_3" />
+			</table>
+		</table> -->
+	</div>
+</main>

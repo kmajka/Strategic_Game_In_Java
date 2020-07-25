@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<main>
+	<!-- Main Panels -->
+	<div figure="Panel" tag="PANEL_TOP" dock="top" height="20%"
+		background_color="default" foreground_color="default" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_LEFT" dock="left" width="0%" visible="Y" main_background_color="RGB(0,0,0)" />
+	<div figure="Panel" tag="PANEL_BOTTOM" dock="bottom" height="100%"
+		visible="Y" main_background_color="RGB(0,0,0)" inside_direction="right" >
+	</div>
+	<div figure="Panel" tag="PANEL_RIGHT" dock="right" height="100%" main_image="loading.png"
+		width="100%" visible="Y" main_background_color="RGB(0,0,0)" inside_direction="DOWN" >
+	</div>
+</main>

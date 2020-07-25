@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<configurations>
+		<div configuration="Map" width="7280" height="7280" name="Poszukiwanie skarbów" 
+		description_map="Poszukiwanie skarbów.... " image_map="map_2.png"
+		 /> 
+		<div configuration="Cell" width="128" height="64" />
+		<div configuration="Camera" position_x="0" position_y="0" />
+	</configurations>
+	<figures>			
+
+		<div figure="Simple_Tree" position_x="550" position_y="190" />
+		<div figure="Simple_Tree" position_x="180" position_y="160" />
+		<div figure="Simple_Tree" position_x="550" position_y="190" />
+		<div figure="Simple_Tree" position_x="110" position_y="330" />
+		<div figure="Simple_Tree" position_x="220" position_y="520" />
+		<div figure="Simple_Tree" position_x="480" position_y="720" />
+		<div figure="Simple_Tree" position_x="610" position_y="260" />
+		<div figure="Simple_Tree" position_x="1230" position_y="380" />
+
+		<div figure="Simple_Tree" position_x="1320" position_y="1400" />
+		
+
+		<div figure="Simple_Castle" position_x="800" position_y="250" />
+		
+		<!-- <div figure="Simple_House" position_x="1700" position_y="500" relation_object="house_1" /> -->
+		<div figure="Simple_House" position_x="1500" position_y="800" relation_object="house_2" />
+		<div figure="Simple_House" position_x="700" position_y="10" relation_object="house_2" />
+		
+		
+		<div figure="Simple_Stone" position_x="800" position_y="50" relation_object="stone_1"/>
+		<div figure="Simple_Stone" position_x="1300" position_y="180" relation_object="stone_2"/>
+		
+		<div figure="Simple_Flower" position_x="50" position_y="50" />
+		<div figure="Simple_Flower" position_x="1" position_y="1" />
+		<div figure="Simple_Flower" position_x="111" position_y="156" />
+
+		<div figure="Simple_Flower" position_x="960" position_y="190" />
+		<div figure="Simple_Flower" position_x="300" position_y="300" />
+	</figures>
+	<background>
+
+
+		<div background_cell="0,16" row="8" column="14"/>
+		<div background_cell="8" row="9" column="14"/>
+		<div background_cell="0,14" row="10" column="14"/>
+		<div background_cell="8" row="11" column="14" />
+		<div background_cell="0,12" row="12" column="14" />
+		<div background_cell="0,12" row="13" column="14" />
+		
+		<div background_cell="0,9" row="8" column="15"/>
+	 	<div background_cell="8" row="9"  column="15"/>
+		<div background_cell="8" row="10" column="15"/>
+	 	<div background_cell="8" row="11" column="15"/>
+		<div background_cell="8" row="12" column="15"/>
+		<div background_cell="8" row="13" column="15"/>
+		<div background_cell="0,12" row="14" column="15"/>
+		
+		<div background_cell="0,9" row="8" column="16"/>
+		<div background_cell="8" row="9"  column="16"/>
+		<div background_cell="8" row="10" column="16"/>
+		<div background_cell="8" row="11" column="16"/>
+		<div background_cell="8" row="12" column="16"/>
+		<div background_cell="8" row="13" column="16"/>
+		<div background_cell="0,15" row="14" column="16"/>
+		<div background_cell="0,14" row="15" column="16"/>
+		<div background_cell="0,12" row="17" column="16"/>
+
+		<div background_cell="0,9" row="8" column="17"/>
+		<div background_cell="8" row="9"  column="17"/>
+		<div background_cell="8" row="10" column="17"/>
+		<div background_cell="8" row="11" column="17"/>
+		<div background_cell="8" row="12" column="17"/>
+		<div background_cell="8" row="13" column="17"/>
+		<div background_cell="8" row="14" column="17"/>
+		<div background_cell="8" row="15" column="17" />
+		<div background_cell="8" row="16" column="17"/>
+		<div background_cell="8" row="17" column="17"/>
+		<div background_cell="0,12" row="18" column="17"/>
+		<div background_cell="0,12" row="19" column="17"/>
+
+		<div background_cell="0,9" row="8" column="18"/>
+		<div background_cell="8" row="9" column="18"/>
+		<div background_cell="8" row="10" column="18"/>
+		<div background_cell="8" row="11" column="18"/>
+		<div background_cell="8" row="12" column="18"/>
+		<div background_cell="8" row="13" column="18"/>
+		<div background_cell="8" row="14" column="18"/>
+		<div background_cell="8" row="15" column="18"/>
+		<div background_cell="8" row="16" column="18"/>
+		<div background_cell="8" row="17" column="18"/>
+		<div background_cell="8" row="18" column="18"/>
+		<div background_cell="8" row="19" column="18"/>
+		<div background_cell="0,12" row="20" column="18"/>
+		<div background_cell="0,12" row="21" column="18"/>
+
+		<div background_cell="0,9" row="8" column="19"/>
+		<div background_cell="8" row="9" column="19"/>
+		<div background_cell="8" row="10" column="19"/>
+		<div background_cell="8" row="11" column="19"/>
+		<div background_cell="8" row="12" column="19"/>
+		<div background_cell="8" row="13" column="19"/>
+		<div background_cell="8" row="14" column="19"/>
+		<div background_cell="8" row="15" column="19"/>
+		<div background_cell="8" row="16" column="19"/>
+		<div background_cell="8" row="17" column="19"/> 
+		<div background_cell="8" row="18" column="19"/>
+		<div background_cell="8" row="19" column="19"/>
+		<div background_cell="8" row="20" column="19"/> 
+		<div background_cell="8" row="21" column="19"/>
+		<div background_cell="0,12" row="22" column="19"/>
+		<div background_cell="0,12" row="23" column="19"/>
+
+		<div background_cell="0,9" row="8" column="20"/>
+		<div background_cell="8" row="9" column="20" />
+		<div background_cell="8" row="10" column="20" />		
+		<div background_cell="8" row="11" column="20"/>
+		<div background_cell="8" row="12" column="20"/>
+		<div background_cell="8" row="13" column="20"/>
+		<div background_cell="8" row="14" column="20"/>
+		<div background_cell="8" row="15" column="20"/>
+		<div background_cell="8" row="16" column="20"/>
+		<div background_cell="8" row="17" column="20"/> 
+		<div background_cell="8" row="18" column="20"/>
+		<div background_cell="8" row="19" column="20"/>
+		<div background_cell="8" row="20" column="20"/> 
+		<div background_cell="8" row="21" column="20"/>
+		<div background_cell="8" row="22" column="20"/>
+		<div background_cell="8" row="23" column="20"/>
+		<div background_cell="0,12" row="24" column="20"/>
+		<div background_cell="0,12" row="25" column="20"/>
+	
+		<div background_cell="0,9" row="8" column="21"/>
+		<div background_cell="8" row="9" column="21"/>
+		<div background_cell="8" row="10" column="21"/>	
+		<div background_cell="8" row="11" column="21"/>
+		<div background_cell="8" row="12" column="21"/>
+		<div background_cell="8" row="13" column="21"/>
+		<div background_cell="8" row="14" column="21"/>
+		<div background_cell="8" row="15" column="21"/>
+		<div background_cell="8" row="16" column="21"/>
+		<div background_cell="8" row="17" column="21"/>
+		<div background_cell="8" row="18" column="21"/>
+		<div background_cell="8" row="19" column="21"/>
+		<div background_cell="8" row="20" column="21"/> 
+		<div background_cell="8" row="21" column="21"/>
+		<div background_cell="8" row="22" column="21"/>
+		<div background_cell="8" row="23" column="21" />
+		<div background_cell="8" row="24" column="21" />
+		<div background_cell="0,13" row="25" column="21" />
+		
+		<div background_cell="0,9" row="8" column="22"/>
+		<div background_cell="8" row="9" column="22"/>
+		<div background_cell="8" row="10" column="22"/>
+		<div background_cell="8" row="11" column="22"/>
+		<div background_cell="8" row="12" column="22"/>
+		<div background_cell="8" row="13" column="22"/>
+		<div background_cell="8" row="14" column="22"/>
+		<div background_cell="8" row="15" column="22"/>
+		<div background_cell="8" row="16" column="22"/>
+		<div background_cell="8" row="17" column="22"/>
+		<div background_cell="8" row="18" column="22"/>
+		<div background_cell="8" row="19" column="22"/>
+		<div background_cell="8" row="20" column="22"/> 
+		<div background_cell="8" row="21" column="22"/>
+		<div background_cell="8" row="22" column="22"/>
+		<div background_cell="8" row="23" column="22" />
+		<div background_cell="0,15" row="24" column="22" />
+ 
+ 		<div background_cell="0,9" row="8" column="23"/>
+		<div background_cell="8" row="9" column="23"/>
+		<div background_cell="8" row="10" column="23"/>
+		<div background_cell="8" row="11" column="23"/>
+		<div background_cell="8" row="12" column="23"/>
+		<div background_cell="8" row="13" column="23"/>
+		<div background_cell="8" row="14" column="23"/>
+		<div background_cell="8" row="15" column="23"/>
+		<div background_cell="8" row="16" column="23"/>
+		<div background_cell="8" row="17" column="23"/> 
+		<div background_cell="8" row="18" column="23"/>
+		<div background_cell="0,15" row="19" column="23"/>
+		<div background_cell="0,20" row="20" column="23"/>
+		<div background_cell="0,20" row="22" column="23"/>
+		<div background_cell="0,13" row="24" column="23" />
+		
+		<div background_cell="0,19" row="8" column="24" />
+		<div background_cell="0,19" row="9" column="24" />
+		<div background_cell="8" row="10" column="24" />
+		<div background_cell="0,20" row="11" column="24"/>
+		<div background_cell="8" row="12" column="24" />
+		<div background_cell="0,20" row="13" column="24"/>
+		<div background_cell="8" row="14" column="24" />
+		<div background_cell="0,20" row="15" column="24"/>
+		<div background_cell="8" row="16" column="24" />
+		<div background_cell="0,20" row="17" column="24"/>
+		<div background_cell="8" row="18" column="24" />
+		<div background_cell="0,13" row="19" column="24" />
+		
+		
+		<div background_cell="0,16" row="31" column="9" />
+		
+		<div background_cell="0,19" row="31" column="10" />
+		<div background_cell="8" row="32" column="10" />
+		<div background_cell="8" row="33" column="10" />
+		<div background_cell="8" row="34" column="10" />
+		
+		<div background_cell="0,9" row="32" column="11" />
+		<div background_cell="8" row="33" column="11" />
+		
+		<div background_cell="0,15" row="34" column="11" />
+		<div background_cell="0,12" row="35" column="11" />
+		
+		<div background_cell="0,16" row="32" column="12" />
+		<div background_cell="0,9" row="32" column="12" />
+		<div background_cell="8" row="33" column="12" />
+		<div background_cell="8" row="34" column="12" />
+		
+		<div background_cell="0,16" row="30" column="13" />
+		<div background_cell="8" row="31" column="13" />
+		<div background_cell="8" row="32" column="13" />
+	
+		
+		
+	</background>
+
+</main>

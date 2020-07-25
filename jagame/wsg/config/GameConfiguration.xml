@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<configurations>
+		<div configuration="video" image_dpi="MEDIUM" width_resolution="800" height_resolution="600" windowed_mode="Y" full_screen="Y" window_position_x="0" window_position_y="0"	/>
+		<div configuration="sound" volume="10"/>
+		<div configuration="figure" figure="Button" tag_default_figure="default_1" border="N" font_name="Times New Roman" font_size="36" 
+			font_style="ITALIC | BOLD" main_font_color="RGB(0,0,0)" focused_font_color="RGB(0,0,0)"  transparent="Y" align="center"  />
+		
+		<div configuration="figure" figure="Button" tag_default_figure="default_custom" font_name="Times New Roman" font_size="18" 
+			font_style="BOLD" main_font_color="RGB(0,0,0)" transparent="Y"  />
+		
+		
+		<div configuration="figure" figure="Button" main_font_color="RGB(0,0,0)" main_background_color="RGB(190,190,190)" focused_background_color="RGB(220,220,220)" 
+			tag_default_figure="default_2" border="Y" font_name="Times New Roman" font_size="20" font_style="BOLD" />
+		
+		<div configuration="figure" figure="TextEdit" font_name="Times New Roman" font_size="20" font_style="BOLD" 
+			main_font_color="RGB(255,255,0)" margin="5%" border="Y" tag_default_figure="simple_text_edit" />
+
+		<div configuration="figure" figure="Button" main_font_color="RGB(0,0,0)" main_background_color="RGB(192,192,192)" focused_background_color="RGB(220,220,220)" 
+			tag_default_figure="default_3" border="Y" font_name="Times New Roman" font_size="12" font_style="BOLD" />
+		
+		<div configuration="figure" figure="Button" tag_default_figure="default_4" transparent="Y" font_name="Times New Roman" font_size="12" font_style="BOLD"  />
+		
+		
+		<div configuration="figure" figure="Label" main_font_color="RGB(0,0,0)" main_background_color="RGB(190,190,190)" 
+			tag_default_figure="label_default_1" border="Y" font_name="Times New Roman" font_size="12" font_style="BOLD" />
+			
+		<div configuration="figure" figure="Label" main_font_color="RGB(255,255,0)" main_background_color="RGB(190,190,190)" 
+			tag_default_figure="label_dialog_info_1" transparent="Y" border="Y" font_name="Times New Roman" font_size="32" font_style="BOLD" />
+			
+		<div configuration="figure" figure="Panel" main_font_color="RGB(0,0,0)" 
+			tag_default_figure="default_template" transparent="Y" font_name="Times New Roman" font_size="28" font_style="BOLD" />
+			
+	</configurations>
+</main>

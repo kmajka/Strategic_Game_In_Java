@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<main>
+	<!-- Main Panels -->
+	<div figure="Dialog" figure_type="editor_menu" tag="INFORMATION_DIALOG" height="15%" transparent="Y" width="30%" temporary_displaying="Y" 
+		visible="Y" main_image="tlo_info.png" inside_direction="DOWN" main_background_color="RGB(0,0,0)" >
+	 	<table figure="FramePanel" tag="menu_dialog" temporaryDisplayed="Y"
+			number_columns="3" number_rows="3" group="dialog_user_menu" visible="Y" >
+			<cell figure="Label" one_choice="Y" tag="INFORMATION_DIALOG_TEXT" temporary_displaying="Y"
+				position_column="0" position_row="1" text="as" extension_cell_column="3" tag_default_figure="label_dialog_info_1" />
+			<cell figure="Button" tag="INFORMATION_BUTTON_OK" text="OK" temporary_displaying="Y"
+				position_column="1" position_row="2" margin="5%" tag_default_figure="default_2" />
+		</table>
+	</div>
+</main>
