@@ -1,0 +1,103 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bwizard.jagame</groupId>
+	<artifactId>jagame</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>../ceg</module>
+		<module>../wsg</module>
+	</modules>
+	
+		<build>
+		<plugins>
+		
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>copy-resources1</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>data</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../wsg/data</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>copy-resources2</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>config</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../wsg/config</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					
+					<execution>
+						<id>copy-resources3</id>
+						<phase>install</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>help</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../wsg/help</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<filesets>
+						<fileset>
+							<directory>dist</directory>
+						</fileset>
+						<fileset>
+							<directory>data</directory>
+						</fileset>
+						<fileset>
+							<directory>config</directory>
+						</fileset>
+						<fileset>
+							<directory>help</directory>
+						</fileset>
+						<fileset>
+							<directory>logs</directory>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>
+
+		</plugins>
+		</build>
+		
+</project>

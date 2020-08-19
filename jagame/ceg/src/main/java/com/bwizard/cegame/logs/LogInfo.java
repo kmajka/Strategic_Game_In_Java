@@ -14,12 +14,26 @@ public class LogInfo {
 		logger.setLevel(Level.INFO);
 	}
 
+	public void trace(String message) {
+		logger.trace(message);
+	}
+
+	public void debug(String message) {
+		logger.debug(message);
+	}
+
 	public void info(String message) {
 		logger.info(message);
 	}
-	
+
+	public void warn(String message) {
+		logger.warn(message);
+	}
+
 	public void error(String message) {
 		logger.error(message);
 	}
+
+
 
 }

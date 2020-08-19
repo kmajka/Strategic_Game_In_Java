@@ -31,7 +31,7 @@ public class MainGame {
 
 		try	{
 
-			logInfo.info("start game");
+			logInfo.info("start game...");
 
 			List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
 					new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
@@ -45,7 +45,7 @@ public class MainGame {
 			System.out.println(ex.getMessage());
 		}
 
-		logInfo.info("end game");
+		logInfo.info("end game.");
 
 	}
 	
