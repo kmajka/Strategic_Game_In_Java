@@ -1,21 +1,14 @@
 package com.bwizard.wsgame;
 
-import java.util.Arrays;
-import java.util.List;
-
 import com.bwizard.cegame.logs.LogInfo;
 import com.bwizard.cegame.logs.LogMonitor;
 import com.bwizard.cegame.validation.BaseValidator;
 import com.bwizard.cegame.validation.interfaces.IValidField;
-import com.bwizard.wsgame.documents.names.CmnComponentName;
-import com.bwizard.wsgame.documents.names.CmnObjectName;
-import com.bwizard.wsgame.documents.names.EditorComponentName;
-import com.bwizard.wsgame.documents.names.EditorObjectName;
-import com.bwizard.wsgame.documents.names.GameComponentName;
-import com.bwizard.wsgame.documents.names.GameObjectName;
-import com.bwizard.wsgame.documents.names.MenuComponentName;
-import com.bwizard.wsgame.parameters.GameGlobals;
+import com.bwizard.wsgame.documents.names.*;
 import com.bwizard.wsgame.window.WindowManagerGame;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * This class provides possibility to run game
@@ -33,12 +26,13 @@ public class MainGame {
    * @throws Exception 
    */
 	public static void main(String[] args) {
-			
+
 		BaseValidator baseValidator = new BaseValidator();
-		
+
 		try	{
-			LogInfo.configure(GameGlobals.CONFIG_DATA + "log4j.properties");
-			
+
+			logInfo.info("start game");
+
 			List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
 					new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
 					
@@ -50,7 +44,9 @@ public class MainGame {
 			LogMonitor.buildInfo(logInfo, ex);
 			System.out.println(ex.getMessage());
 		}
-		
+
+		logInfo.info("end game");
+
 	}
 	
 	/*

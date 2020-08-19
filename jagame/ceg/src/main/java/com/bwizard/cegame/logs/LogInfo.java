@@ -1,43 +1,25 @@
 package com.bwizard.cegame.logs;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
-import com.bwizard.cegame.tools.FileManager;
+import ch.qos.logback.classic.Level;
+import ch.qos.logback.classic.Logger;
+import org.slf4j.LoggerFactory;
 
 public class LogInfo {
 
-	private Logger log = null;
-	
+	private Logger logger = null;
+
+	//TRACE -> DEBUG -> INFO -> WARN -> ERROR
 	public LogInfo(Class<?> clazz) {
-		log = Logger.getLogger(clazz);
-	}
-	
-	public static void configure(String pathFile) {
-		
-		FileManager fileManager = new FileManager(pathFile);
-		InputStream is = fileManager.getInputStream();
-		Properties pr = new Properties();
-		try {
-			pr.load(is);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		PropertyConfigurator.configure(pr);
+		logger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(clazz);
+		logger.setLevel(Level.INFO);
 	}
 
 	public void info(String message) {
-		log.info(message);
+		logger.info(message);
 	}
 	
 	public void error(String message) {
-		log.error(message);
+		logger.error(message);
 	}
 
 }
