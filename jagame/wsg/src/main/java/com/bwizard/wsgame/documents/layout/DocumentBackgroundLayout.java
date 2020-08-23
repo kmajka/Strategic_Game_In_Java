@@ -5,16 +5,16 @@ import java.util.HashMap;
 
 import com.bwizard.cegame.documents.handlers.LayoutAttribute;
 import com.bwizard.cegame.documents.interfaces.ICmnDocument;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.utils.StringUtil;
 import com.bwizard.cegame.world.map.cell.CellBackgroundInfo;
 
 public class DocumentBackgroundLayout implements ICmnDocument<CellBackgroundInfo> {
 	
-	private StateInfoManager stateInfoManager; 
+	private StateInfoGame stateInfoGame;
 	
-	public DocumentBackgroundLayout(StateInfoManager stateInfoManager) {
-		this.stateInfoManager = stateInfoManager;
+	public DocumentBackgroundLayout(StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
 	}
 	
 	@Override
@@ -30,7 +30,7 @@ public class DocumentBackgroundLayout implements ICmnDocument<CellBackgroundInfo
 		String cell = hashCellAttribute.get(LayoutAttribute.BACKGROUND_CELL);
 		if (StringUtil.isNotEmpty(cell)) {
 			int tmp;
-			component = new CellBackgroundInfo(stateInfoManager, stateInfoManager.getWorldMapInfo().getWidthCell(), stateInfoManager.getWorldMapInfo().getHeightCell());
+			component = new CellBackgroundInfo(stateInfoGame, stateInfoGame.getWorldMapInfo().getWidthCell(), stateInfoGame.getWorldMapInfo().getHeightCell());
 			component.setCellAsKeyImage(cell);
 			
 			String column = hashCellAttribute.get(LayoutAttribute.COLUMN);

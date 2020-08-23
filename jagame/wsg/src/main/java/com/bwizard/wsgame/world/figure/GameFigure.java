@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import com.bwizard.cegame.figure.BaseFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.thread.ThreadStatus;
 import com.bwizard.cegame.tools.DrawManager;
 import com.bwizard.cegame.utils.ImageUtil;
@@ -18,29 +18,29 @@ public abstract class GameFigure extends BaseFigure {
 		canFocus(true);
 	}
 	
-	public GameFigure(int x, int y, StateInfoManager stateInfoManager) {
-		super(x , y, stateInfoManager);
+	public GameFigure(int x, int y, StateInfoGame stateInfoGame) {
+		super(x , y, stateInfoGame);
 		canFocus(true);
 	}
 	
 	@Override
 	public void paintFigure(Graphics g) {
 		
-		if(ThreadStatus.RUN.equals(stateInfoManager.getThreadInfo().getThreadStatus())) {
-			update(stateInfoManager.getMonitorTime().getTimeInfo());
+		if(ThreadStatus.RUN.equals(stateInfoGame.getThreadInfo().getThreadStatus())) {
+			update(stateInfoGame.getMonitorTime().getTimeInfo());
 		}
 		
 		if(isSelected()) {
 		
 			//if object was not (area) selecting by mouse
-			if (!stateInfoManager.getCursorInfo().isSelected()) {
+			if (!stateInfoGame.getCursorInfo().isSelected()) {
 				setSelected(true);
 			//if object was (area) selecting by mouse and mouse was released
 			}
 		}
 			
 		DrawManager.drawImageInGameView(g, getImage(), 
-				getActualMapPosition().x, getActualMapPosition().y, stateInfoManager, isSelected(), isPlaceFree());
+				getActualMapPosition().x, getActualMapPosition().y, stateInfoGame, isSelected(), isPlaceFree());
 		
 		if (isDisplayInfo()) {
 			int x1_1 = getActualViewPositionX();

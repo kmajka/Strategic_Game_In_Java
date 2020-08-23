@@ -24,7 +24,7 @@ import com.bwizard.cegame.device.view.MouseView;
 import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.figure.BaseFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.state.handlers.Entry;
 import com.bwizard.cegame.thread.ThreadInfo;
 import com.bwizard.cegame.thread.ThreadScheduler;
@@ -53,7 +53,7 @@ public class BaseWorldGame extends Canvas {
 	
 	protected WorldObjectManager worldObjectManager = null;
 	protected UserViewManager userViewManager = null;
-	protected StateInfoManager stateInfoManager = null;
+	protected StateInfoGame stateInfoGame = null;
 	protected MapBackgroundManager mapBackgroundManager = null;
 	private BaseWindowGame baseWindowGame = null;
 	private ConfigurationProvider configurationProvider = null;
@@ -72,7 +72,7 @@ public class BaseWorldGame extends Canvas {
 	 * @param mapInfo The value describes information about the map in world
 	 * @param gameWorld The value describes custom world created by user
 	 */
-	public BaseWorldGame(final IWindowScreen windowScreen, final StateInfoManager stateInfoManager, 
+	public BaseWorldGame(final IWindowScreen windowScreen, final StateInfoGame stateInfoGame,
 			BaseWindowGame baseWindowGame, ThreadScheduler threadScheduler) {
 				
 		this.windowScreen = windowScreen;
@@ -81,8 +81,8 @@ public class BaseWorldGame extends Canvas {
 		
 		this.threadInfo = new ThreadInfo(ThreadStatus.RUN);	
 		
-		this.stateInfoManager = stateInfoManager;
-		this.stateInfoManager.setThreadInfo(this.threadInfo);
+		this.stateInfoGame = stateInfoGame;
+		this.stateInfoGame.setThreadInfo(this.threadInfo);
 		
 		this.worldObjectManager = new WorldObjectManager();
 		
@@ -98,7 +98,7 @@ public class BaseWorldGame extends Canvas {
 	public void setPanelLayoutManager(IPanelLayoutManager panelLayoutManager) {
 		
 		getMapBackgroundManager().setPanelLayoutManager(panelLayoutManager);
-		stateInfoManager.setPanelLayoutManager(panelLayoutManager);
+		stateInfoGame.setPanelLayoutManager(panelLayoutManager);
 		cleanerManager.setPanelLayoutManager(panelLayoutManager);
 	}
 	
@@ -113,7 +113,7 @@ public class BaseWorldGame extends Canvas {
 			@Override
 			public void run() {
 				
-				stateInfoManager.getMonitorTime().start();
+				stateInfoGame.getMonitorTime().start();
 				
 				//Game loop
 				while(threadInfo.getThreadStatus() != ThreadStatus.EXITED) {
@@ -125,7 +125,7 @@ public class BaseWorldGame extends Canvas {
 						
 						if (threadInfo.getThreadStatus() != ThreadStatus.PAUSED) {
 												
-							stateInfoManager.getMonitorTime().refresh();		
+							stateInfoGame.getMonitorTime().refresh();
 						} 
 						
 						// paint tiles into terrain, paint objects (arc, rectanagle ...) into game, displayed selected rectangle, paint the user panels
@@ -164,7 +164,7 @@ public class BaseWorldGame extends Canvas {
 	 * This method gets map info.
 	 */
 	public WorldMapInfo getWorldMapInfo() {
-		return stateInfoManager.getWorldMapInfo();
+		return stateInfoGame.getWorldMapInfo();
 	}
 	
 	public void updateAndWaitThreadStatus(ThreadStatus threadSts) {
@@ -193,12 +193,12 @@ public class BaseWorldGame extends Canvas {
 	public void updatePositionDependingOnLayout() {
 				
 		//set info about center camera
-		stateInfoManager.getCameraMapInfo().setCenterPositionX(stateInfoManager.getViewLayout().getLeftBorderLayout());
-		stateInfoManager.getCameraMapInfo().setCenterPositionY(stateInfoManager.getViewLayout().getTopBorderLayout());
+		stateInfoGame.getCameraMapInfo().setCenterPositionX(stateInfoGame.getViewLayout().getLeftBorderLayout());
+		stateInfoGame.getCameraMapInfo().setCenterPositionY(stateInfoGame.getViewLayout().getTopBorderLayout());
 		
 		//set camera in specific position depending on layout
-		//stateInfoManager.getCameraMapInfo().updateCameraX(stateInfoManager.getCameraMapInfo().getCameraX());// + stateInfoManager.getViewLayout().getLeftBorderLayout());
-		//stateInfoManager.getCameraMapInfo().updateCameraY(stateInfoManager.getCameraMapInfo().getCameraY());// + stateInfoManager.getViewLayout().getTopBorderLayout());
+		//stateInfoGame.getCameraMapInfo().updateCameraX(stateInfoGame.getCameraMapInfo().getCameraX());// + stateInfoGame.getViewLayout().getLeftBorderLayout());
+		//stateInfoGame.getCameraMapInfo().updateCameraY(stateInfoGame.getCameraMapInfo().getCameraY());// + stateInfoGame.getViewLayout().getTopBorderLayout());
 	}
 		
 	private void cleanUnusedResources() {
@@ -212,7 +212,7 @@ public class BaseWorldGame extends Canvas {
 	private void updateGamedState(BufferStrategy bufferStrategy, ThreadStatus threadStatus) {
 
 		if (threadInfo.getThreadStatus() != ThreadStatus.PAUSED) {
-			stateInfoManager.getCameraMapInfo().AutoCameraInvoke();		
+			stateInfoGame.getCameraMapInfo().AutoCameraInvoke();
 			updateWorld(worldObjectManager.getAllObjects());
 			userViewManager.updateUserViewProperties(worldObjectManager.getAllObjects());
 		}
@@ -231,7 +231,7 @@ public class BaseWorldGame extends Canvas {
 		paintSelected(g);
 
 		// paint the user panels -> have to be displayed at last method for painting
-		stateInfoManager.getPanelLayoutManager().paintPanel(g);
+		stateInfoGame.getPanelLayoutManager().paintPanel(g);
 		g.dispose();
 
 		if (!bufferStrategy.contentsLost()) {
@@ -242,8 +242,8 @@ public class BaseWorldGame extends Canvas {
 	
 	protected void paintSelected(Graphics g) {
 		
-		DrawManager.drawRect(g, stateInfoManager.getCursorInfo().getStartScreenSelectionX(), stateInfoManager.getCursorInfo().getStartScreenSelectionY(), 
-				stateInfoManager.getCursorInfo().getEndScreenSelectionX(), stateInfoManager.getCursorInfo().getEndScreenSelectionX(), Color.YELLOW);
+		DrawManager.drawRect(g, stateInfoGame.getCursorInfo().getStartScreenSelectionX(), stateInfoGame.getCursorInfo().getStartScreenSelectionY(),
+				stateInfoGame.getCursorInfo().getEndScreenSelectionX(), stateInfoGame.getCursorInfo().getEndScreenSelectionX(), Color.YELLOW);
 	}
 	
 	
@@ -254,15 +254,15 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	public CameraMapInfo getCameraMapInfo() {
-		return stateInfoManager.getCameraMapInfo();
+		return stateInfoGame.getCameraMapInfo();
 	}
 	
 	public CursorInfo getCursorInfo() {
-		return stateInfoManager.getCursorInfo();
+		return stateInfoGame.getCursorInfo();
 	}
 	
-	public StateInfoManager getStateInfoManager() {
-		return stateInfoManager;
+	public StateInfoGame getStateInfoGame() {
+		return stateInfoGame;
 	}
 	
 	@Override
@@ -295,7 +295,7 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	public IPanelLayoutManager getPanelLayoutManager() {
-		return this.stateInfoManager.getPanelLayoutManager();
+		return this.stateInfoGame.getPanelLayoutManager();
 	}
 	
 	/**
@@ -319,7 +319,7 @@ public class BaseWorldGame extends Canvas {
 	 * @override
 	 * This method paints layout from management panel 
 	 * @param g This variable provide graphics bufferStrategy tool.
-	 * @param stateInfoManager 
+	 * @param stateInfoGame
 	 */
 	protected void paintBackgroundInUserView(Graphics g) {
 	}
@@ -345,7 +345,7 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	public BaseDrawFigure getElementByTag(String tag) {
-		ArrayList<BaseDrawFigure> list = getStateInfoManager().getPanelLayoutManager().getElementsByTag(tag);
+		ArrayList<BaseDrawFigure> list = getStateInfoGame().getPanelLayoutManager().getElementsByTag(tag);
 		if (list != null && list.size() == 1) {
 			return list.get(0);
 		} else {
@@ -362,7 +362,7 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	public void changeTagElement(String oldTag, String newTag) throws Exception {
-		ArrayList<BaseDrawFigure> list = getStateInfoManager().getPanelLayoutManager().getElementsByTag(oldTag);
+		ArrayList<BaseDrawFigure> list = getStateInfoGame().getPanelLayoutManager().getElementsByTag(oldTag);
 		if (list != null && list.size() == 1) {
 			list.get(0).setTag(newTag);
 		} else {
@@ -371,7 +371,7 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	public void setTextForTagElement(String tag, String text) throws Exception {
-		ArrayList<BaseDrawFigure> list = getStateInfoManager().getPanelLayoutManager().getElementsByTag(tag);
+		ArrayList<BaseDrawFigure> list = getStateInfoGame().getPanelLayoutManager().getElementsByTag(tag);
 		if (list != null && list.size() == 1) {
 			list.get(0).setText(text);
 		} else {

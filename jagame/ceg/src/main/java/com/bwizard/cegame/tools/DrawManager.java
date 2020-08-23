@@ -8,7 +8,7 @@ import java.awt.Stroke;
 import java.awt.image.BufferedImage;
 
 import com.bwizard.cegame.controls.components.BaseDrawFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class DrawManager {
 		
@@ -53,10 +53,10 @@ public class DrawManager {
 		}
 	}	
 	
-	public static void drawImageInGameView(Graphics g, BufferedImage image, int x, int y, StateInfoManager stateInfoManager, boolean selected, boolean placeFree) {
+	public static void drawImageInGameView(Graphics g, BufferedImage image, int x, int y, StateInfoGame stateInfoGame, boolean selected, boolean placeFree) {
 		
-		 final int posX = x + stateInfoManager.getCameraMapInfo().getCameraX() + stateInfoManager.getViewLayout().getLeftBorderLayout();
-		 final int posY = y +  + stateInfoManager.getCameraMapInfo().getCameraY() + + stateInfoManager.getViewLayout().getTopBorderLayout();
+		 final int posX = x + stateInfoGame.getCameraMapInfo().getCameraX() + stateInfoGame.getViewLayout().getLeftBorderLayout();
+		 final int posY = y +  + stateInfoGame.getCameraMapInfo().getCameraY() + + stateInfoGame.getViewLayout().getTopBorderLayout();
 		 
 		//draw picture should depend on left and top layout of game.
 		//position (x,y) of figure(picture) should be absolute into map. (cannot depend on any layout)

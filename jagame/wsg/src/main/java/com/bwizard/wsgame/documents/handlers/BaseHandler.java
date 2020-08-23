@@ -28,9 +28,9 @@ public class BaseHandler {
 		baseWorldGame.clear();
 
 		// recreate panel view of layout
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(name);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(name);
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().loadData();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().loadData();
 
 		baseWorldGame.addEventAction(entryEventManager.getActionEntry(name));
 		
@@ -43,11 +43,11 @@ public class BaseHandler {
 		
 		baseWorldGame.waitForSuspendApplication();
 		
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 		
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(name);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(name);
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().reloadData();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().reloadData();
 				
 		baseWorldGame.addEventAction(entryEventManager.getActionEntry(name));
 		
@@ -60,9 +60,9 @@ public class BaseHandler {
 		
 		baseWorldGame.waitForPauseApplication();
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(name);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(name);
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().reloadData();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().reloadData();
 		
 		baseWorldGame.addEventAction(entryEventManager.getActionEntry(name));
 		
@@ -72,7 +72,7 @@ public class BaseHandler {
 		
 		baseWorldGame.waitForSuspendApplication();
 		
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 				
 		baseWorldGame.addEventAction(Entry.GAME);
 		
@@ -85,16 +85,16 @@ public class BaseHandler {
 		//baseWorldGame.waitForSuspendApplication();
 		baseWorldGame.waitForPauseApplication();
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 		// clear all objects added previously
 		baseWorldGame.clear();
 
 		// load map of game
 		baseWorldGame.loadData("");
 		// recreate panel view of layout
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(EntryEventManager.GAME_MENU);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(EntryEventManager.GAME_MENU);
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().loadData();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().loadData();
 		
 		baseWorldGame.addEventAction(entryEventManager.getActionEntry(EntryEventManager.GAME_MENU));
 		
@@ -105,7 +105,7 @@ public class BaseHandler {
 		
 		baseWorldGame.waitForPauseApplication();
 		
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 
 		baseWorldGame.addEventAction(Entry.EDITOR);
 		
@@ -131,13 +131,13 @@ public class BaseHandler {
 					
 			baseWorldGame.waitForStartApplication();
 			
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 			
 			baseWorldGame.waitForPauseApplication();
 			
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(EntryEventManager.INFORMATION_DIALOG);
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(EntryEventManager.INFORMATION_DIALOG);
 
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().reloadData();
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().reloadData();
 
 			baseWorldGame.addEventAction(Entry.DIALOG);
 			
@@ -145,7 +145,7 @@ public class BaseHandler {
 			if (baseDrawFigure != null) {
 				baseDrawFigure.setFigureType(figureType);
 				baseDrawFigure.setTag(tagYes);
-				baseWorldGame.getStateInfoManager().getPanelLayoutManager().setHandler(baseDrawFigure);
+				baseWorldGame.getStateInfoGame().getPanelLayoutManager().setHandler(baseDrawFigure);
 			}
 			
 			setTextForTagElement(CmnComponentName.INFORMATION_DIALOG_TEXT, text);
@@ -167,11 +167,11 @@ public class BaseHandler {
 				
 			baseWorldGame.waitForPauseApplication();
 			
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 			
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(EntryEventManager.QUESTION_YESNO_DIALOG);
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(EntryEventManager.QUESTION_YESNO_DIALOG);
 
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().reloadData();
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().reloadData();
 
 			baseWorldGame.addEventAction(Entry.DIALOG);
 			
@@ -180,14 +180,14 @@ public class BaseHandler {
 			if (baseDrawFigure != null) {
 				baseDrawFigure.setFigureType(figureType);
 				baseDrawFigure.setTag(tagNo);
-				baseWorldGame.getStateInfoManager().getPanelLayoutManager().setHandler(baseDrawFigure);
+				baseWorldGame.getStateInfoGame().getPanelLayoutManager().setHandler(baseDrawFigure);
 			}
 			
 			baseDrawFigure = baseWorldGame.getElementByTag(CmnComponentName.QUESTION_BUTTON_YES);
 			if (baseDrawFigure != null) {
 				baseDrawFigure.setFigureType(figureType);
 				baseDrawFigure.setTag(tagYes);
-				baseWorldGame.getStateInfoManager().getPanelLayoutManager().setHandler(baseDrawFigure);
+				baseWorldGame.getStateInfoGame().getPanelLayoutManager().setHandler(baseDrawFigure);
 			}
 			
 			setTextForTagElement(CmnComponentName.QUESTION_YESNO_DIALOG_TEXT, text);
@@ -211,18 +211,18 @@ public class BaseHandler {
 		//show in simple way how the object have to move to the goal where is the destination point
 		baseWorldGame.waitForPauseApplication();
 		
-		//baseWorldGame.getStateInfoManager().getPanelLayoutManager().removeDialog();
+		//baseWorldGame.getStateInfoGame().getPanelLayoutManager().removeDialog();
 		
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setLayoutName(EntryEventManager.INFORMATION_SINGLE_OBJECT_DIALOG);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setLayoutName(EntryEventManager.INFORMATION_SINGLE_OBJECT_DIALOG);
 
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().reloadData();
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().reloadData();
 
 		baseWorldGame.addEventAction(Entry.GAME);
 						
 	}
 	
 	private void setTextForTagElement(String tag, String text) throws Exception {
-		ArrayList<BaseDrawFigure> list = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getElementsByTag(tag);
+		ArrayList<BaseDrawFigure> list = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getElementsByTag(tag);
 		if (list != null && list.size() == 1) {
 			list.get(0).setText(text);
 		} else {
@@ -231,26 +231,26 @@ public class BaseHandler {
 	}
 	
 	protected void showComponent(String name) {
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().setVisiblePanelFromGroup(name, true);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().setVisiblePanelFromGroup(name, true);
 	}
 	
 	protected void hideAllGroup(String group) {
-		baseWorldGame.getStateInfoManager().getPanelLayoutManager().hideAllPanelsFromGroup(group);
+		baseWorldGame.getStateInfoGame().getPanelLayoutManager().hideAllPanelsFromGroup(group);
 	}
 	
 	
 	protected void setVisibleComponent(String name, boolean visible) {
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(name);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(name);
 		if (baseDrawFigure != null) {
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().setVisiblePanelFromGroup(name, visible);
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().setVisiblePanelFromGroup(name, visible);
 		}
 			
 	}
 	
 	protected void changeVisibleComponent(String name) {
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(name);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(name);
 		if (baseDrawFigure != null) {
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager().setVisiblePanelFromGroup(name, !baseDrawFigure.isVisible());
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager().setVisiblePanelFromGroup(name, !baseDrawFigure.isVisible());
 		}
 			
 	}

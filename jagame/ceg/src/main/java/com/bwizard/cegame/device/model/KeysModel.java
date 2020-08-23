@@ -17,7 +17,7 @@ public class KeysModel implements IKeysModel {
 
 	@Override
 	public void keyReleased(KeyEvent e){
-		baseWorldGame.getStateInfoManager().getKeysInfo().setKeyEvent(null);
+		baseWorldGame.getStateInfoGame().getKeysInfo().setKeyEvent(null);
 	}
 
 	@Override

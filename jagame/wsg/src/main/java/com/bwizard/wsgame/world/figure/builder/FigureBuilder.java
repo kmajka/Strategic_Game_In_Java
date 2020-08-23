@@ -1,18 +1,18 @@
 package com.bwizard.wsgame.world.figure.builder;
 
 import com.bwizard.cegame.figure.BaseFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public abstract class FigureBuilder {
 	
-	protected StateInfoManager stateInfoManager = null;
+	protected StateInfoGame stateInfoGame = null;
 	
-	public StateInfoManager getStateInfoManager() {
-		return stateInfoManager;
+	public StateInfoGame getStateInfoGame() {
+		return stateInfoGame;
 	}
 
-	public void setStateInfoManager(StateInfoManager stateInfoManager) {
-		this.stateInfoManager = stateInfoManager;
+	public void setStateInfoGame(StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
 	}
 
 	protected abstract BaseFigure composeFigure(String type);

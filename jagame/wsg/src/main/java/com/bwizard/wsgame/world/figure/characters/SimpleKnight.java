@@ -4,7 +4,7 @@ import com.bwizard.wsgame.world.figure.GameFigure;
 import com.bwizard.cegame.calculation.MathOperation;
 import com.bwizard.cegame.figure.ActivityBaseFigure;
 import com.bwizard.cegame.figure.interfaces.IFigureMove;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.tools.Point2DGame;
 import com.bwizard.cegame.tools.Vector2DGame;
 
@@ -15,8 +15,8 @@ public class SimpleKnight extends GameFigure implements IFigureMove {
 	public SimpleKnight() {
 	}
 	
-	public SimpleKnight(int x, int y, StateInfoManager stateInfoManager) {
-		super(x, y, stateInfoManager);
+	public SimpleKnight(int x, int y, StateInfoGame stateInfoGame) {
+		super(x, y, stateInfoGame);
 		canMove(true);
 		canFocus(true);
 		activityFigure = new ActivityKnightFigure();

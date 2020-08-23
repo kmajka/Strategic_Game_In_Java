@@ -1,7 +1,7 @@
 package com.bwizard.wsgame.world.figure.buildings;
 
 import com.bwizard.wsgame.world.figure.GameFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class Box extends GameFigure {
 	
@@ -9,8 +9,8 @@ public class Box extends GameFigure {
 		initialize();
 	}
 	
-	public Box(int x, int y, StateInfoManager stateInfoManager) {
-		super(x , y, stateInfoManager);
+	public Box(int x, int y, StateInfoGame stateInfoGame) {
+		super(x , y, stateInfoGame);
 		initialize();
 	}
 	

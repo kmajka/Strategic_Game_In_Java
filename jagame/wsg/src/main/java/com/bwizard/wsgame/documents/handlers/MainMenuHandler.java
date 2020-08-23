@@ -102,10 +102,10 @@ public class MainMenuHandler extends BaseHandler implements IEventHandler {
 					baseWorldGame.loadData(GameGlobals.MAPS + baseDrawFigure.getFileName());
 			
 					// recreate panel view of layout
-					baseWorldGame.getStateInfoManager().getPanelLayoutManager()
+					baseWorldGame.getStateInfoGame().getPanelLayoutManager()
 							.setLayoutName(EntryEventManager.GAME_VIEW);
 								
-					baseWorldGame.getStateInfoManager().getPanelLayoutManager()
+					baseWorldGame.getStateInfoGame().getPanelLayoutManager()
 							.loadData();
 			
 					baseWorldGame.updatePositionDependingOnLayout();
@@ -155,10 +155,10 @@ public class MainMenuHandler extends BaseHandler implements IEventHandler {
 			// load map of game
 			baseWorldGame.loadData(GameGlobals.MAPS + "Editor_Map_01.xml");
 			// recreate panel view of layout
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager()
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager()
 					.setLayoutName(EntryEventManager.EDITOR_VIEW);
 
-			baseWorldGame.getStateInfoManager().getPanelLayoutManager()
+			baseWorldGame.getStateInfoGame().getPanelLayoutManager()
 					.loadData();
 
 			baseWorldGame.updatePositionDependingOnLayout();

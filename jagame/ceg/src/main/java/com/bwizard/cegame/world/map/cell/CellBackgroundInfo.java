@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 
 import com.bwizard.cegame.frame.BaseFrame;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.thread.ThreadStatus;
 
 /*
@@ -24,7 +24,7 @@ public class CellBackgroundInfo {
 	private int cellRow = -1;
 	private int cellColumn = -1;
 	
-	private StateInfoManager stateInfoManager = null;
+	private StateInfoGame stateInfoGame = null;
 	
 	private ArrayList<BaseFrame> baseFrames = null;
 	
@@ -32,12 +32,12 @@ public class CellBackgroundInfo {
 	 * This constructor store information about one single cell
 	 * @param imageBackground value of image name
 	 */
-	public CellBackgroundInfo(StateInfoManager stateInfoManager, int cellRow, int cellColumn) {
+	public CellBackgroundInfo(StateInfoGame stateInfoGame, int cellRow, int cellColumn) {
 		keyImages = new ArrayList<Integer>();
 		this.changed = false;
 		this.cellRow = cellRow;
 		this.cellColumn = cellColumn;
-		this.stateInfoManager = stateInfoManager;
+		this.stateInfoGame = stateInfoGame;
 	}
 
 	
@@ -128,13 +128,13 @@ public class CellBackgroundInfo {
 	
 	public void paintFigure(Graphics g, int x, int y) {
 		
-		if(ThreadStatus.RUN.equals(stateInfoManager.getThreadInfo().getThreadStatus())) {
+		if(ThreadStatus.RUN.equals(stateInfoGame.getThreadInfo().getThreadStatus())) {
 			for(BaseFrame baseFrame : baseFrames) {
-				baseFrame.update(stateInfoManager.getMonitorTime().getTimeInfo());
+				baseFrame.update(stateInfoGame.getMonitorTime().getTimeInfo());
 			}
 		}
 		
-		//DrawManager.drawImageInView(g, baseFrame.getImage(), x, y, stateInfoManager, false, true);
+		//DrawManager.drawImageInView(g, baseFrame.getImage(), x, y, stateInfoGame, false, true);
 	}
 	
 }

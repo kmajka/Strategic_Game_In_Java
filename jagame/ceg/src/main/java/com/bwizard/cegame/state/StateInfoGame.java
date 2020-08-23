@@ -15,7 +15,7 @@ import com.bwizard.cegame.world.map.WorldMapInfo;
  * @author Krzysztof Majka
  * @version 1.0
  */
-public class StateInfoManager {
+public class StateInfoGame {
 	
 	private CameraMapInfo cameraMapInfo = null;
 	private CursorInfo cursorInfo = null;
@@ -27,7 +27,7 @@ public class StateInfoManager {
 	private IViewLayout viewLayout = null;
 	private IPanelLayoutManager panelLayoutManager = null;
 
-	public StateInfoManager() {
+	public StateInfoGame() {
 		monitorTime = new MonitorTime();
 		cursorInfo = new CursorInfo();
 		keysInfo = new KeysInfo();

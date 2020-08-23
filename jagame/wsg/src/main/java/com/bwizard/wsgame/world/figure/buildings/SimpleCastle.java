@@ -5,7 +5,7 @@ import com.bwizard.wsgame.world.figure.GameFigure;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.tools.DrawManager;
 
 public class SimpleCastle extends GameFigure {
@@ -22,8 +22,8 @@ public class SimpleCastle extends GameFigure {
 		//setActivityFigure(ActivityBaseFigure.PLACED_MANUALY);
 	}
 	
-	public SimpleCastle(int x, int y, StateInfoManager stateInfoManager) {
-		super(x , y, stateInfoManager);
+	public SimpleCastle(int x, int y, StateInfoGame stateInfoGame) {
+		super(x , y, stateInfoGame);
 		initialize();
 	}
 	
@@ -31,9 +31,9 @@ public class SimpleCastle extends GameFigure {
 	public void setSelected(boolean selected) {
 		super.setSelected(selected);
 		if(selected) {
-			stateInfoManager.getPanelLayoutManager().setVisiblePanelFromGroup("panelCastle", true);
+			stateInfoGame.getPanelLayoutManager().setVisiblePanelFromGroup("panelCastle", true);
 		} else {
-			stateInfoManager.getPanelLayoutManager().setVisiblePanelFromGroup("panelCastle", false);
+			stateInfoGame.getPanelLayoutManager().setVisiblePanelFromGroup("panelCastle", false);
 		}
 	}
 	

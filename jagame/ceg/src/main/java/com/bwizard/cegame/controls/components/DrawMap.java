@@ -29,8 +29,8 @@ public class DrawMap extends BaseDrawFigure {
 		this.canPressed = true;
 		this.autoUnselect = true;
 		
-		this.scaleMapWidth = (float)width / (float)baseWorldGame.getStateInfoManager().getWorldMapInfo().getWidthMap();
-		this.scaleMapHeight = (float)height / (float)baseWorldGame.getStateInfoManager().getWorldMapInfo().getHeightMap();
+		this.scaleMapWidth = (float)width / (float)baseWorldGame.getStateInfoGame().getWorldMapInfo().getWidthMap();
+		this.scaleMapHeight = (float)height / (float)baseWorldGame.getStateInfoGame().getWorldMapInfo().getHeightMap();
 	}
 	
 	/**
@@ -86,8 +86,8 @@ public class DrawMap extends BaseDrawFigure {
 				}
 			}
 			
-			int rectPositionX = (int)Math.abs(baseWorldGame.getStateInfoManager().getCameraMapInfo().getCameraX() * this.scaleMapWidth);
-			int rectPositionY = (int)Math.abs(baseWorldGame.getStateInfoManager().getCameraMapInfo().getCameraY() * this.scaleMapHeight);			
+			int rectPositionX = (int)Math.abs(baseWorldGame.getStateInfoGame().getCameraMapInfo().getCameraX() * this.scaleMapWidth);
+			int rectPositionY = (int)Math.abs(baseWorldGame.getStateInfoGame().getCameraMapInfo().getCameraY() * this.scaleMapHeight);
 			
 			//draw rectangle into the map
 			DrawManager.drawRect(g, x + rectPositionX, y + rectPositionY, getRectWidth(), getRectHeight(), Color.BLACK, 2);
@@ -96,11 +96,11 @@ public class DrawMap extends BaseDrawFigure {
 	}
 	
 	private int getRectWidth() {
-		return (int)(baseWorldGame.getStateInfoManager().getViewLayout().getViewWidth() * this.scaleMapWidth);
+		return (int)(baseWorldGame.getStateInfoGame().getViewLayout().getViewWidth() * this.scaleMapWidth);
 	}
 	
 	private int getRectHeight() {
-		return (int)(baseWorldGame.getStateInfoManager().getViewLayout().getViewHeight() * this.scaleMapHeight);
+		return (int)(baseWorldGame.getStateInfoGame().getViewLayout().getViewHeight() * this.scaleMapHeight);
 	}
 	
 	public float getScaleMapWidth() {
@@ -113,13 +113,13 @@ public class DrawMap extends BaseDrawFigure {
 	@Override
 	public void setWidth(int width) {
 		this.width = width;
-		this.scaleMapWidth = (float)width / (float)baseWorldGame.getStateInfoManager().getWorldMapInfo().getWidthMap();
+		this.scaleMapWidth = (float)width / (float)baseWorldGame.getStateInfoGame().getWorldMapInfo().getWidthMap();
 	}
 	
 	@Override
 	public void setHeight(int height) {
 		this.height = height;
-		this.scaleMapHeight = (float)height / (float)baseWorldGame.getStateInfoManager().getWorldMapInfo().getHeightMap();
+		this.scaleMapHeight = (float)height / (float)baseWorldGame.getStateInfoGame().getWorldMapInfo().getHeightMap();
 	}
 	
 	public BaseWorldGame getBaseWorldGame() {

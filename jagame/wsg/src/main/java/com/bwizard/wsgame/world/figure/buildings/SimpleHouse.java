@@ -3,7 +3,7 @@ package com.bwizard.wsgame.world.figure.buildings;
 import com.bwizard.wsgame.world.figure.GameFigure;
 import com.bwizard.wsgame.world.figure.handlers.HouseType;
 
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class SimpleHouse extends GameFigure {
 
@@ -11,8 +11,8 @@ public class SimpleHouse extends GameFigure {
 		initialize(houseType);
 	}
 	
-	public SimpleHouse(int x, int y, StateInfoManager stateInfoManager, HouseType houseType) {
-		super(x , y, stateInfoManager);
+	public SimpleHouse(int x, int y, StateInfoGame stateInfoGame, HouseType houseType) {
+		super(x , y, stateInfoGame);
 		initialize(houseType);
 	}
 	

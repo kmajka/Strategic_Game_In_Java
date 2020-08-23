@@ -26,7 +26,7 @@ public class KeysGameCustomModel extends KeysModel {
 		int stepX = 0;
 		int stepY = 0;
 		
-		baseWorldGame.getStateInfoManager().getKeysInfo().setKeyEvent(arg0);
+		baseWorldGame.getStateInfoGame().getKeysInfo().setKeyEvent(arg0);
 		
 		switch(arg0.getKeyCode()) {
 			case KeyEvent.VK_DOWN:

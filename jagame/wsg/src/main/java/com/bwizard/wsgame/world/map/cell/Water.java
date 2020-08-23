@@ -6,13 +6,13 @@ import com.bwizard.wsgame.world.map.handlers.BackgroundCellName;
 import java.awt.image.BufferedImage;
 
 import com.bwizard.cegame.frame.BaseFrame;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.utils.ImageUtil;
 
 //SeaBlue_<inside_num_tile>_<outside_num_tile>_Background_<version>
 public class Water extends BaseFrame {
 
-	public Water(StateInfoManager stateInfoManager, int cellWidth,
+	public Water(StateInfoGame stateInfoGame, int cellWidth,
 			int cellHeight, BackgroundCellName keyCellName) {
 		
 		initialize(keyCellName);

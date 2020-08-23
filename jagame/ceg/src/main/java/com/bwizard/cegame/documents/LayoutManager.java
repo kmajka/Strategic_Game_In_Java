@@ -10,7 +10,7 @@ import com.bwizard.cegame.controller.BaseWorldGame;
 import com.bwizard.cegame.documents.interfaces.ICmnDocument;
 import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.logs.LogInfo;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.world.map.MapBackgroundManager;
 import com.bwizard.cegame.world.map.cell.CellBackgroundInfo;
 
@@ -24,7 +24,7 @@ public class LayoutManager extends BaseManager {
 	private static final LogInfo logInfo = new LogInfo(LayoutManager.class);
 	
 	private BaseWorldGame baseWorldGame;
-	private StateInfoManager stateInfoManager = null;
+	private StateInfoGame stateInfoGame = null;
 	
 	private ArrayList<BaseConfiguration> listMapConfiguration = null;
 
@@ -43,7 +43,7 @@ public class LayoutManager extends BaseManager {
 	
 	public LayoutManager(BaseWorldGame baseWorldGame) {
 		this.baseWorldGame = baseWorldGame;
-		this.stateInfoManager = baseWorldGame.getStateInfoManager();
+		this.stateInfoGame = baseWorldGame.getStateInfoGame();
 	}
 	
 	public void setDocumentMapConfigurationLayout(ICmnDocument<BaseConfiguration> documentMapConfigurationLayout) {
@@ -93,18 +93,18 @@ public class LayoutManager extends BaseManager {
 
 			if(baseConfiguration instanceof MapConfiguration) {
 				
-				stateInfoManager.getWorldMapInfo().setWidthMap(baseConfiguration.getBasicConfiguration().getWidth());
-				stateInfoManager.getWorldMapInfo().setHeightMap(baseConfiguration.getBasicConfiguration().getHeight());
+				stateInfoGame.getWorldMapInfo().setWidthMap(baseConfiguration.getBasicConfiguration().getWidth());
+				stateInfoGame.getWorldMapInfo().setHeightMap(baseConfiguration.getBasicConfiguration().getHeight());
 				
 			} else if (baseConfiguration instanceof CellConfiguration) {
 				
-				stateInfoManager.getWorldMapInfo().setWidthCell(baseConfiguration.getBasicConfiguration().getWidth());
-				stateInfoManager.getWorldMapInfo().setHeightCell(baseConfiguration.getBasicConfiguration().getHeight());
+				stateInfoGame.getWorldMapInfo().setWidthCell(baseConfiguration.getBasicConfiguration().getWidth());
+				stateInfoGame.getWorldMapInfo().setHeightCell(baseConfiguration.getBasicConfiguration().getHeight());
 				
 			} else if (baseConfiguration instanceof CameraConfiguration) {
 				
-				stateInfoManager.getCameraMapInfo().updateCameraX(baseConfiguration.getBasicConfiguration().getPositionX());
-				stateInfoManager.getCameraMapInfo().updateCameraY(baseConfiguration.getBasicConfiguration().getPositionY());
+				stateInfoGame.getCameraMapInfo().updateCameraX(baseConfiguration.getBasicConfiguration().getPositionX());
+				stateInfoGame.getCameraMapInfo().updateCameraY(baseConfiguration.getBasicConfiguration().getPositionY());
 				
 			}
 			
@@ -119,7 +119,7 @@ public class LayoutManager extends BaseManager {
 	public void loadFiguresMap() {
 		
 		for (BaseFigure baseFigure : listFigureIntoMapLayout) {
-			baseFigure.setStateInfoManager(stateInfoManager);
+			baseFigure.setStateInfoGame(stateInfoGame);
 			baseWorldGame.getWorldObjectManager().addFigureToAllObject(baseFigure);
 		}
 		

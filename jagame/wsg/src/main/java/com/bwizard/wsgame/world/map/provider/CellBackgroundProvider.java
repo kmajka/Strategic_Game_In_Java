@@ -9,19 +9,19 @@ import java.util.Iterator;
 
 import com.bwizard.cegame.frame.BaseFrame;
 import com.bwizard.cegame.game.world.map.cell.interfaces.ICellBackgroundProvider;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class CellBackgroundProvider implements ICellBackgroundProvider {
 
 	//collection for store only one single frame
 	HashMap<BackgroundCellName, BaseFrame> mapKeyCellInfo = new HashMap<BackgroundCellName, BaseFrame>();
 	HashMap<BackgroundCellName, Boolean> mapFirstUpdate = new HashMap<BackgroundCellName, Boolean>();
-	private StateInfoManager stateInfoManager = null;
+	private StateInfoGame stateInfoGame = null;
 	private TileCreator tileCreator = null;
 
-	public CellBackgroundProvider(StateInfoManager stateInfoManager) {
-		this.stateInfoManager = stateInfoManager;
-		this.tileCreator = new TileCreator(stateInfoManager);
+	public CellBackgroundProvider(StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
+		this.tileCreator = new TileCreator(stateInfoGame);
 	}
 
 	@Override
@@ -64,7 +64,7 @@ public class CellBackgroundProvider implements ICellBackgroundProvider {
 			//only one update for 'frame' related with the category (e.g. LATO) for painting background in the iteration
 			if (!mapFirstUpdate.get(keyCellName)) {
 				for(BaseFrame baseFrame : baseFrames) {
-					baseFrame.update(stateInfoManager.getMonitorTime().getTimeInfo());
+					baseFrame.update(stateInfoGame.getMonitorTime().getTimeInfo());
 				}
 				mapFirstUpdate.put(keyCellName, true);
 			}

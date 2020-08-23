@@ -2,7 +2,7 @@ package com.bwizard.wsgame.world.figure.items;
 
 import com.bwizard.wsgame.world.figure.GameFigure;
 
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class SimpleFire extends GameFigure {
 	
@@ -10,8 +10,8 @@ public class SimpleFire extends GameFigure {
 		initialize();
 	}
 	
-	public SimpleFire(int x, int y, StateInfoManager stateInfoManager) {
-		super(x , y, stateInfoManager);
+	public SimpleFire(int x, int y, StateInfoGame stateInfoGame) {
+		super(x , y, stateInfoGame);
 		initialize();
 
 	}

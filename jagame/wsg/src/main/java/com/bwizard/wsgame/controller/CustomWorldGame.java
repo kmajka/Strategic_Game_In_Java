@@ -31,7 +31,7 @@ import com.bwizard.cegame.documents.layout.DocumentConfigurationLayout;
 import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.figure.interfaces.IFigureMove;
 import com.bwizard.cegame.logs.LogInfo;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.state.handlers.Entry;
 import com.bwizard.cegame.thread.ThreadScheduler;
 import com.bwizard.cegame.window.BaseWindowGame;
@@ -58,20 +58,21 @@ public class CustomWorldGame extends BaseWorldGame {
 	 * This constructor creates image for ball which will be managed by FrameManager
 	 * windowScreen - add information about window to main world to serve actions like close application etc.
 	 */
-	public CustomWorldGame(IWindowScreen windowScreen, StateInfoManager stateInfoManager, BaseWindowGame baseWindowGame, ThreadScheduler threadScheduler) throws Exception {
+	public CustomWorldGame(IWindowScreen windowScreen, StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame,
+						   ThreadScheduler threadScheduler) throws Exception {
 		
-		super(windowScreen, stateInfoManager, baseWindowGame, threadScheduler);
+		super(windowScreen, stateInfoGame, baseWindowGame, threadScheduler);
 				
-		cellBackgroundProvider = new CellBackgroundProvider(stateInfoManager);
-		this.stateInfoManager = stateInfoManager;
+		cellBackgroundProvider = new CellBackgroundProvider(stateInfoGame);
+		this.stateInfoGame = stateInfoGame;
 		
 		//create map from xml
 
 		DocumentConfigurationLayout documentMapConfigurationLayout = new DocumentConfigurationLayout();
-		DocumentBackgroundLayout documentBackgroundLayout = new DocumentBackgroundLayout(stateInfoManager);
+		DocumentBackgroundLayout documentBackgroundLayout = new DocumentBackgroundLayout(stateInfoGame);
 		DocumentFigureLayout documentFigureLayout = new DocumentFigureLayout();
 			
-		mapBackgroundManager = new MapBackgroundManager(stateInfoManager);
+		mapBackgroundManager = new MapBackgroundManager(stateInfoGame);
 		
 		layoutManager = new LayoutManager(this);
 		layoutManager.setDocumentMapConfigurationLayout(documentMapConfigurationLayout);
@@ -115,7 +116,7 @@ public class CustomWorldGame extends BaseWorldGame {
 	
 	@Override
 	public void paintBackgroundInUserView(Graphics g) {
-		this.getMapBackgroundManager().drawBackground(g, cellBackgroundProvider, stateInfoManager); 
+		this.getMapBackgroundManager().drawBackground(g, cellBackgroundProvider, stateInfoGame);
 	}	
 
 	/**
@@ -150,11 +151,11 @@ public class CustomWorldGame extends BaseWorldGame {
 	protected void paintSelected(Graphics g) {
 		g.setColor(Color.YELLOW);
 		
-		int x1 = stateInfoManager.getCursorInfo().getStartScreenSelectionX();
-		int y1 = stateInfoManager.getCursorInfo().getStartScreenSelectionY();
+		int x1 = stateInfoGame.getCursorInfo().getStartScreenSelectionX();
+		int y1 = stateInfoGame.getCursorInfo().getStartScreenSelectionY();
 		
-		int x3 = stateInfoManager.getCursorInfo().getEndScreenSelectionX();
-		int y3 = stateInfoManager.getCursorInfo().getEndScreenSelectionY();
+		int x3 = stateInfoGame.getCursorInfo().getEndScreenSelectionX();
+		int y3 = stateInfoGame.getCursorInfo().getEndScreenSelectionY();
 		
 		int x2 = x1;
 		int y2 = y3;

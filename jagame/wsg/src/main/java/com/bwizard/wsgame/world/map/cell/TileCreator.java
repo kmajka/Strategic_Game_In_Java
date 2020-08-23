@@ -2,14 +2,14 @@ package com.bwizard.wsgame.world.map.cell;
 
 import com.bwizard.wsgame.world.map.handlers.BackgroundCellName;
 import com.bwizard.cegame.frame.BaseFrame;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class TileCreator {
 	
-	StateInfoManager stateInfoManager = null;
+	StateInfoGame stateInfoGame = null;
 	
-	public TileCreator(StateInfoManager stateInfoManager) {	
-		this.stateInfoManager = stateInfoManager;
+	public TileCreator(StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
 	}
 	
 	public BaseFrame createTile(BackgroundCellName keyCellName) {
@@ -20,7 +20,7 @@ public class TileCreator {
 			case GRASSGREEN_0_0_BACKGROUND_1:
 			case GRASSBRIGHT_0_0_BACKGROUND_1:
 			case GRASSDARK_0_0_BACKGROUND_1:
-				baseFrame = new Ground(stateInfoManager, stateInfoManager.getWorldMapInfo().getHeightCell(), stateInfoManager.getWorldMapInfo().getWidthCell(), keyCellName);
+				baseFrame = new Ground(stateInfoGame, stateInfoGame.getWorldMapInfo().getHeightCell(), stateInfoGame.getWorldMapInfo().getWidthCell(), keyCellName);
 				break;
 			case SEABLUE_0_0_BACKGROUND_1:
 			case SEABLUE_2_2_BACKGROUND_1:
@@ -32,7 +32,7 @@ public class TileCreator {
 			case SEABLUE_3_4_BACKGROUND_1:
 			case SEABLUE_4_2_BACKGROUND_1:
 			case SEABLUE_4_1_BACKGROUND_1:
-				baseFrame = new Water(stateInfoManager, stateInfoManager.getWorldMapInfo().getHeightCell(), stateInfoManager.getWorldMapInfo().getWidthCell(), keyCellName);
+				baseFrame = new Water(stateInfoGame, stateInfoGame.getWorldMapInfo().getHeightCell(), stateInfoGame.getWorldMapInfo().getWidthCell(), keyCellName);
 				break;
 			default:
 				break;

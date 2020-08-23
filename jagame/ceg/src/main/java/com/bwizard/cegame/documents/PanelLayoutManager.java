@@ -15,7 +15,7 @@ import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
 import com.bwizard.cegame.documents.layout.DocumentLayoutTool;
 import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 
 /**
@@ -27,7 +27,7 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 	
 	protected BaseWorldGame baseWorldGame = null;
 	private LayoutEventManager layoutEventManager = null;
-	protected StateInfoManager stateInfoManager = null;
+	protected StateInfoGame stateInfoGame = null;
 	public int backgroundName;
 	
 	protected ListFigureManager listFigureManager = null;
@@ -46,7 +46,7 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 		this.configurationProvider = configurationProvider;
 		
 		this.baseWorldGame = baseWorldGame;
-		this.stateInfoManager = baseWorldGame.getStateInfoManager();
+		this.stateInfoGame = baseWorldGame.getStateInfoGame();
 		
 		this.documentManagerPanelLayout = new DocumentManager<BaseDrawFigure>();	
 		this.documentManagerPanelLayout.cmnDocument = documentPanelLayout;

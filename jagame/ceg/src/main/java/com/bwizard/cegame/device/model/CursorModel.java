@@ -19,7 +19,7 @@ import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.figure.interfaces.IFigureMove;
 import com.bwizard.cegame.logs.LogInfo;
 import com.bwizard.cegame.logs.LogMonitor;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.tools.Point2DGame;
 import com.bwizard.cegame.utils.PointInfo;
 
@@ -41,16 +41,16 @@ public class CursorModel implements ICursorModel {
 	protected BaseWorldGame baseWorldGame = null;
 	private final int SIZE_MOVE_MAP = 10;
 	private final int STEP = 30;
-	protected StateInfoManager stateInfoManager = null;
+	protected StateInfoGame stateInfoGame = null;
 	
 	public CursorModel(WorldObjectManager worldObjectManager, BaseWorldGame baseWorldGame, ICursorController gameCursor)  {
 		this.worldObjectManager = worldObjectManager;
 		this.baseWorldGame = baseWorldGame;
-		this.cameraMapInfo = baseWorldGame.getStateInfoManager().getCameraMapInfo();
-		this.cursorInfo = baseWorldGame.getStateInfoManager().getCursorInfo();
-		this.keysInfo = baseWorldGame.getStateInfoManager().getKeysInfo();
+		this.cameraMapInfo = baseWorldGame.getStateInfoGame().getCameraMapInfo();
+		this.cursorInfo = baseWorldGame.getStateInfoGame().getCursorInfo();
+		this.keysInfo = baseWorldGame.getStateInfoGame().getKeysInfo();
 		this.gameCursor = gameCursor;
-		this.stateInfoManager = this.baseWorldGame.getStateInfoManager();
+		this.stateInfoGame = this.baseWorldGame.getStateInfoGame();
 	}
 	
 	

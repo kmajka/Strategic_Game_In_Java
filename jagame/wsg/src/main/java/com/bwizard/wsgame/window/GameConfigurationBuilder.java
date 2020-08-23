@@ -12,7 +12,7 @@ import com.bwizard.cegame.documents.PanelLayoutManager;
 import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.logs.LogInfo;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.state.handlers.Entry;
 import com.bwizard.cegame.thread.ThreadScheduler;
 import com.bwizard.cegame.window.BaseWindowGame;
@@ -28,14 +28,14 @@ import com.bwizard.cegame.window.screen.provider.SimpleScreenProvider;
  * @author Krzysztof Majka
  * @version 1.0
  */
-public class WindowProviderGame {
+public class GameConfigurationBuilder {
 	
 	//member to send/receive some parameters from thread
 	private BaseWindowGame baseWindowGame;
 	private ThreadScheduler threadScheduler = null;
-	private static final LogInfo logInfo = new LogInfo(WindowProviderGame.class);
+	private static final LogInfo logInfo = new LogInfo(GameConfigurationBuilder.class);
 	
-	public WindowProviderGame(ThreadScheduler threadScheduler) {
+	public GameConfigurationBuilder(ThreadScheduler threadScheduler) {
 		this.threadScheduler = threadScheduler;
 		baseWindowGame = new BaseWindowGame(WindowGameActionName.REOPEN);
 	}
@@ -51,10 +51,12 @@ public class WindowProviderGame {
 				try {
 					//create main window (e.g. simple screen) with title
 					IWindowScreen mainWindow = null;
-					
+
+					//1.SetGeneralConfiguration()
 					ConfigurationProvider configurationProvider = new ConfigurationProvider(GameGlobals.CONFIG_DATA + "GameConfiguration.xml");
 					configurationProvider.loadData();	
-					
+
+					//2.SetWindowScreen
 					if (configurationProvider.getVideoConfiguration().isWindowedMode()) {
 						mainWindow = new SimpleScreenProvider(configurationProvider);
 					} else {
@@ -62,12 +64,12 @@ public class WindowProviderGame {
 					}
 					
 					//configurationProvider.getVideoConfiguration().getImageDpi();
-					
-					StateInfoManager stateInfoManager = new StateInfoManager();
-					stateInfoManager.setWindowScreen(mainWindow);
+
+					StateInfoGame stateInfoGame = new StateInfoGame();
+					stateInfoGame.setWindowScreen(mainWindow);
 					
 					//map->Canvas
-					BaseWorldGame baseWorldGame = new CustomWorldGame(mainWindow, stateInfoManager, baseWindowGame, threadScheduler);
+					BaseWorldGame baseWorldGame = new CustomWorldGame(mainWindow, stateInfoGame, baseWindowGame, threadScheduler);
 					baseWorldGame.setConfigurationProvider(configurationProvider);
 					//create layout interface
 					DocumentPanelLayout documentPanelLayout = new DocumentGamePanelLayout(baseWorldGame);
@@ -82,8 +84,8 @@ public class WindowProviderGame {
 					baseWorldGame.setPanelLayoutManager(panelLayoutManager);
 
 					//set user view layout
-					stateInfoManager.setViewLayout(documentPanelLayout);
-					stateInfoManager.getCameraMapInfo().setViewLayout(documentPanelLayout);
+					stateInfoGame.setViewLayout(documentPanelLayout);
+					stateInfoGame.getCameraMapInfo().setViewLayout(documentPanelLayout);
 					
 					//create main Layout for window
 					SimpleWindowLayout simpleWindowLayout = new SimpleWindowLayout(baseWorldGame);

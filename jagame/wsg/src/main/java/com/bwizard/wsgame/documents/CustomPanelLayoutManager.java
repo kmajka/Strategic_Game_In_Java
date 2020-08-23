@@ -201,21 +201,21 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 				
 			} else if (GameComponentName.CZAS_GRY.equals(baseDrawFigure.getTag())) {
 				
-				String timeInfo = baseWorldGame.displayInfoTime(stateInfoManager.getMonitorTime().getTimeInfo().getAllTime());
+				String timeInfo = baseWorldGame.displayInfoTime(stateInfoGame.getMonitorTime().getTimeInfo().getAllTime());
 				baseDrawFigure.setText("Czas gry: " + timeInfo);
 				
 			} else if (GameComponentName.POZYCJA_KURSORA_EKRAN_GRY.equals(baseDrawFigure.getTag())) {
 				
-				baseDrawFigure.setText("Pozycja kursora [ekran gry]: X:" + stateInfoManager.getCursorInfo().getScreenCursorPositionX() + " / Y:"+ stateInfoManager.getCursorInfo().getScreenCursorPositionY());
-				baseDrawFigure.setText("Start map selection: X:" + (stateInfoManager.getCursorInfo().getStartMapSelectionX()) 
-						+ " / Y:"+ (stateInfoManager.getCursorInfo().getStartMapSelectionY()));
+				baseDrawFigure.setText("Pozycja kursora [ekran gry]: X:" + stateInfoGame.getCursorInfo().getScreenCursorPositionX() + " / Y:"+ stateInfoGame.getCursorInfo().getScreenCursorPositionY());
+				baseDrawFigure.setText("Start map selection: X:" + (stateInfoGame.getCursorInfo().getStartMapSelectionX())
+						+ " / Y:"+ (stateInfoGame.getCursorInfo().getStartMapSelectionY()));
 				//baseDrawFigure.setText("liczba wyswietlanych obiektow:" + this.baseWorldGame.getWorldObjectManager().getUserViewObjects().size());
 				
 			} else if (GameComponentName.POZYCJA_KURSORA_MAPA.equals(baseDrawFigure.getTag())) {
 				
-				baseDrawFigure.setText("Pozycja kursora [mapa]: X:" + (stateInfoManager.getCursorInfo().getMapCursorPositionX()) + " / Y:"+ (stateInfoManager.getCursorInfo().getMapCursorPositionY()));
-				//baseDrawFigure.setText("End selection: X:" + (stateInfoManager.getMouseInfo().getEndScreenSelectionX() - baseWorldGame.getCameraMapInfo().getCameraX()) 
-				//		+ " / Y:"+ (stateInfoManager.getMouseInfo().getEndScreenSelectionY() - baseWorldGame.getCameraMapInfo().getCameraY()));
+				baseDrawFigure.setText("Pozycja kursora [mapa]: X:" + (stateInfoGame.getCursorInfo().getMapCursorPositionX()) + " / Y:"+ (stateInfoGame.getCursorInfo().getMapCursorPositionY()));
+				//baseDrawFigure.setText("End selection: X:" + (stateInfoGame.getMouseInfo().getEndScreenSelectionX() - baseWorldGame.getCameraMapInfo().getCameraX())
+				//		+ " / Y:"+ (stateInfoGame.getMouseInfo().getEndScreenSelectionY() - baseWorldGame.getCameraMapInfo().getCameraY()));
 				
 			} else if (GameComponentName.ROZMIAR_PLANSZY.equals(baseDrawFigure.getTag())) {
 				
@@ -228,25 +228,25 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 				
 			} else if (GameComponentName.POLOZENIE_WIERZCHOKOW_X1Y1.equals(baseDrawFigure.getTag())) {
 				
-				//baseDrawFigure.setText("X: " + Math.abs(stateInfoManager.getCameraMapInfo().getCameraX()) / stateInfoManager.getWorldMapInfo().getWidthCell());
-				baseDrawFigure.setText("X: " + Integer.toString(stateInfoManager.getCameraMapInfo().getCameraX()));
+				//baseDrawFigure.setText("X: " + Math.abs(stateInfoGame.getCameraMapInfo().getCameraX()) / stateInfoGame.getWorldMapInfo().getWidthCell());
+				baseDrawFigure.setText("X: " + Integer.toString(stateInfoGame.getCameraMapInfo().getCameraX()));
 				//baseDrawFigure.setText("X1,Y1: ["+ x +","+ y +"]");
 				
 			} else if (GameComponentName.POLOZENIE_WIERZCHOKOW_X2Y1.equals(baseDrawFigure.getTag())) {		
 
-				//baseDrawFigure.setText("Y: " + Math.abs(stateInfoManager.getCameraMapInfo().getCameraY()) / stateInfoManager.getWorldMapInfo().getHeightCell());
+				//baseDrawFigure.setText("Y: " + Math.abs(stateInfoGame.getCameraMapInfo().getCameraY()) / stateInfoGame.getWorldMapInfo().getHeightCell());
 				//baseDrawFigure.setText("X2,Y1: ["+ (x + w) +","+ y +"]");
-				baseDrawFigure.setText("Y: " + Integer.toString(stateInfoManager.getCameraMapInfo().getCameraY()));
+				baseDrawFigure.setText("Y: " + Integer.toString(stateInfoGame.getCameraMapInfo().getCameraY()));
 				
 			} else if (GameComponentName.POLOZENIE_WIERZCHOKOW_X1Y2.equals(baseDrawFigure.getTag())) {
 				
-				baseDrawFigure.setText("X: " + Math.abs(stateInfoManager.getCameraMapInfo().getCameraX()) / stateInfoManager.getWorldMapInfo().getWidthCell());
+				baseDrawFigure.setText("X: " + Math.abs(stateInfoGame.getCameraMapInfo().getCameraX()) / stateInfoGame.getWorldMapInfo().getWidthCell());
 				
 				//baseDrawFigure.setText("X1,Y2: ["+ x +","+ (y + h)+"]");
 				
 			} else if (GameComponentName.POLOZENIE_WIERZCHOKOW_X2Y2.equals(baseDrawFigure.getTag())) {
 				
-				baseDrawFigure.setText("Y: " + Math.abs(stateInfoManager.getCameraMapInfo().getCameraY()) / stateInfoManager.getWorldMapInfo().getHeightCell());
+				baseDrawFigure.setText("Y: " + Math.abs(stateInfoGame.getCameraMapInfo().getCameraY()) / stateInfoGame.getWorldMapInfo().getHeightCell());
 				
 				//baseDrawFigure.setText("X2,Y2: ["+ (x + w) +","+ (y + h) +"]");
 				
@@ -266,7 +266,7 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 	@Override
 	public boolean isDisplayBackgroundCells() {
 		
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_BACKGROUND_CHECKBOX);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_BACKGROUND_CHECKBOX);
 		if (baseDrawFigure != null) {
 			return baseDrawFigure.isSelected();
 		}
@@ -278,7 +278,7 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 	@Override
 	public boolean isDisplayBackgroundPositionCells() {
 		
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_BACKGROUND_POSITION_CHECKBOX);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_BACKGROUND_POSITION_CHECKBOX);
 		if (baseDrawFigure != null) {
 			return baseDrawFigure.isSelected();
 		}
@@ -289,7 +289,7 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 	@Override
 	public boolean isDisplayRoadCells() {
 		
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_ROAD_CHECKBOX);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_ROAD_CHECKBOX);
 		if (baseDrawFigure != null) {
 			return baseDrawFigure.isSelected();
 		}
@@ -301,7 +301,7 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 	@Override
 	public boolean isDisplayRoadPositionCells() {
 		
-		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoManager().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_ROAD_POSITION_CHECKBOX);
+		BaseDrawFigure baseDrawFigure = baseWorldGame.getStateInfoGame().getPanelLayoutManager().getFirstElementsByTag(GameComponentName.DISPLAY_CELL_ROAD_POSITION_CHECKBOX);
 		if (baseDrawFigure != null) {
 			return baseDrawFigure.isSelected();
 		}

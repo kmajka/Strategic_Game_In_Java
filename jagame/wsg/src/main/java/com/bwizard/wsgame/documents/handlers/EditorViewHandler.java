@@ -150,7 +150,7 @@ public class EditorViewHandler extends BaseHandler implements IEventHandler {
 		
 		if (CmnObjectName.KNIGHT_1.equals(arg0)) {
 			FigureBuilder factory = new CharacterBuilder();
-			factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+			factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 			BaseFigure baseFigure = factory.build(CmnObjectName.KNIGHT_1);
 			baseFigure.updateEditor();
 			baseFigure.setSelected(true);
@@ -159,7 +159,7 @@ public class EditorViewHandler extends BaseHandler implements IEventHandler {
 			
 		} else if (CmnObjectName.CASTLE_1.equals(arg0)) {
 			FigureBuilder factory = new BuildingBuilder();
-			factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+			factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 			BaseFigure baseFigure = factory.build(CmnObjectName.CASTLE_1);
 			baseFigure.updateEditor();
 			baseFigure.setSelected(true);
@@ -168,7 +168,7 @@ public class EditorViewHandler extends BaseHandler implements IEventHandler {
 			
 		} else if (CmnObjectName.TREE_1.equals(arg0)) {
 			FigureBuilder factory = new NatureBuilder();
-			factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+			factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 			BaseFigure baseFigure = factory.build(CmnObjectName.TREE_1);
 			baseFigure.updateEditor();
 			baseFigure.setSelected(true);

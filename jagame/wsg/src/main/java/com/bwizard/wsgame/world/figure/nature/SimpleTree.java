@@ -1,7 +1,7 @@
 package com.bwizard.wsgame.world.figure.nature;
 
 import com.bwizard.wsgame.world.figure.GameFigure;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 
 public class SimpleTree extends GameFigure {
 	
@@ -9,8 +9,8 @@ public class SimpleTree extends GameFigure {
 		initialize();
 	}
 	
-	public SimpleTree(int x, int y, StateInfoManager stateInfoManager) {
-		super(x , y, stateInfoManager);
+	public SimpleTree(int x, int y, StateInfoGame stateInfoGame) {
+		super(x , y, stateInfoGame);
 		setName("SimpleTree");
 		
 		initialize();

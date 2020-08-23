@@ -7,7 +7,7 @@ import java.util.List;
 
 import com.bwizard.cegame.calculation.MathOperation;
 import com.bwizard.cegame.frame.BaseFrame;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.tools.Point2DGame;
 
 public abstract class BaseFigure extends BaseFrame {
@@ -26,7 +26,7 @@ public abstract class BaseFigure extends BaseFrame {
 	private Point2DGame startPosition;
 	private Point2DGame actualPosition;
 	private Point2DGame endPosition;
-	protected StateInfoManager stateInfoManager;
+	protected StateInfoGame stateInfoGame;
 	private boolean existOnMap;
 	private int positionX;
 	private int positionY;
@@ -52,8 +52,8 @@ public abstract class BaseFigure extends BaseFrame {
 		placeFree = true;
 	}
 	
-	public BaseFigure(int x, int y, StateInfoManager stateInfoManager) {
-		this.stateInfoManager = stateInfoManager;
+	public BaseFigure(int x, int y, StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
 		this.actualPosition = setCorrectlyPosition(x, y);
 		this.startPosition = setCorrectlyPosition(x, y);
 		this.endPosition = setCorrectlyPosition(x, y);
@@ -70,12 +70,12 @@ public abstract class BaseFigure extends BaseFrame {
 	
 	public boolean isSelected() {
 		
-		if (!selected && stateInfoManager.getCursorInfo().isSelected() && canMove) {
+		if (!selected && stateInfoGame.getCursorInfo().isSelected() && canMove) {
 
-			int firstRectX1 = stateInfoManager.getCursorInfo().getStartMapSelectionX();//a2.x
-			int firstRectY1 = stateInfoManager.getCursorInfo().getStartMapSelectionY();//a2.y
-			int firstRectX2 = stateInfoManager.getCursorInfo().getEndMapSelectionX();//b2.x
-			int firstRectY2 = stateInfoManager.getCursorInfo().getEndMapSelectionY();//b2.y
+			int firstRectX1 = stateInfoGame.getCursorInfo().getStartMapSelectionX();//a2.x
+			int firstRectY1 = stateInfoGame.getCursorInfo().getStartMapSelectionY();//a2.y
+			int firstRectX2 = stateInfoGame.getCursorInfo().getEndMapSelectionX();//b2.x
+			int firstRectY2 = stateInfoGame.getCursorInfo().getEndMapSelectionY();//b2.y
 			
 			int secondRectX1 = getActualMapPosition().x; //a1.x
 			int secondRectY1 = getActualMapPosition().y;//a1.y
@@ -104,21 +104,21 @@ public abstract class BaseFigure extends BaseFrame {
 	}
 	
 	public int getEndViewPositionX() {
-		return endPosition.x + stateInfoManager.getCameraMapInfo().getInViewCameraX();
+		return endPosition.x + stateInfoGame.getCameraMapInfo().getInViewCameraX();
 	}
 	
 	public int getEndViewPositionY() {
-		return endPosition.y + stateInfoManager.getCameraMapInfo().getInViewCameraY();
+		return endPosition.y + stateInfoGame.getCameraMapInfo().getInViewCameraY();
 	}
 	
 	//position on the view
 	public int getActualViewPositionX() {
-		return actualPosition.x + stateInfoManager.getCameraMapInfo().getInViewCameraX();
+		return actualPosition.x + stateInfoGame.getCameraMapInfo().getInViewCameraX();
 	}
 	
 	//position on the view
 	public int getActualViewPositionY() {
-		return actualPosition.y + stateInfoManager.getCameraMapInfo().getInViewCameraY();
+		return actualPosition.y + stateInfoGame.getCameraMapInfo().getInViewCameraY();
 	}
 	
 	//position on the map
@@ -207,10 +207,10 @@ public abstract class BaseFigure extends BaseFrame {
 
 	public boolean isInUserView() {
 		
-		int firstRectX1 = Math.abs(stateInfoManager.getCameraMapInfo().getCameraX());//a2.x
-		int firstRectY1 = Math.abs(stateInfoManager.getCameraMapInfo().getCameraY());//a2.y
-		int firstRectX2 = Math.abs(stateInfoManager.getCameraMapInfo().getCameraX()) + stateInfoManager.getViewLayout().getViewWidth();//b2.x
-		int firstRectY2 = Math.abs(stateInfoManager.getCameraMapInfo().getCameraY()) + stateInfoManager.getViewLayout().getViewHeight();//b2.y
+		int firstRectX1 = Math.abs(stateInfoGame.getCameraMapInfo().getCameraX());//a2.x
+		int firstRectY1 = Math.abs(stateInfoGame.getCameraMapInfo().getCameraY());//a2.y
+		int firstRectX2 = Math.abs(stateInfoGame.getCameraMapInfo().getCameraX()) + stateInfoGame.getViewLayout().getViewWidth();//b2.x
+		int firstRectY2 = Math.abs(stateInfoGame.getCameraMapInfo().getCameraY()) + stateInfoGame.getViewLayout().getViewHeight();//b2.y
 		
 		int secondRectX1 = getActualMapPosition().x; //a1.x
 		int secondRectY1 = getActualMapPosition().y;//a1.y
@@ -255,8 +255,8 @@ public abstract class BaseFigure extends BaseFrame {
 		this.endPosition = setCorrectlyPosition(positionX, positionY);
 	}
 	
-	public void setStateInfoManager(StateInfoManager stateInfoManager) {
-		this.stateInfoManager = stateInfoManager;
+	public void setStateInfoGame(StateInfoGame stateInfoGame) {
+		this.stateInfoGame = stateInfoGame;
 	}
 
 	public boolean isExistOnComponentMap() {

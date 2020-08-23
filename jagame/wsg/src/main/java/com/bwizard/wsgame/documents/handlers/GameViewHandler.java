@@ -74,7 +74,7 @@ public class GameViewHandler extends BaseHandler implements IEventHandler {
 			BaseFigure selectedFigure = baseWorldGame.getWorldObjectManager().getFirstSelectedObject();
 			if (selectedFigure != null) {
 				FigureBuilder factory = new BuildingBuilder();
-				factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+				factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 				BaseFigure baseFigure = factory.build(CmnObjectName.CASTLE_1);
 				baseFigure.setAllMapPositions(selectedFigure.getMapPositionX() + (selectedFigure.getWidth() / 2), selectedFigure.getMapPositionY() + selectedFigure.getHeight());
 				baseWorldGame.addFigure(baseFigure);
@@ -87,7 +87,7 @@ public class GameViewHandler extends BaseHandler implements IEventHandler {
 			BaseFigure selectedFigure = baseWorldGame.getWorldObjectManager().getFirstSelectedObject();
 			if (selectedFigure != null) {
 				FigureBuilder factory = new CharacterBuilder();
-				factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+				factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 				BaseFigure baseFigure = factory.build(CmnObjectName.KNIGHT_1);
 				baseFigure.setAllMapPositions(selectedFigure.getMapPositionX() + (selectedFigure.getWidth() / 2), selectedFigure.getMapPositionY() + selectedFigure.getHeight());
 				baseWorldGame.addFigure(baseFigure);
@@ -99,7 +99,7 @@ public class GameViewHandler extends BaseHandler implements IEventHandler {
 			BaseFigure selectedFigure = baseWorldGame.getWorldObjectManager().getFirstSelectedObject();
 			if (selectedFigure != null) {
 				FigureBuilder factory = new NatureBuilder();
-				factory.setStateInfoManager(baseWorldGame.getStateInfoManager());
+				factory.setStateInfoGame(baseWorldGame.getStateInfoGame());
 				BaseFigure baseFigure = factory.build(CmnObjectName.TREE_1);
 				baseFigure.setAllMapPositions(selectedFigure.getMapPositionX() + (selectedFigure.getWidth() / 2), selectedFigure.getMapPositionY() + selectedFigure.getHeight());
 				baseFigure.updateEditor();

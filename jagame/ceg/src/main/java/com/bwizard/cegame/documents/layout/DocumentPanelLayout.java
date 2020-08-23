@@ -135,7 +135,7 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 	
 	private BaseDrawFigure createElement(BaseDrawFigure parentElement, BaseDrawFigure component, HashMap<String, String> hashCellAttribute) {
 		
-		final IWindowScreen windowScreen = baseWorldGame.getStateInfoManager().getWindowScreen();
+		final IWindowScreen windowScreen = baseWorldGame.getStateInfoGame().getWindowScreen();
 				
 		String tag = hashCellAttribute.get(LayoutAttribute.TAG);
 		if (StringUtil.isNotEmpty(tag)) {
@@ -145,7 +145,7 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 		//update all necessary properties
 		DocumentLayoutTool.updateFigure(component, hashCellAttribute);
 			
-		component.setCursorInfo(baseWorldGame.getStateInfoManager().getCursorInfo());
+		component.setCursorInfo(baseWorldGame.getStateInfoGame().getCursorInfo());
 		if (component instanceof DrawMap) {
 			((DrawMap)component).setBaseWorldGame(baseWorldGame);
 		}
@@ -553,12 +553,12 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 	
 	@Override
 	public int getViewHeight() {
-		return baseWorldGame.getStateInfoManager().getWindowScreen().getHeight() - bottomBorderLayout - topBorderLayout;
+		return baseWorldGame.getStateInfoGame().getWindowScreen().getHeight() - bottomBorderLayout - topBorderLayout;
 	}
 		
 	@Override
 	public int getViewWidth() {
-		return baseWorldGame.getStateInfoManager().getWindowScreen().getWidth() - rightBorderLayout - leftBorderLayout;
+		return baseWorldGame.getStateInfoGame().getWindowScreen().getWidth() - rightBorderLayout - leftBorderLayout;
 	}
 		  	  
 	protected BufferedImage getImageSprite(String file) {

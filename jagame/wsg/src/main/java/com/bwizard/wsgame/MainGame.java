@@ -5,7 +5,7 @@ import com.bwizard.cegame.logs.LogMonitor;
 import com.bwizard.cegame.validation.BaseValidator;
 import com.bwizard.cegame.validation.interfaces.IValidField;
 import com.bwizard.wsgame.documents.names.*;
-import com.bwizard.wsgame.window.WindowManagerGame;
+import com.bwizard.wsgame.window.GameRunner;
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,13 +32,14 @@ public class MainGame {
 		try	{
 
 			logInfo.info("start game...");
-
+//mocito,unit
 			List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
 					new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
 					
-			baseValidator.validateFields(listFieldsToCheck);			
-			WindowManagerGame windowManagerGame = new WindowManagerGame();
-			windowManagerGame.runGame();
+			baseValidator.validateFields(listFieldsToCheck);
+
+			GameRunner game = new GameRunner();
+			game.start();
 
 		} catch (Exception ex) {
 			LogMonitor.buildInfo(logInfo, ex);

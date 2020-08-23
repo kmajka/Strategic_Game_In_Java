@@ -11,9 +11,9 @@ public class NatureBuilder extends FigureBuilder {
 		BaseFigure baseFigure = null;
 		
 		if (CmnObjectName.TREE_1.equals(type)) {
-			int x = stateInfoManager.getCameraMapInfo().getRealCameraX() + (stateInfoManager.getViewLayout().getViewWidth() / 2);
-			int y = stateInfoManager.getCameraMapInfo().getRealCameraY() + (stateInfoManager.getViewLayout().getViewHeight() /2);
-			baseFigure = new SimpleTree(x, y, stateInfoManager );
+			int x = stateInfoGame.getCameraMapInfo().getRealCameraX() + (stateInfoGame.getViewLayout().getViewWidth() / 2);
+			int y = stateInfoGame.getCameraMapInfo().getRealCameraY() + (stateInfoGame.getViewLayout().getViewHeight() /2);
+			baseFigure = new SimpleTree(x, y, stateInfoGame );
 		}
 		
 		

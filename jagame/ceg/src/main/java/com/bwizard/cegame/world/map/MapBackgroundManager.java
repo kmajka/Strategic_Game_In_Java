@@ -11,7 +11,7 @@ import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
 import com.bwizard.cegame.frame.BaseFrame;
 import com.bwizard.cegame.game.world.map.cell.interfaces.ICellBackgroundProvider;
 import com.bwizard.cegame.parameters.CmnGlobals;
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.tools.DrawManager;
 import com.bwizard.cegame.world.map.cell.CellBackgroundInfo;
 import com.bwizard.cegame.world.map.cell.CellRoadInfo;
@@ -22,7 +22,7 @@ public class MapBackgroundManager {
 	private CellRoadInfo[][] cellRoadInfoTab = null;
 	
 	private IPanelLayoutManager panelLayoutManager;
-	private StateInfoManager stateInfoManager = null;
+	private StateInfoGame stateInfoGame = null;
 	private Set<CellBackgroundInfo> hashSetVisibleCellsInfo = null;
 	
 	//background
@@ -37,22 +37,22 @@ public class MapBackgroundManager {
 	private int maxRoadRow = 0;
 	private int maxRoadColumn = 0;
 
-	public MapBackgroundManager(StateInfoManager stateInfoManager) {
+	public MapBackgroundManager(StateInfoGame stateInfoGame) {
 		
-		this.stateInfoManager = stateInfoManager;
+		this.stateInfoGame = stateInfoGame;
 		hashSetVisibleCellsInfo = new HashSet<CellBackgroundInfo>();
 	}
 	
 	public void createCellBackgroundInfoTab() {
 			
 		//added range safety - will be multiply by two (in the isometric map each tiles is moved by half so there is two times more tiles) // '3' it is a safety margin
-		maxBackgroundRow = (stateInfoManager.getWorldMapInfo().getNumberHeightCell() * 2) + 3;
+		maxBackgroundRow = (stateInfoGame.getWorldMapInfo().getNumberHeightCell() * 2) + 3;
 		//it is a safety margin for isometric maps to cover the entire map tiles
-		maxBackgroundColumn = stateInfoManager.getWorldMapInfo().getNumberWidthCell() + 2;
+		maxBackgroundColumn = stateInfoGame.getWorldMapInfo().getNumberWidthCell() + 2;
 		//middleWidthCell will be divided by two
-		middleBackgroundWidthCell = stateInfoManager.getWorldMapInfo().getWidthCell() / 2;
+		middleBackgroundWidthCell = stateInfoGame.getWorldMapInfo().getWidthCell() / 2;
 		//middleHeightCell will be divided by two
-		middleBackgroundHeightCell = stateInfoManager.getWorldMapInfo().getHeightCell() / 2;
+		middleBackgroundHeightCell = stateInfoGame.getWorldMapInfo().getHeightCell() / 2;
 		
 		if (cellBackgroundInfoTab == null) {
 					
@@ -60,7 +60,7 @@ public class MapBackgroundManager {
 			
 			for (int row = 0; row < maxBackgroundRow; row++) {
 				for (int column = 0; column < maxBackgroundColumn; column++) {
-					cellBackgroundInfoTab[row][column] = new CellBackgroundInfo(stateInfoManager, stateInfoManager.getWorldMapInfo().getWidthCell(), stateInfoManager.getWorldMapInfo().getHeightCell()); 
+					cellBackgroundInfoTab[row][column] = new CellBackgroundInfo(stateInfoGame, stateInfoGame.getWorldMapInfo().getWidthCell(), stateInfoGame.getWorldMapInfo().getHeightCell());
 					cellBackgroundInfoTab[row][column].setKeyCell(row + "|" + column);
 					ArrayList<Integer> list = new ArrayList<Integer>();
 					list.add(0);
@@ -81,13 +81,13 @@ public class MapBackgroundManager {
 	public void createCellRoadInfoTab() {
 		
 		//added range safety - will be multiply by two (in the isometric map each tiles is moved by half so there is two times more tiles) // '3' it is a safety margin
-		maxRoadRow = (stateInfoManager.getWorldMapInfo().getNumberHeightCell() * 2) + 3;
+		maxRoadRow = (stateInfoGame.getWorldMapInfo().getNumberHeightCell() * 2) + 3;
 		//it is a safety margin for isometric maps to cover the entire map tiles
-		maxRoadColumn = stateInfoManager.getWorldMapInfo().getNumberWidthCell() + 2;
+		maxRoadColumn = stateInfoGame.getWorldMapInfo().getNumberWidthCell() + 2;
 		//middleWidthCell will be divided by two
-		middleBackgroundWidthCell = stateInfoManager.getWorldMapInfo().getWidthCell() / 2;
+		middleBackgroundWidthCell = stateInfoGame.getWorldMapInfo().getWidthCell() / 2;
 		//middleHeightCell will be divided by two
-		middleBackgroundHeightCell = stateInfoManager.getWorldMapInfo().getHeightCell() / 2;
+		middleBackgroundHeightCell = stateInfoGame.getWorldMapInfo().getHeightCell() / 2;
 		
 		if (cellRoadInfoTab == null) {
 					
@@ -95,7 +95,7 @@ public class MapBackgroundManager {
 			
 			for (int row = 0; row < maxRoadRow; row++) {
 				for (int column = 0; column < maxRoadColumn; column++) {
-					cellRoadInfoTab[row][column] = new CellRoadInfo(stateInfoManager.getWorldMapInfo().getWidthCell(), stateInfoManager.getWorldMapInfo().getHeightCell()); 
+					cellRoadInfoTab[row][column] = new CellRoadInfo(stateInfoGame.getWorldMapInfo().getWidthCell(), stateInfoGame.getWorldMapInfo().getHeightCell());
 					cellRoadInfoTab[row][column].setKeyCell(row + "|" + column);
 				}
 			}
@@ -176,7 +176,7 @@ public class MapBackgroundManager {
 		}
 		
 		if (panelLayoutManager.isDisplayBackgroundCells() || CmnGlobals.CELL_IN_BACKGROUND) {
-			DrawManager.drawRect(g, pointColumn/* + stateInfoManager.getViewLayout().getLeftBorderLayout()*/, pointRow/* + stateInfoManager.getViewLayout().getTopBorderLayout()*/, 
+			DrawManager.drawRect(g, pointColumn/* + stateInfoGame.getViewLayout().getLeftBorderLayout()*/, pointRow/* + stateInfoGame.getViewLayout().getTopBorderLayout()*/,
 					currentCellBackgroundInfo.getCellWidth(), currentCellBackgroundInfo.getCellHeight(), Color.YELLOW);
 			
 			int width, height;
@@ -204,7 +204,7 @@ public class MapBackgroundManager {
 		
 		
 		if (panelLayoutManager.isDisplayBackgroundCells() || CmnGlobals.CELL_IN_ROAD) {
-			DrawManager.drawRect(g, pointColumn/* + stateInfoManager.getViewLayout().getLeftBorderLayout()*/, pointRow/* + stateInfoManager.getViewLayout().getTopBorderLayout()*/, 
+			DrawManager.drawRect(g, pointColumn/* + stateInfoGame.getViewLayout().getLeftBorderLayout()*/, pointRow/* + stateInfoGame.getViewLayout().getTopBorderLayout()*/,
 					currentCellBackgroundInfo.getCellWidth(), currentCellBackgroundInfo.getCellHeight(), Color.YELLOW);
 			
 			int width, height;
@@ -235,7 +235,7 @@ public class MapBackgroundManager {
 		
 	}
 	
-	public void drawBackground(Graphics g, ICellBackgroundProvider cellBackgroundProvider, StateInfoManager stateInfoManager) {
+	public void drawBackground(Graphics g, ICellBackgroundProvider cellBackgroundProvider, StateInfoGame stateInfoGame) {
 
 		if (cellBackgroundInfoTab == null) {
 			return;
@@ -252,16 +252,16 @@ public class MapBackgroundManager {
 		int tileY = 0;
 						
 		//start position the camera in tile: divide position of camera Y by Height (position of row(Y) will be calculated) e.g. 2000/128
-		int currentTileRow = stateInfoManager.getCameraMapInfo().getRealCameraY() / stateInfoManager.getWorldMapInfo().getHeightCell();
-		final int startColumn = stateInfoManager.getCameraMapInfo().getRealCameraX() / stateInfoManager.getWorldMapInfo().getWidthCell();
+		int currentTileRow = stateInfoGame.getCameraMapInfo().getRealCameraY() / stateInfoGame.getWorldMapInfo().getHeightCell();
+		final int startColumn = stateInfoGame.getCameraMapInfo().getRealCameraX() / stateInfoGame.getWorldMapInfo().getWidthCell();
 			
 		//start position the camera in axis X
-		final int positionY = stateInfoManager.getCameraMapInfo().getRealCameraY() + middleBackgroundHeightCell - stateInfoManager.getViewLayout().getTopBorderLayout();
+		final int positionY = stateInfoGame.getCameraMapInfo().getRealCameraY() + middleBackgroundHeightCell - stateInfoGame.getViewLayout().getTopBorderLayout();
 		//start position the camera in axis Y
-		final int positionX = stateInfoManager.getCameraMapInfo().getRealCameraX() - stateInfoManager.getViewLayout().getLeftBorderLayout();
+		final int positionX = stateInfoGame.getCameraMapInfo().getRealCameraX() - stateInfoGame.getViewLayout().getLeftBorderLayout();
 		
-		final int mapLayoutWidth = stateInfoManager.getViewLayout().getViewWidth() + stateInfoManager.getViewLayout().getLeftBorderLayout();
-		final int mapLayoutHeight = stateInfoManager.getViewLayout().getViewHeight() + stateInfoManager.getViewLayout().getTopBorderLayout();
+		final int mapLayoutWidth = stateInfoGame.getViewLayout().getViewWidth() + stateInfoGame.getViewLayout().getLeftBorderLayout();
+		final int mapLayoutHeight = stateInfoGame.getViewLayout().getViewHeight() + stateInfoGame.getViewLayout().getTopBorderLayout();
 
 		while ((tileY = ((currentTileRow * middleBackgroundHeightCell) - positionY)) < mapLayoutHeight) {
 			
@@ -273,7 +273,7 @@ public class MapBackgroundManager {
 			//position of the tile on the X axis (single cell)
 			int tileX = 0;
 			
-			while ((tileX = ((currentTileColumn * stateInfoManager.getWorldMapInfo().getWidthCell()) - positionX) - (isMod ? middleBackgroundWidthCell : 0)) < mapLayoutWidth) {
+			while ((tileX = ((currentTileColumn * stateInfoGame.getWorldMapInfo().getWidthCell()) - positionX) - (isMod ? middleBackgroundWidthCell : 0)) < mapLayoutWidth) {
 									
 				CellBackgroundInfo currentCellBackgroundInfo = drawCell(g, currentTileRow, currentTileColumn, tileY, tileX, cellBackgroundProvider);
 				

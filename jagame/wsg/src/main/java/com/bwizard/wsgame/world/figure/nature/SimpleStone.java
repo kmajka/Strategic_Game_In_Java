@@ -4,7 +4,7 @@ import com.bwizard.wsgame.parameters.GameGlobals;
 import com.bwizard.wsgame.world.figure.GameFigure;
 import com.bwizard.wsgame.world.figure.handlers.StoneType;
 
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.utils.ImageUtil;
 
 public class SimpleStone extends GameFigure {
@@ -13,8 +13,8 @@ public class SimpleStone extends GameFigure {
 		initialize(stoneType);
 	}
 	
-	public SimpleStone(int x, int y, StateInfoManager stateInfoManager, StoneType stoneType) {
-		super(x , y, stateInfoManager);
+	public SimpleStone(int x, int y, StateInfoGame stateInfoGame, StoneType stoneType) {
+		super(x , y, stateInfoGame);
 		initialize(stoneType);
 	}
 	

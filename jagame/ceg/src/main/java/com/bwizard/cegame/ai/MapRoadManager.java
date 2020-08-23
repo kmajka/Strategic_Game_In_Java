@@ -1,17 +1,17 @@
 package com.bwizard.cegame.ai;
 
-import com.bwizard.cegame.state.StateInfoManager;
+import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.world.map.cell.CellRoadInfo;
 
 public class MapRoadManager {
 
 	private CellRoadInfo[][] cellRoadInfoTab = null;
 	
-	protected StateInfoManager stateInfoManager = null;
+	protected StateInfoGame stateInfoGame = null;
 
-	public MapRoadManager(StateInfoManager stateInfoManager) {
+	public MapRoadManager(StateInfoGame stateInfoGame) {
 		
-		this.stateInfoManager = stateInfoManager;
+		this.stateInfoGame = stateInfoGame;
 	}
 
 	public CellRoadInfo[][] getCellRoadInfoTab() {
