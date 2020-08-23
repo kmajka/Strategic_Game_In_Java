@@ -1,4 +1,4 @@
-package com.bwizard.wsgame.window;
+package com.bwizard.wsgame.admin;
 
 import com.bwizard.cegame.thread.ThreadScheduler;
 

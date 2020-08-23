@@ -5,7 +5,7 @@ import com.bwizard.cegame.logs.LogMonitor;
 import com.bwizard.cegame.validation.BaseValidator;
 import com.bwizard.cegame.validation.interfaces.IValidField;
 import com.bwizard.wsgame.documents.names.*;
-import com.bwizard.wsgame.window.GameRunner;
+import com.bwizard.wsgame.admin.GameRunner;
 
 import java.util.Arrays;
 import java.util.List;
