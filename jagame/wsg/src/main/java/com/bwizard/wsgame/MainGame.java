@@ -27,17 +27,8 @@ public class MainGame {
    */
 	public static void main(String[] args) {
 
-		BaseValidator baseValidator = new BaseValidator();
-
 		try	{
-
 			logInfo.info("start game...");
-//mocito,unit
-			List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
-					new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
-					
-			baseValidator.validateFields(listFieldsToCheck);
-
 			GameRunner game = new GameRunner();
 			game.start();
 
@@ -48,6 +39,15 @@ public class MainGame {
 
 		logInfo.info("end game.");
 
+	}
+
+	private void validateParameters() throws IllegalAccessException {
+		BaseValidator baseValidator = new BaseValidator();
+
+		List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
+				new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
+
+		baseValidator.validateFields(listFieldsToCheck);
 	}
 	
 	/*
