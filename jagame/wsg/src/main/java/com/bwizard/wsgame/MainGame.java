@@ -29,6 +29,7 @@ public class MainGame {
 
 		try	{
 			logInfo.info("start game...");
+			validateParameters();
 			GameRunner game = new GameRunner();
 			game.start();
 
@@ -41,7 +42,7 @@ public class MainGame {
 
 	}
 
-	private void validateParameters() throws IllegalAccessException {
+	private static void validateParameters() throws IllegalAccessException {
 		BaseValidator baseValidator = new BaseValidator();
 
 		List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
