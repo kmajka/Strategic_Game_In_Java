@@ -1,4 +1,4 @@
-package com.bwizard.wsgame.admin;
+package com.bwizard.wsgame.config;
 
 import com.bwizard.wsgame.controller.CustomWorldGame;
 import com.bwizard.wsgame.documents.CustomPanelLayoutManager;

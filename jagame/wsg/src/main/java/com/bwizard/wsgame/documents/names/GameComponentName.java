@@ -1,5 +1,6 @@
 package com.bwizard.wsgame.documents.names;
 
+
 import com.bwizard.cegame.validation.interfaces.IValidField;
 
 /**

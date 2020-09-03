@@ -1,11 +1,10 @@
 package com.bwizard.wsgame;
 
-import com.bwizard.cegame.logs.LogInfo;
-import com.bwizard.cegame.logs.LogMonitor;
 import com.bwizard.cegame.validation.BaseValidator;
 import com.bwizard.cegame.validation.interfaces.IValidField;
+
+import com.bwizard.wsgame.config.GameRunner;
 import com.bwizard.wsgame.documents.names.*;
-import com.bwizard.wsgame.admin.GameRunner;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,38 +16,26 @@ import java.util.List;
  */
 public class MainGame {
 	
-	private static final LogInfo logInfo = new LogInfo(MainGame.class);
-	
    /**
-   * This method demonstrates the game.
+   * This method run the game.
    * @param args Unused.
    * @return Nothing.
-   * @throws Exception 
    */
 	public static void main(String[] args) {
 
-		try	{
-			logInfo.info("start game...");
-			validateParameters();
+		List<IValidField> listFieldsToCheck = Arrays.asList(new CmnComponentName(),
+															new CmnObjectName(),
+															new EditorComponentName(),
+															new EditorObjectName(),
+															new GameComponentName(),
+															new GameObjectName(),
+															new MenuComponentName());
+
+        BaseValidator baseValidator = new BaseValidator();
+		if (baseValidator.validateConstantFields(listFieldsToCheck)) {
 			GameRunner game = new GameRunner();
 			game.start();
-
-		} catch (Exception ex) {
-			LogMonitor.buildInfo(logInfo, ex);
-			System.out.println(ex.getMessage());
 		}
-
-		logInfo.info("end game.");
-
-	}
-
-	private static void validateParameters() throws IllegalAccessException {
-		BaseValidator baseValidator = new BaseValidator();
-
-		List<IValidField> listFieldsToCheck = Arrays.asList( new CmnComponentName(), new CmnObjectName(), new EditorComponentName(),
-				new EditorObjectName(), new GameComponentName(), new GameObjectName(), new MenuComponentName() );
-
-		baseValidator.validateFields(listFieldsToCheck);
 	}
 	
 	/*
