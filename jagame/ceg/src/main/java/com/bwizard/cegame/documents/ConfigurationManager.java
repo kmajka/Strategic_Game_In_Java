@@ -37,7 +37,7 @@ public class ConfigurationManager extends BaseManager {
 	}
 			
 	
-	public void fillDocumentCollection(String filePath) throws Exception {
+	public void fillDocumentCollection(String filePath) {
 		
 		logInfo.info("start: fillDocumentCollection("+filePath+")");
 		

@@ -58,10 +58,9 @@ public class CustomWorldGame extends BaseWorldGame {
 	 * This constructor creates image for ball which will be managed by FrameManager
 	 * windowScreen - add information about window to main world to serve actions like close application etc.
 	 */
-	public CustomWorldGame(IWindowScreen windowScreen, StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame,
-						   ThreadScheduler threadScheduler) throws Exception {
+	public CustomWorldGame(IWindowScreen windowScreen, StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame) throws Exception {
 		
-		super(windowScreen, stateInfoGame, baseWindowGame, threadScheduler);
+		super(windowScreen, stateInfoGame, baseWindowGame);
 				
 		cellBackgroundProvider = new CellBackgroundProvider(stateInfoGame);
 		this.stateInfoGame = stateInfoGame;

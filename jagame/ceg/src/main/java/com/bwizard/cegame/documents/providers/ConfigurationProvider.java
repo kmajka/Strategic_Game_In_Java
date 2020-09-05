@@ -19,8 +19,7 @@ public class ConfigurationProvider {
 		configurationManager = new ConfigurationManager(new DocumentConfigurationLayout());
 	}
 	
-	public void loadData() throws Exception {
-
+	public void loadData() {
 		configurationManager.fillDocumentCollection(pathFileName);
 		configurationManager.loadConfigurationGame();
 	}
@@ -41,10 +40,6 @@ public class ConfigurationProvider {
 			
 			IFigureConfiguration figureConfiguration = baseConfiguration.getFigureConfiguration();
 			if(figureConfiguration != null) {
-				//BaseDrawFigure configFigure = figureConfiguration.getFigure();
-				//if (configFigure != null) {
-				//	
-				//}
 				list.add(figureConfiguration);
 			}
 		}

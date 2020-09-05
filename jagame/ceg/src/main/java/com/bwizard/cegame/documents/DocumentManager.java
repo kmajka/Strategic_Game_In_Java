@@ -105,9 +105,7 @@ public class DocumentManager<T> {
 				}
 			}
 		}
-		
-		
-		
+
 		logInfo.info("start: fillDocumentCollection(ArrayList<T> listElement, "+pathName+")");
 	}
 	  

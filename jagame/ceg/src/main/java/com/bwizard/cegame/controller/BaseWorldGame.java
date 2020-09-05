@@ -1,16 +1,5 @@
 package com.bwizard.cegame.controller;
 
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.image.BufferStrategy;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
 import com.bwizard.cegame.camera.CameraMapInfo;
 import com.bwizard.cegame.controls.components.BaseDrawFigure;
 import com.bwizard.cegame.device.interfaces.ICursorController;
@@ -29,12 +18,17 @@ import com.bwizard.cegame.state.handlers.Entry;
 import com.bwizard.cegame.thread.ThreadInfo;
 import com.bwizard.cegame.thread.ThreadScheduler;
 import com.bwizard.cegame.thread.ThreadStatus;
-import com.bwizard.cegame.time.MonitorTime;
 import com.bwizard.cegame.tools.DrawManager;
 import com.bwizard.cegame.window.BaseWindowGame;
 import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 import com.bwizard.cegame.world.map.MapBackgroundManager;
 import com.bwizard.cegame.world.map.WorldMapInfo;
+
+import java.awt.*;
+import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * This class represents whole map for updating position and painting
@@ -46,20 +40,20 @@ public class BaseWorldGame extends Canvas {
 	private static final long serialVersionUID = -5880974255843436127L;
 	
 	private static final int FRAME_DELAY = 10;
-	private ThreadScheduler threadScheduler = null;
-	private ThreadInfo threadInfo = null;
+	private final ThreadScheduler threadScheduler;
+	private final ThreadInfo threadInfo;
 
-	private IWindowScreen windowScreen = null;
+	private final IWindowScreen windowScreen;
 	
-	protected WorldObjectManager worldObjectManager = null;
-	protected UserViewManager userViewManager = null;
-	protected StateInfoGame stateInfoGame = null;
+	protected WorldObjectManager worldObjectManager;
+	protected UserViewManager userViewManager;
+	protected StateInfoGame stateInfoGame;
 	protected MapBackgroundManager mapBackgroundManager = null;
-	private BaseWindowGame baseWindowGame = null;
+	private final BaseWindowGame baseWindowGame;
 	private ConfigurationProvider configurationProvider = null;
 	protected ICursorController cursorController = null;
 	protected IKeysController keysController = null;
-	public CleanerManager cleanerManager = null;
+	public CleanerManager cleanerManager;
 	protected MouseView mouseView = null;
 	protected KeysView keysView = null;
 	protected CursorAppearance gameCursor = null;
@@ -73,7 +67,7 @@ public class BaseWorldGame extends Canvas {
 	 * @param gameWorld The value describes custom world created by user
 	 */
 	public BaseWorldGame(final IWindowScreen windowScreen, final StateInfoGame stateInfoGame,
-			BaseWindowGame baseWindowGame, ThreadScheduler threadScheduler) {
+			BaseWindowGame baseWindowGame) {
 				
 		this.windowScreen = windowScreen;
 		
@@ -89,7 +83,7 @@ public class BaseWorldGame extends Canvas {
 		this.userViewManager = new UserViewManager();
 		worldObjectManager.setUserViewManager(userViewManager);
 		
-		this.threadScheduler = threadScheduler;
+		this.threadScheduler = new ThreadScheduler(1);
 		
 		this.cleanerManager = new CleanerManager();
 		
@@ -108,40 +102,36 @@ public class BaseWorldGame extends Canvas {
 		requestFocus();
 		final BufferStrategy bufferStrategy = getBufferStrategy();
 		
-		threadScheduler.setTask( new Runnable() {
-			
-			@Override
-			public void run() {
-				
-				stateInfoGame.getMonitorTime().start();
-				
-				//Game loop
-				while(threadInfo.getThreadStatus() != ThreadStatus.EXITED) {
-					
-					threadInfo.updateThreadStatus();
-					
-					//SUSPEND is use for hold all operations during reload data from menu
-					if (threadInfo.getThreadStatus() != ThreadStatus.SUSPEND) {
-						
-						if (threadInfo.getThreadStatus() != ThreadStatus.PAUSED) {
-												
-							stateInfoGame.getMonitorTime().refresh();
-						} 
-						
-						// paint tiles into terrain, paint objects (arc, rectanagle ...) into game, displayed selected rectangle, paint the user panels
-						updateGamedState(bufferStrategy, threadInfo.getThreadStatus());
+		threadScheduler.setTask(() -> {
+
+			stateInfoGame.getMonitorTime().start();
+
+			//Game loop
+			while(threadInfo.getThreadStatus() != ThreadStatus.EXITED) {
+
+				threadInfo.updateThreadStatus();
+
+				//SUSPEND is use for hold all operations during reload data from menu
+				if (threadInfo.getThreadStatus() != ThreadStatus.SUSPEND) {
+
+					if (threadInfo.getThreadStatus() != ThreadStatus.PAUSED) {
+
+						stateInfoGame.getMonitorTime().refresh();
 					}
-					
-					cleanUnusedResources();
-					
-					sleep();
-					
+
+					// paint tiles into terrain, paint objects (arc, rectangle ...) into game, displayed selected rectangle, paint the user panels
+					updateGamedState(bufferStrategy);
 				}
-				mainWindow.clean();
-				
-				//update hidden parameter (e.g. class GamePanelHandler => WindowGameName.EXIT or WindowGameName.REOPEN) to skip problem with 2 threads
-				baseWindowGame.refresh();
+
+				cleanUnusedResources();
+
+				sleep();
+
 			}
+			mainWindow.clean();
+
+			//update hidden parameter (e.g. class GamePanelHandler => WindowGameName.EXIT or WindowGameName.REOPEN) to skip problem with 2 threads
+			baseWindowGame.refresh();
 		});
 	}
 
@@ -207,9 +197,9 @@ public class BaseWorldGame extends Canvas {
 	
 	/**
 	 * This method paints all objects into screen games.
-	 * @param elapsedTime This variable provide information about elapsed time in game - since the start of the game.
+	 * @param bufferStrategy object for drawing
 	 */
-	private void updateGamedState(BufferStrategy bufferStrategy, ThreadStatus threadStatus) {
+	private void updateGamedState(BufferStrategy bufferStrategy) {
 
 		if (threadInfo.getThreadStatus() != ThreadStatus.PAUSED) {
 			stateInfoGame.getCameraMapInfo().AutoCameraInvoke();
@@ -250,7 +240,7 @@ public class BaseWorldGame extends Canvas {
 	public String displayInfoTime(long time) {
 		long second = TimeUnit.MILLISECONDS.toSeconds(time) % 60;
 		long minute = TimeUnit.MILLISECONDS.toSeconds(time) / 60;
-		return (minute > 0 ? String.valueOf(minute) + " min. ":  "") + String.valueOf(second) +" sec. ";
+		return (minute > 0 ? minute + " min. ":  "") + second +" sec. ";
 	}
 	
 	public CameraMapInfo getCameraMapInfo() {
@@ -299,10 +289,9 @@ public class BaseWorldGame extends Canvas {
 	}
 	
 	/**
-	 * @override
 	 * This method paints world in specific games.
 	 * @param g This variable provide graphics bufferStrategy tool.
-	 * @param listPoint The information about all objects added to map by clicked mouse.
+	 * @param worldObjectManager The information about all objects added to map by clicked mouse.
 	 * @return Nothing.
 	 */
 	protected void paintFiguresInUserView(Graphics g, WorldObjectManager worldObjectManager) {
@@ -310,16 +299,14 @@ public class BaseWorldGame extends Canvas {
 	
 	/**
 	 * This method updates world(calculations) in games.
-	 * @param worldObjectManager This variable information about all objects in the world.
+	 * @param allObjects This variable information about all objects in the world.
 	 */
 	protected void updateWorld(List<BaseFigure> allObjects) {
 	}
 	
 	/**
-	 * @override
 	 * This method paints layout from management panel 
 	 * @param g This variable provide graphics bufferStrategy tool.
-	 * @param stateInfoGame
 	 */
 	protected void paintBackgroundInUserView(Graphics g) {
 	}
@@ -359,15 +346,6 @@ public class BaseWorldGame extends Canvas {
 		}
 		
 		return null;
-	}
-	
-	public void changeTagElement(String oldTag, String newTag) throws Exception {
-		ArrayList<BaseDrawFigure> list = getStateInfoGame().getPanelLayoutManager().getElementsByTag(oldTag);
-		if (list != null && list.size() == 1) {
-			list.get(0).setTag(newTag);
-		} else {
-			throw new Exception("There is no tag "+oldTag+" element for change.");
-		}
 	}
 	
 	public void setTextForTagElement(String tag, String text) throws Exception {

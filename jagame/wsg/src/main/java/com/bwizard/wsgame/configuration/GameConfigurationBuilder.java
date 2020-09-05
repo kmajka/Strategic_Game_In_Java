@@ -29,34 +29,28 @@ import com.bwizard.cegame.window.screen.provider.SimpleScreenProvider;
  * @version 1.0
  */
 public class GameConfigurationBuilder {
-	
-	//member to send/receive some parameters from thread
+
 	private BaseWindowGame baseWindowGame;
-	private ThreadScheduler threadScheduler = null;
 	private static final LogInfo logInfo = new LogInfo(GameConfigurationBuilder.class);
-	
-	public GameConfigurationBuilder(ThreadScheduler threadScheduler) {
-		this.threadScheduler = threadScheduler;
+
+	public GameConfigurationBuilder() {
 		baseWindowGame = new BaseWindowGame(WindowGameActionName.REOPEN);
 	}
-	
+
 	public void invoke(String layoutName) {
 		
 		EventQueue.invokeLater( new Runnable() {
 			@Override
 			public void run() {
-				
 				logInfo.info("start: invoke()");
 				
 				try {
-					//create main window (e.g. simple screen) with title
-					IWindowScreen mainWindow = null;
-
 					//1.SetGeneralConfiguration()
 					ConfigurationProvider configurationProvider = new ConfigurationProvider(GameGlobals.CONFIG_DATA + "GameConfiguration.xml");
 					configurationProvider.loadData();	
 
 					//2.SetWindowScreen
+					IWindowScreen mainWindow = null;
 					if (configurationProvider.getVideoConfiguration().isWindowedMode()) {
 						mainWindow = new SimpleScreenProvider(configurationProvider);
 					} else {
@@ -69,7 +63,7 @@ public class GameConfigurationBuilder {
 					stateInfoGame.setWindowScreen(mainWindow);
 					
 					//map->Canvas
-					BaseWorldGame baseWorldGame = new CustomWorldGame(mainWindow, stateInfoGame, baseWindowGame, threadScheduler);
+					BaseWorldGame baseWorldGame = new CustomWorldGame(mainWindow, stateInfoGame, baseWindowGame);
 					baseWorldGame.setConfigurationProvider(configurationProvider);
 					//create layout interface
 					DocumentPanelLayout documentPanelLayout = new DocumentGamePanelLayout(baseWorldGame);
@@ -106,9 +100,7 @@ public class GameConfigurationBuilder {
 				}
 				
 				logInfo.info("exit: invoke()");
-					
 			}
-			
 		});
 	}
 
