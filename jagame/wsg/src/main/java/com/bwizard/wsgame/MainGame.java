@@ -3,7 +3,7 @@ package com.bwizard.wsgame;
 import com.bwizard.cegame.validation.BaseValidator;
 import com.bwizard.cegame.validation.interfaces.IValidField;
 
-import com.bwizard.wsgame.configuration.GameRunner;
+import com.bwizard.wsgame.runner.GameRunner;
 import com.bwizard.wsgame.documents.names.*;
 
 import java.util.Arrays;

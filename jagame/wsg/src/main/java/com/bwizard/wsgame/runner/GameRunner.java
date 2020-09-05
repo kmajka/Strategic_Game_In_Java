@@ -1,7 +1,8 @@
-package com.bwizard.wsgame.configuration;
+package com.bwizard.wsgame.runner;
 
 import com.bwizard.cegame.controller.BaseWorldGame;
 import com.bwizard.cegame.documents.PanelLayoutManager;
+import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
 import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.logs.LogInfo;
@@ -24,17 +25,14 @@ import java.awt.*;
  * @author Krzysztof Majka
  * @version 1.0
  */
-public class GameConfiguration {
+public class GameRunner {
 
-	private static final LogInfo logInfo = new LogInfo(GameConfiguration.class);
-	//private final BaseWindowGame baseWindowGame;
+	private static final LogInfo logInfo = new LogInfo(GameRunner.class);
 	private final ConfigurationProvider configurationProvider;
 
-	public GameConfiguration() {
+	public GameRunner() {
 		configurationProvider = new ConfigurationProvider(GameGlobals.CONFIG_DATA + "GameConfiguration.xml");
 		configurationProvider.loadData();
-
-
 	}
 
 	private IWindowScreen getWindow() {
@@ -42,13 +40,20 @@ public class GameConfiguration {
 		return windowFactory.createWindow();
 	}
 
-	private BaseWorldGame getWorld(StateInfoGame stateInfoGame) throws Exception {
+	private BaseWorldGame getWorld(StateInfoGame stateInfoGame) {
 		BaseWindowGame baseWindowGame = new BaseWindowGame(WindowGameActionName.REOPEN);
 		return new CustomWorldGame(stateInfoGame, baseWindowGame);
 	}
 
-	public void invoke(String layoutName) {
-		
+	private IPanelLayoutManager getMenuLayout(BaseWorldGame baseWorldGame, DocumentPanelLayout documentPanelLayout) throws Exception {
+		PanelLayoutManager panelLayoutManager = new CustomPanelLayoutManager(baseWorldGame, documentPanelLayout, configurationProvider);
+		panelLayoutManager.setLayoutName("Game_Menu.xml");
+		panelLayoutManager.loadData();
+		return panelLayoutManager;
+	}
+
+	public void start() {
+
 		EventQueue.invokeLater(() -> {
 			logInfo.info("start: invoke()");
 
@@ -56,7 +61,7 @@ public class GameConfiguration {
 				IWindowScreen mainWindow = getWindow();
 				StateInfoGame stateInfoGame = new StateInfoGame(mainWindow);
 
-				//map->Canvas
+				//prepare map->Canvas
 				BaseWorldGame baseWorldGame = getWorld(stateInfoGame);
 
 				//create layout interface
@@ -64,11 +69,7 @@ public class GameConfiguration {
 
 				//EditorLayout.xml
 				//GameLayout.xml
-				PanelLayoutManager panelLayoutManager = new CustomPanelLayoutManager(baseWorldGame, documentPanelLayout, configurationProvider);
-				panelLayoutManager.setLayoutName(layoutName);
-
-				panelLayoutManager.loadData();
-
+				IPanelLayoutManager panelLayoutManager = getMenuLayout(baseWorldGame, documentPanelLayout);
 				baseWorldGame.setPanelLayoutManager(panelLayoutManager);
 
 				//set user view layout

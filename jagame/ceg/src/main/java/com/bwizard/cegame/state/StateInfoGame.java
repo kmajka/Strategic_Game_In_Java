@@ -17,13 +17,13 @@ import com.bwizard.cegame.world.map.WorldMapInfo;
  */
 public class StateInfoGame {
 	
-	private CameraMapInfo cameraMapInfo = null;
-	private CursorInfo cursorInfo = null;
-	private KeysInfo keysInfo = null;
-	private MonitorTime monitorTime = null;
-	private WorldMapInfo worldMapInfo = null;
+	private final CameraMapInfo cameraMapInfo;
+	private CursorInfo cursorInfo;
+	private final KeysInfo keysInfo;
+	private final MonitorTime monitorTime;
+	private final WorldMapInfo worldMapInfo;
 	private ThreadInfo threadInfo = null;
-	private IWindowScreen windowScreen = null;
+	private final IWindowScreen windowScreen;
 	private IViewLayout viewLayout = null;
 	private IPanelLayoutManager panelLayoutManager = null;
 
