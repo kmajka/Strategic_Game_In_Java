@@ -42,8 +42,6 @@ public class BaseWorldGame extends Canvas {
 	private static final int FRAME_DELAY = 10;
 	private final ThreadScheduler threadScheduler;
 	private final ThreadInfo threadInfo;
-
-	private final IWindowScreen windowScreen;
 	
 	protected WorldObjectManager worldObjectManager;
 	protected UserViewManager userViewManager;
@@ -66,10 +64,7 @@ public class BaseWorldGame extends Canvas {
 	 * @param mapInfo The value describes information about the map in world
 	 * @param gameWorld The value describes custom world created by user
 	 */
-	public BaseWorldGame(final IWindowScreen windowScreen, final StateInfoGame stateInfoGame,
-			BaseWindowGame baseWindowGame) {
-				
-		this.windowScreen = windowScreen;
+	public BaseWorldGame(final StateInfoGame stateInfoGame,	BaseWindowGame baseWindowGame) {
 		
 		this.baseWindowGame = baseWindowGame;
 		
@@ -174,7 +169,7 @@ public class BaseWorldGame extends Canvas {
 	 * @return simpleScreenManager The value for main screen window.
 	 */
 	public IWindowScreen getWindowScreen() {
-		return windowScreen;
+		return stateInfoGame.getWindowScreen();
 	}
 	
 	/**
@@ -321,14 +316,6 @@ public class BaseWorldGame extends Canvas {
 	
 	public BaseWindowGame getBaseWindowGame() {
 		return baseWindowGame;
-	}
-
-	public ConfigurationProvider getConfigurationProvider() {
-		return configurationProvider;
-	}
-
-	public void setConfigurationProvider(ConfigurationProvider configurationProvider) {
-		this.configurationProvider = configurationProvider;
 	}
 	
 	public BaseDrawFigure getElementByTag(String tag) {

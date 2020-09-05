@@ -5,6 +5,7 @@ import java.awt.Dimension;
 
 import com.bwizard.cegame.device.handlers.CursorName;
 import com.bwizard.cegame.device.interfaces.ICursorController;
+import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.window.layout.interfaces.IWindowLayout;
 
 /*

@@ -1,28 +1,10 @@
 package com.bwizard.wsgame.controller;
 
-import com.bwizard.wsgame.device.model.KeysEditorCustomModel;
-import com.bwizard.wsgame.device.model.KeysGameCustomModel;
-import com.bwizard.wsgame.device.view.GameCursorAppearance;
-import com.bwizard.wsgame.documents.layout.DocumentBackgroundLayout;
-import com.bwizard.wsgame.documents.layout.DocumentFigureLayout;
-import com.bwizard.wsgame.world.map.provider.CellBackgroundProvider;
-
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.List;
-
 import com.bwizard.cegame.controller.BaseWorldGame;
 import com.bwizard.cegame.controller.WorldObjectManager;
 import com.bwizard.cegame.device.controller.CursorController;
 import com.bwizard.cegame.device.controller.KeysController;
-import com.bwizard.cegame.device.model.CursorDialogModel;
-import com.bwizard.cegame.device.model.CursorEditorModel;
-import com.bwizard.cegame.device.model.CursorEmptyModel;
-import com.bwizard.cegame.device.model.CursorGameModel;
-import com.bwizard.cegame.device.model.CursorMenuModel;
-import com.bwizard.cegame.device.model.KeysDialogModel;
-import com.bwizard.cegame.device.model.KeysEmptyModel;
-import com.bwizard.cegame.device.model.KeysMenuModel;
+import com.bwizard.cegame.device.model.*;
 import com.bwizard.cegame.device.view.CursorAppearance;
 import com.bwizard.cegame.device.view.KeysView;
 import com.bwizard.cegame.device.view.MouseView;
@@ -33,11 +15,17 @@ import com.bwizard.cegame.figure.interfaces.IFigureMove;
 import com.bwizard.cegame.logs.LogInfo;
 import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.state.handlers.Entry;
-import com.bwizard.cegame.thread.ThreadScheduler;
 import com.bwizard.cegame.window.BaseWindowGame;
-import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 import com.bwizard.cegame.world.map.MapBackgroundManager;
+import com.bwizard.wsgame.device.model.KeysEditorCustomModel;
+import com.bwizard.wsgame.device.model.KeysGameCustomModel;
+import com.bwizard.wsgame.device.view.GameCursorAppearance;
+import com.bwizard.wsgame.documents.layout.DocumentBackgroundLayout;
+import com.bwizard.wsgame.documents.layout.DocumentFigureLayout;
+import com.bwizard.wsgame.world.map.provider.CellBackgroundProvider;
 
+import java.awt.*;
+import java.util.List;
 
 /**
  * This class creates world for specific game
@@ -47,20 +35,13 @@ import com.bwizard.cegame.world.map.MapBackgroundManager;
 public class CustomWorldGame extends BaseWorldGame {
 
 	private static final LogInfo logInfo = new LogInfo(CustomWorldGame.class);
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = -3549159518493868586L;
-	private CellBackgroundProvider cellBackgroundProvider = null;
-	private LayoutManager layoutManager = null;
-	/*
-	 * This constructor creates image for ball which will be managed by FrameManager
-	 * windowScreen - add information about window to main world to serve actions like close application etc.
-	 */
-	public CustomWorldGame(IWindowScreen windowScreen, StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame) throws Exception {
-		
-		super(windowScreen, stateInfoGame, baseWindowGame);
+	private final CellBackgroundProvider cellBackgroundProvider;
+	private final LayoutManager layoutManager;
+
+	public CustomWorldGame(StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame) {
+		super(stateInfoGame, baseWindowGame);
 				
 		cellBackgroundProvider = new CellBackgroundProvider(stateInfoGame);
 		this.stateInfoGame = stateInfoGame;
@@ -119,7 +100,6 @@ public class CustomWorldGame extends BaseWorldGame {
 	}	
 
 	/**
-	 * @override
 	 * This method paints figures world in user view games.
 	 * @param g This variable provide graphics bufferStrategy tool.
 	 * @param worldObjectManager The information about object in game.
@@ -155,7 +135,7 @@ public class CustomWorldGame extends BaseWorldGame {
 		
 		int x3 = stateInfoGame.getCursorInfo().getEndScreenSelectionX();
 		int y3 = stateInfoGame.getCursorInfo().getEndScreenSelectionY();
-		
+
 		int x2 = x1;
 		int y2 = y3;
 		

@@ -16,17 +16,14 @@ import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
  * @author Krzysztof Majka
  * @version 1.0
  */
-public class SimpleScreenProvider extends WindowScreen implements IWindowScreen {
+public class SimpleScreenWindow extends WindowScreen implements IWindowScreen {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3159210109676022841L;
-	private int screenWidth = 0;
-	private int screenHeight = 0;
-	private ConfigurationProvider configurationProvider = null;
+	private final int screenWidth;
+	private final int screenHeight;
+	private final ConfigurationProvider configurationProvider;
 	
-	public SimpleScreenProvider(ConfigurationProvider configurationProvider) {
+	public SimpleScreenWindow(ConfigurationProvider configurationProvider) {
 		
 		this.configurationProvider = configurationProvider;
 	

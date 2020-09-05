@@ -27,7 +27,9 @@ public class StateInfoGame {
 	private IViewLayout viewLayout = null;
 	private IPanelLayoutManager panelLayoutManager = null;
 
-	public StateInfoGame() {
+	public StateInfoGame(IWindowScreen mainWindow) {
+		this.windowScreen = mainWindow;
+
 		monitorTime = new MonitorTime();
 		cursorInfo = new CursorInfo();
 		keysInfo = new KeysInfo();
@@ -60,10 +62,6 @@ public class StateInfoGame {
 
 	public IWindowScreen getWindowScreen() {
 		return windowScreen;
-	}
-
-	public void setWindowScreen(IWindowScreen windowScreen) {
-		this.windowScreen = windowScreen;
 	}
 
 	public IViewLayout getViewLayout() {

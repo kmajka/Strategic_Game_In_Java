@@ -15,11 +15,8 @@ import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
  * @author Krzysztof Majka
  * @version 1.0
  */
-public class FullScreenProvider extends WindowScreen implements IWindowScreen {
+public class FullScreenWindow extends WindowScreen implements IWindowScreen {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2592717624133003306L;
 	private GraphicsDevice graphicsDevice = null;
 	private DisplayMode currentdisplayMode;
@@ -27,7 +24,7 @@ public class FullScreenProvider extends WindowScreen implements IWindowScreen {
 	private int screenWidth = 0;
 	private int screenHeight = 0;
 	
-	public FullScreenProvider(ConfigurationProvider configurationProvider) {
+	public FullScreenWindow(ConfigurationProvider configurationProvider) {
 		
 		if(configurationProvider.getVideoConfiguration().isFullScreen()) {
 			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
