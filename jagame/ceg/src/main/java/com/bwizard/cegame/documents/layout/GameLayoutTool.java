@@ -22,7 +22,7 @@ import com.bwizard.cegame.utils.BooleanUtil;
 import com.bwizard.cegame.utils.ColorUtil;
 import com.bwizard.cegame.utils.StringUtil;
 
-public class DocumentLayoutTool {
+public class GameLayoutTool {
 
 	public static BaseDrawFigure getComponentFigure(String name) {
 		

@@ -7,7 +7,7 @@ import com.bwizard.cegame.configuration.components.interfaces.IFigureConfigurati
 import com.bwizard.cegame.configuration.components.interfaces.ISoundConfiguration;
 import com.bwizard.cegame.configuration.components.interfaces.IVideoConfiguration;
 import com.bwizard.cegame.documents.ConfigurationManager;
-import com.bwizard.cegame.documents.layout.DocumentConfigurationLayout;
+import com.bwizard.cegame.documents.layout.GameConfigurationLayout;
 
 public class ConfigurationProvider {
 
@@ -16,7 +16,7 @@ public class ConfigurationProvider {
 	
 	public ConfigurationProvider(String pathFileName) {
 		this.pathFileName = pathFileName;
-		configurationManager = new ConfigurationManager(new DocumentConfigurationLayout());
+		configurationManager = new ConfigurationManager(new GameConfigurationLayout());
 	}
 	
 	public void loadData() {

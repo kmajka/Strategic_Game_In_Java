@@ -70,6 +70,7 @@ public class StateInfoGame {
 
 	public void setViewLayout(IViewLayout viewLayout) {
 		this.viewLayout = viewLayout;
+		this.cameraMapInfo.setViewLayout(viewLayout);
 	}
 
 	public IPanelLayoutManager getPanelLayoutManager() {

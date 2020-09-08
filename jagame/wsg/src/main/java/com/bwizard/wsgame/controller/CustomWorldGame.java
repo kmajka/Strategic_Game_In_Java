@@ -9,7 +9,7 @@ import com.bwizard.cegame.device.view.CursorAppearance;
 import com.bwizard.cegame.device.view.KeysView;
 import com.bwizard.cegame.device.view.MouseView;
 import com.bwizard.cegame.documents.LayoutManager;
-import com.bwizard.cegame.documents.layout.DocumentConfigurationLayout;
+import com.bwizard.cegame.documents.layout.GameConfigurationLayout;
 import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.figure.interfaces.IFigureMove;
 import com.bwizard.cegame.logs.LogInfo;
@@ -20,8 +20,8 @@ import com.bwizard.cegame.world.map.MapBackgroundManager;
 import com.bwizard.wsgame.device.model.KeysEditorCustomModel;
 import com.bwizard.wsgame.device.model.KeysGameCustomModel;
 import com.bwizard.wsgame.device.view.GameCursorAppearance;
-import com.bwizard.wsgame.documents.layout.DocumentBackgroundLayout;
-import com.bwizard.wsgame.documents.layout.DocumentFigureLayout;
+import com.bwizard.wsgame.documents.layout.CustomBackgroundLayout;
+import com.bwizard.wsgame.documents.layout.CustomFigureLayout;
 import com.bwizard.wsgame.world.map.provider.CellBackgroundProvider;
 
 import java.awt.*;
@@ -48,16 +48,16 @@ public class CustomWorldGame extends BaseWorldGame {
 		
 		//create map from xml
 
-		DocumentConfigurationLayout documentMapConfigurationLayout = new DocumentConfigurationLayout();
-		DocumentBackgroundLayout documentBackgroundLayout = new DocumentBackgroundLayout(stateInfoGame);
-		DocumentFigureLayout documentFigureLayout = new DocumentFigureLayout();
+		GameConfigurationLayout documentMapConfigurationLayout = new GameConfigurationLayout();
+		CustomBackgroundLayout customBackgroundLayout = new CustomBackgroundLayout(stateInfoGame);
+		CustomFigureLayout customFigureLayout = new CustomFigureLayout();
 			
 		mapBackgroundManager = new MapBackgroundManager(stateInfoGame);
 		
 		layoutManager = new LayoutManager(this);
 		layoutManager.setDocumentMapConfigurationLayout(documentMapConfigurationLayout);
-		layoutManager.setDocumentManagerBackgroundLayout(documentBackgroundLayout);
-		layoutManager.setDocumentManagerFigureLayout(documentFigureLayout);
+		layoutManager.setDocumentManagerBackgroundLayout(customBackgroundLayout);
+		layoutManager.setDocumentManagerFigureLayout(customFigureLayout);
 			
 	}
 	

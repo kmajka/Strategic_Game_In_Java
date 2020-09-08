@@ -8,12 +8,12 @@ import com.bwizard.cegame.configuration.components.MapConfiguration;
 import com.bwizard.cegame.controller.BaseWorldGame;
 import com.bwizard.cegame.controls.components.BaseDrawFigure;
 import com.bwizard.cegame.documents.LayoutManager;
-import com.bwizard.cegame.documents.layout.DocumentConfigurationLayout;
-import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
+import com.bwizard.cegame.documents.layout.GameConfigurationLayout;
+import com.bwizard.cegame.documents.layout.GamePanelLayout;
 
-public class DocumentGamePanelLayout extends DocumentPanelLayout {
+public class CustomPanelLayout extends GamePanelLayout {
 
-	public DocumentGamePanelLayout(BaseWorldGame baseWorldGame) {
+	public CustomPanelLayout(BaseWorldGame baseWorldGame) {
 		super(baseWorldGame);
 	}
 	
@@ -24,7 +24,7 @@ public class DocumentGamePanelLayout extends DocumentPanelLayout {
 			
 			LayoutManager layoutManager = new LayoutManager();
 			//set object to read configuration for map
-			layoutManager.setDocumentMapConfigurationLayout(new DocumentConfigurationLayout());
+			layoutManager.setDocumentMapConfigurationLayout(new GameConfigurationLayout());
 			//read configuration of map
 			layoutManager.fillDocumentCollection(GameGlobals.MAPS + component.getFileName());
 			//get configuration of map

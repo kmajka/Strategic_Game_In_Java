@@ -9,11 +9,11 @@ import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.utils.StringUtil;
 import com.bwizard.cegame.world.map.cell.CellBackgroundInfo;
 
-public class DocumentBackgroundLayout implements ICmnDocument<CellBackgroundInfo> {
+public class CustomBackgroundLayout implements ICmnDocument<CellBackgroundInfo> {
 	
 	private StateInfoGame stateInfoGame;
 	
-	public DocumentBackgroundLayout(StateInfoGame stateInfoGame) {
+	public CustomBackgroundLayout(StateInfoGame stateInfoGame) {
 		this.stateInfoGame = stateInfoGame;
 	}
 	

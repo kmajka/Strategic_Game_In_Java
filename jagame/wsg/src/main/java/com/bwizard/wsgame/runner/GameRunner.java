@@ -3,7 +3,7 @@ package com.bwizard.wsgame.runner;
 import com.bwizard.cegame.controller.BaseWorldGame;
 import com.bwizard.cegame.documents.PanelLayoutManager;
 import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
-import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
+import com.bwizard.cegame.documents.layout.GamePanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.logs.LogInfo;
 import com.bwizard.cegame.state.StateInfoGame;
@@ -15,7 +15,7 @@ import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 import com.bwizard.cegame.window.screen.provider.ScreenWindowFactory;
 import com.bwizard.wsgame.controller.CustomWorldGame;
 import com.bwizard.wsgame.documents.CustomPanelLayoutManager;
-import com.bwizard.wsgame.documents.layout.DocumentGamePanelLayout;
+import com.bwizard.wsgame.documents.layout.CustomPanelLayout;
 import com.bwizard.wsgame.parameters.GameGlobals;
 
 import java.awt.*;
@@ -45,8 +45,8 @@ public class GameRunner {
 		return new CustomWorldGame(stateInfoGame, baseWindowGame);
 	}
 
-	private IPanelLayoutManager getMenuLayout(BaseWorldGame baseWorldGame, DocumentPanelLayout documentPanelLayout) throws Exception {
-		PanelLayoutManager panelLayoutManager = new CustomPanelLayoutManager(baseWorldGame, documentPanelLayout, configurationProvider);
+	private IPanelLayoutManager getMenuLayout(BaseWorldGame baseWorldGame, GamePanelLayout gamePanelLayout) throws Exception {
+		PanelLayoutManager panelLayoutManager = new CustomPanelLayoutManager(baseWorldGame, gamePanelLayout, configurationProvider);
 		panelLayoutManager.setLayoutName("Game_Menu.xml");
 		panelLayoutManager.loadData();
 		return panelLayoutManager;
@@ -65,16 +65,15 @@ public class GameRunner {
 				BaseWorldGame baseWorldGame = getWorld(stateInfoGame);
 
 				//create layout interface
-				DocumentPanelLayout documentPanelLayout = new DocumentGamePanelLayout(baseWorldGame);
+				GamePanelLayout gamePanelLayout = new CustomPanelLayout(baseWorldGame);
 
 				//EditorLayout.xml
 				//GameLayout.xml
-				IPanelLayoutManager panelLayoutManager = getMenuLayout(baseWorldGame, documentPanelLayout);
+				IPanelLayoutManager panelLayoutManager = getMenuLayout(baseWorldGame, gamePanelLayout);
 				baseWorldGame.setPanelLayoutManager(panelLayoutManager);
 
 				//set user view layout
-				stateInfoGame.setViewLayout(documentPanelLayout);
-				stateInfoGame.getCameraMapInfo().setViewLayout(documentPanelLayout);
+				stateInfoGame.setViewLayout(gamePanelLayout);
 
 				//create main Layout for window
 				SimpleWindowLayout simpleWindowLayout = new SimpleWindowLayout(baseWorldGame);

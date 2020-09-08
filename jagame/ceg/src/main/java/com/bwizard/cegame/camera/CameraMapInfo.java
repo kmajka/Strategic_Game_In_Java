@@ -5,7 +5,7 @@ import com.bwizard.cegame.view.layout.interfaces.IViewLayout;
 import com.bwizard.cegame.world.map.WorldMapInfo;
 
 /*
- * This class stores information about the camera in the map (e.g camera can not go beyond the map )
+ * This class stores information about the camera in the map
  * @author Krzysztof Majka
  * @version 1.0
  */

@@ -8,7 +8,7 @@ import java.util.Set;
 import com.bwizard.cegame.controls.components.handlers.DrawListHandler;
 import com.bwizard.cegame.controls.components.list.InfoDrawListFigure;
 import com.bwizard.cegame.documents.handlers.Arrangement;
-import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
+import com.bwizard.cegame.documents.layout.GamePanelLayout;
 import com.bwizard.cegame.device.model.CursorInfo;
 import com.bwizard.cegame.parameters.CmnGlobals;
 import com.bwizard.cegame.tools.DrawManager;
@@ -246,7 +246,7 @@ public class DrawList extends BaseDrawFigure {
 				if (this.getNumberRows() > figure.getCurrentRow() && this.getNumberColumns() > figure.getCurrentColumn() 
 						&& figure.getCurrentRow() > -1 && figure.getCurrentColumn() > -1) {
 					baseFigure.setVisible(true);
-					DocumentPanelLayout.setProperComponentSize(baseFigure, figure.getCurrentRow(), figure.getCurrentColumn(), buttonSize);
+					GamePanelLayout.setProperComponentSize(baseFigure, figure.getCurrentRow(), figure.getCurrentColumn(), buttonSize);
 					baseFigure.paint(g);
 					
 				} else {

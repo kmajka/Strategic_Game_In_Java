@@ -8,7 +8,7 @@ import com.bwizard.cegame.controls.components.BaseDrawFigure;
 import com.bwizard.cegame.controls.components.DrawMap;
 import com.bwizard.cegame.controls.components.interfaces.IEventHandler;
 import com.bwizard.cegame.documents.PanelLayoutManager;
-import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
+import com.bwizard.cegame.documents.layout.GamePanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.logs.LogInfo;
@@ -27,8 +27,8 @@ public class CustomPanelLayoutManager extends PanelLayoutManager {
 	
 	private static final LogInfo logInfo = new LogInfo(CustomPanelLayoutManager.class);
 	
-	public CustomPanelLayoutManager(BaseWorldGame baseWorldGame, DocumentPanelLayout documentPanelLayout, ConfigurationProvider configurationProvider) throws Exception {
-		super(baseWorldGame, documentPanelLayout, configurationProvider);
+	public CustomPanelLayoutManager(BaseWorldGame baseWorldGame, GamePanelLayout gamePanelLayout, ConfigurationProvider configurationProvider) throws Exception {
+		super(baseWorldGame, gamePanelLayout, configurationProvider);
 	}
 	
 	@Override

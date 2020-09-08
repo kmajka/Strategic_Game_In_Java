@@ -12,8 +12,8 @@ import com.bwizard.cegame.controls.components.BaseDrawFigure;
 import com.bwizard.cegame.controls.components.DrawList;
 import com.bwizard.cegame.controls.components.DrawMap;
 import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
-import com.bwizard.cegame.documents.layout.DocumentLayoutTool;
-import com.bwizard.cegame.documents.layout.DocumentPanelLayout;
+import com.bwizard.cegame.documents.layout.GameLayoutTool;
+import com.bwizard.cegame.documents.layout.GamePanelLayout;
 import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.state.StateInfoGame;
 
@@ -33,11 +33,11 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 	protected ListFigureManager listFigureManager = null;
 	private FocusedManager focusedManager = null;
 	protected DocumentManager<BaseDrawFigure> documentManagerPanelLayout = null;
-	protected DocumentPanelLayout documentPanelLayout = null;
+	protected GamePanelLayout gamePanelLayout = null;
 	private String layoutName;
 	protected ConfigurationProvider configurationProvider = null;
 	
-	public PanelLayoutManager(BaseWorldGame baseWorldGame, DocumentPanelLayout documentPanelLayout, ConfigurationProvider configurationProvider) throws Exception {
+	public PanelLayoutManager(BaseWorldGame baseWorldGame, GamePanelLayout gamePanelLayout, ConfigurationProvider configurationProvider) throws Exception {
 		
 		this.listFigureManager = new ListFigureManager();
 		this.focusedManager = new FocusedManager();
@@ -49,10 +49,10 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 		this.stateInfoGame = baseWorldGame.getStateInfoGame();
 		
 		this.documentManagerPanelLayout = new DocumentManager<BaseDrawFigure>();	
-		this.documentManagerPanelLayout.cmnDocument = documentPanelLayout;
+		this.documentManagerPanelLayout.cmnDocument = gamePanelLayout;
 		
-		this.documentPanelLayout = documentPanelLayout;
-		this.documentPanelLayout.setListFigureIntoPanelLayout(listFigureManager.getElements());
+		this.gamePanelLayout = gamePanelLayout;
+		this.gamePanelLayout.setListFigureIntoPanelLayout(listFigureManager.getElements());
 		
 	}
 	
@@ -79,7 +79,7 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 		layoutEventManager.clearAll();
 		listFigureManager.clearAll();
 		
-		documentPanelLayout.setLayoutImagePath(fileLayoutImagePath);
+		gamePanelLayout.setLayoutImagePath(fileLayoutImagePath);
 		
 		documentManagerPanelLayout.fillDocumentCollection(listFigureManager.getElements(), fileLayoutXmlPath);
 		
@@ -90,7 +90,7 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 	
 	protected void reloadDocumentCollection(String fileLayoutXmlPath, String fileLayoutImagePath) {
 				
-		documentPanelLayout.setLayoutImagePath(fileLayoutImagePath);
+		gamePanelLayout.setLayoutImagePath(fileLayoutImagePath);
 		
 		focusedManager.clearElements();
 		//fill list of possible focused elements
@@ -412,7 +412,7 @@ public class PanelLayoutManager implements IPanelLayoutManager {
 			if (configFigure != null) {
 				
 				for(BaseDrawFigure baseDrawFigure : listFigureManager.getElementsForDefaultTag(configFigure.getTagDefaultFigure())) {
-					DocumentLayoutTool.updateFigure(baseDrawFigure, configFigure);
+					GameLayoutTool.updateFigure(baseDrawFigure, configFigure);
 				}			
 			}
 		}

@@ -21,11 +21,8 @@ import com.bwizard.cegame.documents.interfaces.ICmnDocument;
 import com.bwizard.cegame.figure.BaseFigure;
 import com.bwizard.cegame.utils.StringUtil;
 
-public class DocumentFigureLayout implements ICmnDocument<BaseFigure> {
-		
-	public DocumentFigureLayout() {
-	}
-	
+public class CustomFigureLayout implements ICmnDocument<BaseFigure> {
+
 	@Override
 	public ArrayList<BaseFigure> createElementFromCellAttribute(
 			BaseFigure parentElement,

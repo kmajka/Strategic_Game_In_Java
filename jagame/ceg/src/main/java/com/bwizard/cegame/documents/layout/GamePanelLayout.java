@@ -26,7 +26,7 @@ import com.bwizard.cegame.utils.StringUtil;
 import com.bwizard.cegame.view.layout.interfaces.IViewLayout;
 import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 
-public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewLayout {
+public class GamePanelLayout implements ICmnDocument<BaseDrawFigure>, IViewLayout {
 	
 	private int rightBorderLayout = 0;
 	private int leftBorderLayout = 0;
@@ -37,7 +37,7 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 	private BaseWorldGame baseWorldGame = null;
 	private String layoutImagePath;
 	
-	public DocumentPanelLayout(BaseWorldGame baseWorldGame) {
+	public GamePanelLayout(BaseWorldGame baseWorldGame) {
 		this.baseWorldGame = baseWorldGame;
 	}
 	
@@ -71,7 +71,7 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 		ArrayList<BaseDrawFigure> list = new ArrayList<BaseDrawFigure>();
 		
 		String figure = hashCellAttribute.get(LayoutAttribute.FIGURE);
-		BaseDrawFigure component = DocumentLayoutTool.getComponentFigure(figure);
+		BaseDrawFigure component = GameLayoutTool.getComponentFigure(figure);
 	  
 		if (component != null) {
 			
@@ -143,7 +143,7 @@ public class DocumentPanelLayout implements ICmnDocument<BaseDrawFigure>, IViewL
 		}
 		
 		//update all necessary properties
-		DocumentLayoutTool.updateFigure(component, hashCellAttribute);
+		GameLayoutTool.updateFigure(component, hashCellAttribute);
 			
 		component.setCursorInfo(baseWorldGame.getStateInfoGame().getCursorInfo());
 		if (component instanceof DrawMap) {

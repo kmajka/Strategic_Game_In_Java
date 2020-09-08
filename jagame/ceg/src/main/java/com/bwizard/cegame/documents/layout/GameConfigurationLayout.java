@@ -19,11 +19,8 @@ import com.bwizard.cegame.documents.interfaces.ICmnDocument;
 import com.bwizard.cegame.utils.BooleanUtil;
 import com.bwizard.cegame.utils.StringUtil;
 
-public class DocumentConfigurationLayout implements ICmnDocument<BaseConfiguration> {
-	
-	public DocumentConfigurationLayout() {
-	}
-	
+public class GameConfigurationLayout implements ICmnDocument<BaseConfiguration> {
+
 	@Override
 	public ArrayList<BaseConfiguration> createElementFromCellAttribute(
 			BaseConfiguration parentElement,
@@ -138,11 +135,11 @@ public class DocumentConfigurationLayout implements ICmnDocument<BaseConfigurati
 			
 			String figureName = hashCellAttribute.get(LayoutAttribute.FIGURE);
 			if (StringUtil.isNotEmpty(figureName)) {
-				BaseDrawFigure figure = DocumentLayoutTool.getComponentFigure(figureName);
+				BaseDrawFigure figure = GameLayoutTool.getComponentFigure(figureName);
 				if(figure != null) {
 					component.getFigureConfiguration().setFigure(figure);
 					
-					DocumentLayoutTool.updateFigure(figure, hashCellAttribute);
+					GameLayoutTool.updateFigure(figure, hashCellAttribute);
 				}
 			}
 			
