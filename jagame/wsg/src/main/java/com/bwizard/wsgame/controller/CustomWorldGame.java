@@ -40,8 +40,8 @@ public class CustomWorldGame extends BaseWorldGame {
 	private final CellBackgroundProvider cellBackgroundProvider;
 	private final LayoutManager layoutManager;
 
-	public CustomWorldGame(StateInfoGame stateInfoGame, BaseWindowGame baseWindowGame) {
-		super(stateInfoGame, baseWindowGame);
+	public CustomWorldGame(StateInfoGame stateInfoGame) {
+		super(stateInfoGame);
 				
 		cellBackgroundProvider = new CellBackgroundProvider(stateInfoGame);
 		this.stateInfoGame = stateInfoGame;

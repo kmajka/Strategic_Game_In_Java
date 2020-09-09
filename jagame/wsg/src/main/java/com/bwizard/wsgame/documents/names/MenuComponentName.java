@@ -22,7 +22,5 @@ public class MenuComponentName implements IValidField {
 	//[MAIN_MENU] -> [EDITOR_GAME_BUTTON] -> 
 	public static final String GENERATE_USER_MAP_BUTTON = "GENERATE_USER_MAP_BUTTON";
 	
-	public static final String REOPEN_APPLICATION_BUTTON = "REOPEN_APPLICATION_BUTTON";
-	
 
 }

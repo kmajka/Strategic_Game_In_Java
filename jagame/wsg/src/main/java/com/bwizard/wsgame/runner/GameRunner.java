@@ -8,8 +8,6 @@ import com.bwizard.cegame.documents.providers.ConfigurationProvider;
 import com.bwizard.cegame.logs.LogInfo;
 import com.bwizard.cegame.state.StateInfoGame;
 import com.bwizard.cegame.state.handlers.Entry;
-import com.bwizard.cegame.window.BaseWindowGame;
-import com.bwizard.cegame.window.handlers.WindowGameActionName;
 import com.bwizard.cegame.window.layout.SimpleWindowLayout;
 import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 import com.bwizard.cegame.window.screen.provider.ScreenWindowFactory;
@@ -40,11 +38,6 @@ public class GameRunner {
 		return windowFactory.createWindow();
 	}
 
-	private BaseWorldGame getWorld(StateInfoGame stateInfoGame) {
-		BaseWindowGame baseWindowGame = new BaseWindowGame(WindowGameActionName.REOPEN);
-		return new CustomWorldGame(stateInfoGame, baseWindowGame);
-	}
-
 	private IPanelLayoutManager getMenuLayout(BaseWorldGame baseWorldGame, GamePanelLayout gamePanelLayout) throws Exception {
 		PanelLayoutManager panelLayoutManager = new CustomPanelLayoutManager(baseWorldGame, gamePanelLayout, configurationProvider);
 		panelLayoutManager.setLayoutName("Game_Menu.xml");
@@ -62,7 +55,7 @@ public class GameRunner {
 				StateInfoGame stateInfoGame = new StateInfoGame(mainWindow);
 
 				//prepare map->Canvas
-				BaseWorldGame baseWorldGame = getWorld(stateInfoGame);
+				BaseWorldGame baseWorldGame = new CustomWorldGame(stateInfoGame);
 
 				//create layout interface
 				GamePanelLayout gamePanelLayout = new CustomPanelLayout(baseWorldGame);

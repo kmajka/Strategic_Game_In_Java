@@ -8,12 +8,11 @@ package com.bwizard.cegame.window.handlers;
 public enum WindowGameActionName {
 
 	EXIT("EXIT"),
-	NONE("NONE"),
-	REOPEN("REOPEN");
+	NONE("NONE");
 	
 	private final String windowGameActionName;
 	
-	private WindowGameActionName(String windowGameName) {
+	WindowGameActionName(String windowGameName) {
 		this.windowGameActionName = windowGameName;
 	}
 	

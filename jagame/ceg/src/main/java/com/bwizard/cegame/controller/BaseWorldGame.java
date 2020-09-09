@@ -64,9 +64,9 @@ public class BaseWorldGame extends Canvas {
 	 * @param mapInfo The value describes information about the map in world
 	 * @param gameWorld The value describes custom world created by user
 	 */
-	public BaseWorldGame(final StateInfoGame stateInfoGame,	BaseWindowGame baseWindowGame) {
+	public BaseWorldGame(final StateInfoGame stateInfoGame) {
 		
-		this.baseWindowGame = baseWindowGame;
+		this.baseWindowGame = new BaseWindowGame();
 		
 		this.threadInfo = new ThreadInfo(ThreadStatus.RUN);	
 		
@@ -253,10 +253,6 @@ public class BaseWorldGame extends Canvas {
 	@Override
 	public void setCursor(Cursor cursor) {
 		super.setCursor(cursor);
-	}
-	
-	public void waitForRestartApplication() {
-		updateAndWaitThreadStatus(ThreadStatus.EXITED);
 	}
 	
 	public void waitForExitApplication() {

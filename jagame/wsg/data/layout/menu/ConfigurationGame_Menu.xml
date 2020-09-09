@@ -17,12 +17,8 @@
   				position_column="5" position_row="1" extension_cell_row="3" text="Kingdom of the one Lord" 
   				extension_cell_column="4" transparent="Y" font_name="Times New Roman" font_size="50" 
   				font_style="ITALIC | BOLD" focused_font_style="ITALIC | BOLD" main_font_color="RGB(200,0,0)" />
-          
-        <cell figure="Button" figure_type="main_menu" tag="REOPEN_APPLICATION_BUTTON" text="Restart Game"
-  				position_column="3" position_row="8" extension_cell_row="1"
-  				extension_cell_column="2" tag_default_figure="default_1" focused_image="mark_element.png" />
-          
-        <cell figure="Panel" 
+
+        	<cell figure="Panel"
   				position_column="3" position_row="6" extension_cell_row="1" text=""  
   				extension_cell_column="4" tag_default_figure="default_template"  />
           

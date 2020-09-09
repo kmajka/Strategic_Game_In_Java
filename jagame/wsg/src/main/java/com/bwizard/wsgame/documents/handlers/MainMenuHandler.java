@@ -1,5 +1,12 @@
 package com.bwizard.wsgame.documents.handlers;
 
+import com.bwizard.cegame.controller.BaseWorldGame;
+import com.bwizard.cegame.controls.components.BaseDrawFigure;
+import com.bwizard.cegame.controls.components.interfaces.IEventHandler;
+import com.bwizard.cegame.documents.handlers.FigureType;
+import com.bwizard.cegame.logs.LogInfo;
+import com.bwizard.cegame.state.handlers.Entry;
+import com.bwizard.cegame.thread.ThreadStatus;
 import com.bwizard.wsgame.documents.EntryEventManager;
 import com.bwizard.wsgame.documents.names.CmnComponentName;
 import com.bwizard.wsgame.documents.names.EditorComponentName;
@@ -8,15 +15,6 @@ import com.bwizard.wsgame.documents.names.MenuComponentName;
 import com.bwizard.wsgame.parameters.GameGlobals;
 
 import java.awt.image.BufferedImage;
-
-import com.bwizard.cegame.controller.BaseWorldGame;
-import com.bwizard.cegame.controls.components.BaseDrawFigure;
-import com.bwizard.cegame.controls.components.interfaces.IEventHandler;
-import com.bwizard.cegame.documents.handlers.FigureType;
-import com.bwizard.cegame.logs.LogInfo;
-import com.bwizard.cegame.state.handlers.Entry;
-import com.bwizard.cegame.thread.ThreadStatus;
-import com.bwizard.cegame.window.handlers.WindowGameActionName;
 
 //main_menu
 public class MainMenuHandler extends BaseHandler implements IEventHandler {
@@ -49,13 +47,6 @@ public class MainMenuHandler extends BaseHandler implements IEventHandler {
 
 			returnToGame();
 
-		} else if (MenuComponentName.REOPEN_APPLICATION_BUTTON.equals(arg0)) {
-
-			// re-opening application
-			baseWorldGame.waitForRestartApplication();
-			baseWorldGame.getBaseWindowGame().setHideActionName(WindowGameActionName.REOPEN);
-			baseWorldGame.addEventAction(Entry.MENU);
-			
 		} else if (MenuComponentName.CREDITS_BUTTON.equals(arg0)) {
 
 			performLayout(EntryEventManager.CREDITSGAME_MENU);
@@ -66,12 +57,12 @@ public class MainMenuHandler extends BaseHandler implements IEventHandler {
 
 		} else if (MenuComponentName.OPEN_CUSTOM_GAME_BUTTON.equals(arg0)) {
 			
-			BaseDrawFigure baseDrawFigure = null;
+			BaseDrawFigure baseDrawFigure;
 			if (sender instanceof BaseDrawFigure) {
 				baseDrawFigure = (BaseDrawFigure)sender;
 			
 				if (baseDrawFigure.getCountPressed() == 1) {
-					BaseDrawFigure element = null;
+					BaseDrawFigure element;
 					String text = baseDrawFigure.getDescriptionField1();
 					element = baseWorldGame.getElementByTag("DESCRIPTION_MAP");
 					element.setText(text);

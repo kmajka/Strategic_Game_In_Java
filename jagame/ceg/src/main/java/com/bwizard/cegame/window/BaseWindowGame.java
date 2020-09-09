@@ -4,16 +4,11 @@ import com.bwizard.cegame.window.handlers.WindowGameActionName;
 
 public class BaseWindowGame {
 	
-	private WindowGameActionName actionName;
+	private WindowGameActionName actionName = WindowGameActionName.NONE;
 	private WindowGameActionName hideActionName;
 	
 	public BaseWindowGame() {
 		this.hideActionName = WindowGameActionName.NONE;
-	}
-	
-	public BaseWindowGame(WindowGameActionName actionName) {
-		super();
-		this.setActionName(actionName);
 	}
 	
 	//transfer of hidden parameter
