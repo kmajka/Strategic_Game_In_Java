@@ -68,8 +68,7 @@ public class BaseWorldGame extends Canvas {
 		
 		this.baseWindowGame = new BaseWindowGame();
 		
-		this.threadInfo = new ThreadInfo(ThreadStatus.RUN);	
-		
+		this.threadInfo = new ThreadInfo(ThreadStatus.RUN);
 		this.stateInfoGame = stateInfoGame;
 		this.stateInfoGame.setThreadInfo(this.threadInfo);
 		
@@ -84,7 +83,7 @@ public class BaseWorldGame extends Canvas {
 		
 	}
 
-	public void setPanelLayoutManager(IPanelLayoutManager panelLayoutManager) {
+	public void setPanelLayout(IPanelLayoutManager panelLayoutManager) {
 		
 		getMapBackgroundManager().setPanelLayoutManager(panelLayoutManager);
 		stateInfoGame.setPanelLayoutManager(panelLayoutManager);

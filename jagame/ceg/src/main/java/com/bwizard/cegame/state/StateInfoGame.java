@@ -5,7 +5,9 @@ import com.bwizard.cegame.documents.interfaces.IPanelLayoutManager;
 import com.bwizard.cegame.device.model.CursorInfo;
 import com.bwizard.cegame.device.model.KeysInfo;
 import com.bwizard.cegame.thread.ThreadInfo;
+import com.bwizard.cegame.thread.ThreadStatus;
 import com.bwizard.cegame.time.MonitorTime;
+import com.bwizard.cegame.time.TimeInfo;
 import com.bwizard.cegame.view.layout.interfaces.IViewLayout;
 import com.bwizard.cegame.window.screen.interfaces.IWindowScreen;
 import com.bwizard.cegame.world.map.WorldMapInfo;
@@ -29,15 +31,11 @@ public class StateInfoGame {
 
 	public StateInfoGame(IWindowScreen mainWindow) {
 		this.windowScreen = mainWindow;
-
 		monitorTime = new MonitorTime();
-		cursorInfo = new CursorInfo();
 		keysInfo = new KeysInfo();
 		worldMapInfo = new WorldMapInfo();
-		
-		cameraMapInfo = new CameraMapInfo();
-		cameraMapInfo.setMapInfo(worldMapInfo);
-		cursorInfo.setCameraMapInfo(cameraMapInfo);
+		cameraMapInfo = new CameraMapInfo(worldMapInfo);
+		cursorInfo = new CursorInfo(cameraMapInfo);
 	}
 	
 	public CameraMapInfo getCameraMapInfo() {
@@ -85,12 +83,20 @@ public class StateInfoGame {
 		return threadInfo;
 	}
 
+	public boolean isThreadRun() {
+		return ThreadStatus.RUN.equals(getThreadInfo().getThreadStatus());
+	}
+
 	public void setThreadInfo(ThreadInfo threadInfo) {
 		this.threadInfo = threadInfo;
 	}
 
 	public MonitorTime getMonitorTime() {
 		return monitorTime;
+	}
+
+	public TimeInfo getTimeInGame() {
+		return monitorTime.getTimeInfo();
 	}
 	
 }

@@ -55,31 +55,31 @@ public class GameRunner {
 				StateInfoGame stateInfoGame = new StateInfoGame(mainWindow);
 
 				//prepare map->Canvas
-				BaseWorldGame baseWorldGame = new CustomWorldGame(stateInfoGame);
+				BaseWorldGame worldInGame = new CustomWorldGame(stateInfoGame);
 
 				//create layout interface
-				GamePanelLayout gamePanelLayout = new CustomPanelLayout(baseWorldGame);
+				GamePanelLayout gamePanelLayout = new CustomPanelLayout(worldInGame);
 
 				//EditorLayout.xml
 				//GameLayout.xml
-				IPanelLayoutManager panelLayoutManager = getMenuLayout(baseWorldGame, gamePanelLayout);
-				baseWorldGame.setPanelLayoutManager(panelLayoutManager);
+				IPanelLayoutManager menuLayout = getMenuLayout(worldInGame, gamePanelLayout);
+				worldInGame.setPanelLayout(menuLayout);
 
 				//set user view layout
 				stateInfoGame.setViewLayout(gamePanelLayout);
 
 				//create main Layout for window
-				SimpleWindowLayout simpleWindowLayout = new SimpleWindowLayout(baseWorldGame);
+				SimpleWindowLayout simpleWindowLayout = new SimpleWindowLayout(worldInGame);
 				mainWindow.setLayout(simpleWindowLayout);
 
 				//add information about events to manage e.g. mouse ,keys
-				baseWorldGame.addEventAction(Entry.MENU);
+				worldInGame.addEventAction(Entry.MENU);
 
 				//displaying main window
 				mainWindow.createGUI();
 
 				//starts main thread
-				baseWorldGame.run(mainWindow);
+				worldInGame.run(mainWindow);
 
 			} catch (Exception e) {
 				// TODO Auto-generated catch block

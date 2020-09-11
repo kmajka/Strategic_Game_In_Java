@@ -44,10 +44,7 @@ public class CustomWorldGame extends BaseWorldGame {
 		super(stateInfoGame);
 				
 		cellBackgroundProvider = new CellBackgroundProvider(stateInfoGame);
-		this.stateInfoGame = stateInfoGame;
-		
 		//create map from xml
-
 		GameConfigurationLayout documentMapConfigurationLayout = new GameConfigurationLayout();
 		CustomBackgroundLayout customBackgroundLayout = new CustomBackgroundLayout(stateInfoGame);
 		CustomFigureLayout customFigureLayout = new CustomFigureLayout();
@@ -58,7 +55,6 @@ public class CustomWorldGame extends BaseWorldGame {
 		layoutManager.setDocumentMapConfigurationLayout(documentMapConfigurationLayout);
 		layoutManager.setDocumentManagerBackgroundLayout(customBackgroundLayout);
 		layoutManager.setDocumentManagerFigureLayout(customFigureLayout);
-			
 	}
 	
 	@Override
@@ -68,14 +64,12 @@ public class CustomWorldGame extends BaseWorldGame {
 	
 	@Override
 	public void clear() {
-		
 		userViewManager.clear();
 		worldObjectManager.clear();
 		cellBackgroundProvider.clear();
 		mapBackgroundManager.clear();
 		cursorController.clearComponents();
 		cleanerManager.removeUnusedResources();
-		
 	}
 	
 	@Override

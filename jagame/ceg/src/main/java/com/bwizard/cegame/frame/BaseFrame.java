@@ -38,7 +38,7 @@ public abstract class BaseFrame {
 		return this.activityFigure.getActualActivity();
 	}
 	
-	public void update(TimeInfo timeInfo) {
+	public void updateFrame(TimeInfo timeInfo) {
 		frameManager.update(timeInfo);
 	}
 	

@@ -26,8 +26,8 @@ public abstract class GameFigure extends BaseFigure {
 	@Override
 	public void paintFigure(Graphics g) {
 		
-		if(ThreadStatus.RUN.equals(stateInfoGame.getThreadInfo().getThreadStatus())) {
-			update(stateInfoGame.getMonitorTime().getTimeInfo());
+		if(stateInfoGame.isThreadRun()) {
+			updateFrame(stateInfoGame.getTimeInGame());
 		}
 		
 		if(isSelected()) {

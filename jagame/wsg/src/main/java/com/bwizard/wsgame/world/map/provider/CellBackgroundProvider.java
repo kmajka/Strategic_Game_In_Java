@@ -55,7 +55,7 @@ public class CellBackgroundProvider implements ICellBackgroundProvider {
 	}
 	
 	@Override
-	public void updateBackgroundCell(ArrayList<BaseFrame> baseFrames, ArrayList<Integer> keyImages) {
+	public void updateBackgroundCell(ArrayList<BaseFrame> figures, ArrayList<Integer> keyImages) {
 		
 		for(int keyImage: keyImages) {
 			
@@ -63,8 +63,8 @@ public class CellBackgroundProvider implements ICellBackgroundProvider {
 			
 			//only one update for 'frame' related with the category (e.g. LATO) for painting background in the iteration
 			if (!mapFirstUpdate.get(keyCellName)) {
-				for(BaseFrame baseFrame : baseFrames) {
-					baseFrame.update(stateInfoGame.getMonitorTime().getTimeInfo());
+				for(BaseFrame figure : figures) {
+					figure.updateFrame(stateInfoGame.getTimeInGame());
 				}
 				mapFirstUpdate.put(keyCellName, true);
 			}

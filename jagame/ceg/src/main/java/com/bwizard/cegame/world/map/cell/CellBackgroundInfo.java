@@ -26,7 +26,7 @@ public class CellBackgroundInfo {
 	
 	private StateInfoGame stateInfoGame = null;
 	
-	private ArrayList<BaseFrame> baseFrames = null;
+	private ArrayList<BaseFrame> figures = null;
 	
 	/*
 	 * This constructor store information about one single cell
@@ -118,22 +118,21 @@ public class CellBackgroundInfo {
 		this.cellColumn = cellColumn;
 	}
 
-	public ArrayList<BaseFrame> getBaseFrames() {
-		return baseFrames;
+	public ArrayList<BaseFrame> getFigures() {
+		return figures;
 	}
 
-	public void setBaseFrame(ArrayList<BaseFrame> baseFrame) {
-		this.baseFrames = baseFrame;
+	public void setBaseFrame(ArrayList<BaseFrame> figures) {
+		this.figures = figures;
 	}
 	
 	public void paintFigure(Graphics g, int x, int y) {
 		
-		if(ThreadStatus.RUN.equals(stateInfoGame.getThreadInfo().getThreadStatus())) {
-			for(BaseFrame baseFrame : baseFrames) {
-				baseFrame.update(stateInfoGame.getMonitorTime().getTimeInfo());
+		if(stateInfoGame.isThreadRun()) {
+			for(BaseFrame figure : figures) {
+				figure.updateFrame(stateInfoGame.getTimeInGame());
 			}
 		}
-		
 		//DrawManager.drawImageInView(g, baseFrame.getImage(), x, y, stateInfoGame, false, true);
 	}
 	

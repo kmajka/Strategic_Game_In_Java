@@ -18,15 +18,12 @@ public class CameraMapInfo extends CameraInfo  {
 		return viewLayout;
 	}
 
-	public CameraMapInfo() {
+	public CameraMapInfo(WorldMapInfo mapInfo) {
+		this.mapInfo = mapInfo;
 	}
 	
 	public WorldMapInfo getMapInfo() {
 		return mapInfo;
-	}
-
-	public void setMapInfo(WorldMapInfo mapInfo) {
-		this.mapInfo = mapInfo;
 	}
 	
 	public void setViewLayout(IViewLayout viewLayout) {

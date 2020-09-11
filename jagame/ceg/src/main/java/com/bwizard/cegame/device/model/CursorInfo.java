@@ -21,7 +21,8 @@ public class CursorInfo {
 	private boolean selected = false;
 	//member for checking if some DrawFigure (e.g. DrawMap) has been selected 
 
-	public CursorInfo() {
+	public CursorInfo(CameraMapInfo cameraMapInfo) {
+		this.cameraMapInfo = cameraMapInfo;
 	}
 	/*
 	 * This constructor store information about mouse
@@ -51,9 +52,6 @@ public class CursorInfo {
 
 	public CameraMapInfo getCameraMapInfo() {
 		return cameraMapInfo;
-	}
-	public void setCameraMapInfo(CameraMapInfo cameraMapInfo) {
-		this.cameraMapInfo = cameraMapInfo;
 	}
 	
 	public int getStartScreenSelectionX() {

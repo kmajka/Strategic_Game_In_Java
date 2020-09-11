@@ -144,7 +144,7 @@ public class MapBackgroundManager {
    * @param cellPositionColumn This value store information about key[X] for cell.
    * @param pointRow This value store information about position cell in Y-axis. [128x128 cell range: min.-128 ...] 
    * @param pointColumn This value store information about position cell in X-axis. [128x128 cell range: min.-128 ...]
-   * @param cellBackground used to obtain the image
+   * @param cellBackgroundProvider used to obtain the image
    * @return CellBackgroundInfo.
    */
 	private CellBackgroundInfo drawCell(Graphics g, int cellPositionRow, int cellPositionColumn, int pointRow, int pointColumn, ICellBackgroundProvider cellBackgroundProvider) {
@@ -169,9 +169,9 @@ public class MapBackgroundManager {
 			}
 		}
 		
-		cellBackgroundProvider.updateBackgroundCell(currentCellBackgroundInfo.getBaseFrames(), currentCellBackgroundInfo.getKeyImages());
+		cellBackgroundProvider.updateBackgroundCell(currentCellBackgroundInfo.getFigures(), currentCellBackgroundInfo.getKeyImages());
 		
-		for(BaseFrame baseFrame : currentCellBackgroundInfo.getBaseFrames()) {
+		for(BaseFrame baseFrame : currentCellBackgroundInfo.getFigures()) {
 			DrawManager.drawImage(g, baseFrame.getImage(), pointColumn, pointRow, baseFrame.getImage().getWidth(), baseFrame.getImage().getHeight());
 		}
 		
